@@ -3,17 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 
 Route::group(['domain' => 'master.localhost'], function () {
     Route::controller(AuthController::class)->group(function () {
@@ -27,6 +16,7 @@ Route::group(['domain' => 'master.localhost'], function () {
         Route::get('logout', 'logout');
     });
 
+      include 'extras/master/BerandaRoute.php';
       include 'extras/master/NaldyRoute.php';
       include 'extras/master/RicoRoute.php';
       include 'extras/master/YusufRoute.php';
@@ -35,5 +25,6 @@ Route::group(['domain' => 'master.localhost'], function () {
 });
 
 Route::get('/', function () {
-   return view('login');
+   return view("admin.beranda");
 });
+
