@@ -27,6 +27,11 @@ Route::group(['domain' => 'master.localhost'], function () {
         Route::get('logout', 'logout');
     });
 
+      include 'extras/master/NaldyRoute.php';
+      include 'extras/master/RicoRoute.php';
+      include 'extras/master/YusufRoute.php';
+
+
 });
 
 Route::get('/', function () {
