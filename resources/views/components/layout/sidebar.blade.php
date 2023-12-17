@@ -27,7 +27,7 @@
 
             <li class="menu-title">Menu</li>
 
-            <x-layout.sidebar-item url="/" icons="mgc_calendar_line" label="Dashboard" />
+            <x-layout.sidebar-item url="{{url('beranda')}}" icons="mgc_calendar_line" label="Dashboard" />
 
 
             <li class="menu-item">
@@ -38,39 +38,39 @@
                 </a>
                 <ul class="sub-menu hidden">
                     <li class="menu-item">
-                        <a href="pages-starter.php" class="menu-link">
+                        <a href="{{url('master-data/kabupaten')}}" class="menu-link">
                             <span class="menu-text">Data Kabupaten</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-timeline.php" class="menu-link">
+                        <a href="{{url('master-data/dapil')}}" class="menu-link">
                             <span class="menu-text">Data Dapil</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-invoice.php" class="menu-link">
+                        <a href="{{url('master-data/kecamatan')}}" class="menu-link">
                             <span class="menu-text">Data Kecamatan</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-gallery.php" class="menu-link">
+                        <a href="{{url('master-data/desa')}}" class="menu-link">
                             <span class="menu-text">Data Desa</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-faqs.php" class="menu-link">
+                        <a href="{{url('master-data/tps')}}" class="menu-link">
                             <span class="menu-text">Data TPS</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="pages-faqs.php" class="menu-link">
+                        <a href="{{url('master-data/partai')}}" class="menu-link">
                             <span class="menu-text">Data Partai</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="pages-faqs.php" class="menu-link">
+                        <a href="{{url('master-data/kandidat')}}" class="menu-link">
                             <span class="menu-text">Data Kandidat</span>
                         </a>
                     </li>
@@ -88,27 +88,27 @@
                 </a>
                 <ul class="sub-menu hidden">
                     <li class="menu-item">
-                        <a href="pages-starter.php" class="menu-link">
+                        <a href="{{url('perhitungan-cepat/keseluruhan')}}" class="menu-link">
                             <span class="menu-text">Hasil Keseluruhan</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-timeline.php" class="menu-link">
+                        <a href="{{url('perhitungan-cepat/kecamatan')}}" class="menu-link">
                             <span class="menu-text">Hasil Kecamatan</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-invoice.php" class="menu-link">
+                        <a href="{{url('perhitungan-cepat/desa')}}" class="menu-link">
                             <span class="menu-text">Hasil Desa</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-gallery.php" class="menu-link">
+                        <a href="{{url('perhitungan-cepat/tps')}}" class="menu-link">
                             <span class="menu-text">Hasil TPS</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-faqs.php" class="menu-link">
+                        <a href="{{url('perhitungan-cepat/partai')}}" class="menu-link">
                             <span class="menu-text">Hasil Partai</span>
                         </a>
                     </li>
@@ -118,8 +118,8 @@
                 </ul>
             </li>
 
-             <x-layout.sidebar-item url="/" icons="mgc_calendar_line" label="Pengaturan" />
-             <x-layout.sidebar-item url="/" icons="mgc_calendar_line" label="Profil Akun" />
+             <x-layout.sidebar-item url="{{url('pengaturan')}}" icons="mgc_calendar_line" label="Pengaturan" />
+             <x-layout.sidebar-item url="{{url('profil-akun')}}" icons="mgc_calendar_line" label="Profil Akun" />
 
 
 

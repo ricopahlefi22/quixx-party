@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Master\Perhitungan-Cepat;
+namespace App\Http\Controllers\Master\MasterData;
+namespace App\Http\Controllers\Master\PerhitunganCepat;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
