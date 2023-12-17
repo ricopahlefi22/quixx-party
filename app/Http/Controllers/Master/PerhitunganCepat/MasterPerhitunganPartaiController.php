@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class MasterPerhitunganPartaiController extends Controller
 {
-    //
+    function index(){
+        return view('master.perhitungan-cepat.partai.index');
+    }
 }

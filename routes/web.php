@@ -16,13 +16,12 @@ Route::group(['domain' => 'master.localhost'], function () {
         Route::get('logout', 'logout');
 
 
-        include 'extras/master/BerandaRoute.php';
     });
+        include 'extras/master/BerandaRoute.php';
+        include 'extras/master/MasterDataRoute.php';
+        include 'extras/master/PerhitunganCepatRoute.php';
 
-    
-    include 'extras/master/NaldyRoute.php';
-    include 'extras/master/RicoRoute.php';
-    include 'extras/master/YusufRoute.php';
+
 
 
 });

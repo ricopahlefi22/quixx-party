@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class MasterPerhitunganKecamatanController extends Controller
 {
-    //
+    function index(){
+        return view('master.perhitungan-cepat.kecamatan.index');
+    }
 }
