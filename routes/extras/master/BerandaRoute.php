@@ -1,7 +1,7 @@
 <?php
-
+use App\Http\Controllers\Master\MasterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/beranda', function () {
-    return "OKKK";
+Route::controller(MasterController::class)->group(function () {
+    Route::get('beranda', 'beranda');
 });

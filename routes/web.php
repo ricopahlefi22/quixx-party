@@ -14,17 +14,20 @@ Route::group(['domain' => 'master.localhost'], function () {
         Route::post('reset-password', 'resetPasswordProcess');
         Route::post('otp', 'otp');
         Route::get('logout', 'logout');
+
+
+        include 'extras/master/BerandaRoute.php';
     });
 
-      include 'extras/master/BerandaRoute.php';
-      include 'extras/master/NaldyRoute.php';
-      include 'extras/master/RicoRoute.php';
-      include 'extras/master/YusufRoute.php';
+    
+    include 'extras/master/NaldyRoute.php';
+    include 'extras/master/RicoRoute.php';
+    include 'extras/master/YusufRoute.php';
 
 
 });
 
 Route::get('/', function () {
-   return view("admin.beranda");
+ return view("admin.beranda");
 });
 

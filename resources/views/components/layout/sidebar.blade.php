@@ -4,14 +4,14 @@
     <a href="#" class="logo-box">
         <!-- Light Brand Logo -->
         <div class="logo-light">
-            <img src="assets/images/logo-light.png" class="logo-lg h-6" alt="Light logo">
-            <img src="assets/images/logo-sm.png" class="logo-sm" alt="Small logo">
+            <img src="{{ asset('assets/images/logo-light.png')}}" class="logo-lg h-6" alt="Light logo">
+            <img src="{{ asset('assets/images/logo-sm.png')}}" class="logo-sm" alt="Small logo">
         </div>
 
         <!-- Dark Brand Logo -->
         <div class="logo-dark">
-            <img src="assets/images/logo-dark.png" class="logo-lg h-6" alt="Dark logo">
-            <img src="assets/images/logo-sm.png" class="logo-sm" alt="Small logo">
+            <img src="{{ asset('assets/images/logo-dark.png')}}" class="logo-lg h-6" alt="Dark logo">
+            <img src="{{ asset('assets/images/logo-sm.png')}}" class="logo-sm" alt="Small logo">
         </div>
     </a>
 
@@ -27,11 +27,103 @@
 
             <li class="menu-title">Menu</li>
 
-            <x-layout.sidebar-item url="" icons="mgc_calendar_line" label="Dashboard" />
-            <x-layout.sidebar-item url="" icons="mgc_calendar_line" label="Dashboard" />
-            <x-layout.sidebar-item url="" icons="mgc_calendar_line" label="Dashboard" />
-            <x-layout.sidebar-item url="" icons="mgc_calendar_line" label="Dashboard" />
-            <x-layout.sidebar-item url="" icons="mgc_calendar_line" label="Dashboard" />
+            <x-layout.sidebar-item url="/" icons="mgc_calendar_line" label="Dashboard" />
+
+
+            <li class="menu-item">
+                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                    <span class="menu-icon"><i class="mgc_box_3_line"></i></span>
+                    <span class="menu-text"> Master Data </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <ul class="sub-menu hidden">
+                    <li class="menu-item">
+                        <a href="pages-starter.php" class="menu-link">
+                            <span class="menu-text">Data Kabupaten</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-timeline.php" class="menu-link">
+                            <span class="menu-text">Data Dapil</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-invoice.php" class="menu-link">
+                            <span class="menu-text">Data Kecamatan</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-gallery.php" class="menu-link">
+                            <span class="menu-text">Data Desa</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-faqs.php" class="menu-link">
+                            <span class="menu-text">Data TPS</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="pages-faqs.php" class="menu-link">
+                            <span class="menu-text">Data Partai</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="pages-faqs.php" class="menu-link">
+                            <span class="menu-text">Data Kandidat</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </li>
+
+
+
+            <li class="menu-item">
+                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                    <span class="menu-icon"><i class="mgc_box_3_line"></i></span>
+                    <span class="menu-text"> Perhitungan Cepat </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <ul class="sub-menu hidden">
+                    <li class="menu-item">
+                        <a href="pages-starter.php" class="menu-link">
+                            <span class="menu-text">Hasil Keseluruhan</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-timeline.php" class="menu-link">
+                            <span class="menu-text">Hasil Kecamatan</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-invoice.php" class="menu-link">
+                            <span class="menu-text">Hasil Desa</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-gallery.php" class="menu-link">
+                            <span class="menu-text">Hasil TPS</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-faqs.php" class="menu-link">
+                            <span class="menu-text">Hasil Partai</span>
+                        </a>
+                    </li>
+
+                   
+                    
+                </ul>
+            </li>
+
+             <x-layout.sidebar-item url="/" icons="mgc_calendar_line" label="Pengaturan" />
+             <x-layout.sidebar-item url="/" icons="mgc_calendar_line" label="Profil Akun" />
+
+
+
+
         </ul>
 
     </div>
