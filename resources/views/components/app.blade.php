@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/perfect-scrollbar.min.css') }}" />
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/style.css') }}" />
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/style.css') }}" />
         <link defer rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/animate.css') }}" />
         <script src="{{ asset('template/assets/js/perfect-scrollbar.min.js') }}"></script>
         <script defer src="{{ asset('template/assets/js/popper.min.js') }}"></script>
