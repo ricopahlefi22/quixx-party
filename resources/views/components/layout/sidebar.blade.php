@@ -24,25 +24,25 @@
             <x-layout.sidebar-dropdown>
                 <x-layout.sidebar-dropdown-button class="master-data" icon="layers" label="Master data"/>
                 <x-layout.sidebar-dropdown-menu class="master-data">
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Kabupaten"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Dapil"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Kecamatan"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Desa"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data TPS"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Partai"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-kabupaten') }}" label="Data Kabupaten"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-dapil') }}" label="Data Dapil"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-kecamatan') }}" label="Data Kecamatan"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-desa') }}" label="Data Desa"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-tps') }}" label="Data TPS"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-partai') }}" label="Data Partai"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/data-kandidat') }}" label="Data Kandidat"/>
                 </x-layout.sidebar-dropdown-menu>
             </x-layout.sidebar-dropdown>
 
 
             <x-layout.sidebar-dropdown>
-                <x-layout.sidebar-dropdown-button class="perhitungan-cepat" icon="percent" label="Perhitungan Cepat"/>
+                <x-layout.sidebar-dropdown-button class="perhitungan-cepat" icon="zap" label="Perhitungan Cepat"/>
                 <x-layout.sidebar-dropdown-menu class="perhitungan-cepat">
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Keseluruhan"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Kecamatan"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Desa"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil TPS"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data TPS"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Partai"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('perhitungan-cepat/keseluruhan') }}" label="Hasil Keseluruhan"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('perhitungan-cepat/kecamatan') }}" label="Hasil Kecamatan"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('perhitungan-cepat/desa') }}" label="Hasil Desa"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('perhitungan-cepat/tps') }}" label="Hasil TPS"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('perhitungan-cepat/partai') }}" label="Hasil Partai"/>
                 </x-layout.sidebar-dropdown-menu>
             </x-layout.sidebar-dropdown>
 

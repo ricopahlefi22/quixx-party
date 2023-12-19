@@ -1,22 +1,37 @@
 <x-app>
-	<div class="card">
-		<div class="card-body">
-			<center>
-				<h3>Data kecamatan</h3>
-			</center>
-		</div>
-	</div>
+    <x-card.card>
+        <div class="p-3 flex items-center justify-between">
+            <h2 class="text-base font-semibold text-slate-600">Data Kecamatan</h2>
+            <x-button.btn url="#" class="primary"  label="Tambah Kecamatan" />
+        </div>
+        <div class="p-3">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><center>No.</center></th>
+                            <th><center>No.</center></th>
+                            <th><center>No.</center></th>
+                            <th><center>No.</center></th>
+                            <th><center>No.</center></th>
+                            <th><center>No.</center></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><center>No.</center></td>
+                            <td><center>No.</center></td>
+                            <td><center>No.</center></td>
+                            <td><center>No.</center></td>
+                            <td><center>No.</center></td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </x-card.card>
 
-
-	<div class="card">
-		<div class="card-body">
-			<table class="table">
-				<tr>
-					<th>#</th>
-					<th>Aksi</th>
-					<th>Nama Kecamatan</th>
-				</tr>
-			</table>
-		</div>
-	</div>
 </x-app>

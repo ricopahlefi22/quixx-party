@@ -12,30 +12,30 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('master-data')->group(function () {
 
     Route::controller(MasterMasterdataDapilController::class)->group(function () {
-        Route::get('dapil', 'index');
+        Route::get('data-dapil', 'index');
     });
 
     Route::controller(MasterMasterdataDesaController::class)->group(function () {
-        Route::get('desa', 'index');
+        Route::get('data-desa', 'index');
     });
     Route::controller(MasterMasterdataKabupatenController::class)->group(function () {
-        Route::get('kabupaten', 'index');
+        Route::get('data-kabupaten', 'index');
     });
 
     Route::controller(MasterMasterdataKandidatController::class)->group(function () {
-        Route::get('kandidat', 'index');
+        Route::get('data-kandidat', 'index');
     });
 
     Route::controller(MasterMasterdataKecamatanController::class)->group(function () {
-        Route::get('kecamatan', 'index');
+        Route::get('data-kecamatan', 'index');
     });
 
     Route::controller(MasterMasterdataPartaiController::class)->group(function () {
-        Route::get('partai', 'index');
+        Route::get('data-partai', 'index');
     });
 
      Route::controller(MasterMasterdataTpsController::class)->group(function () {
-        Route::get('tps', 'index');
+        Route::get('data-tps', 'index');
         Route::get('card', 'card');
     });
 
