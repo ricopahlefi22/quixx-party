@@ -1,510 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Quixx</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
-    <meta content="coderthemes" name="author">
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Quixx</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/perfect-scrollbar.min.css') }}" />
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/style.css') }}" />
+        <link defer rel="stylesheet" type="text/css" media="screen" href="{{ asset('template/assets/css/animate.css') }}" />
+        <script src="{{ asset('template/assets/js/perfect-scrollbar.min.js') }}"></script>
+        <script defer src="{{ asset('template/assets/js/popper.min.js') }}"></script>
+    </head>
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('tempelate/assets/images/favicon.ico') }}">
+    <body
+        x-data="main"
+        class="relative overflow-x-hidden font-nunito text-sm font-normal antialiased"
+        :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.theme === 'dark' || $store.app.isDarkMode ?  'dark' : '', $store.app.menu, $store.app.layout,$store.app.rtlClass]"
+    >
+        <!-- sidebar menu overlay -->
+        <div x-cloak class="fixed inset-0 z-50 bg-[black]/60 lg:hidden" :class="{'hidden' : !$store.app.sidebar}" @click="$store.app.toggleSidebar()"></div>
 
-    <!-- App css -->
-    <link href="{{ asset('tempelate/assets/css/app.min.css') }}" rel="stylesheet" type="text/css">
+        <!-- screen loader -->
+        {{-- <div class="screen_loader animate__animated fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
+            <svg width="64" height="64" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg" fill="#4361ee">
+                <path
+                    d="M67.447 58c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zm9.448 9.447c0 5.523 4.477 10 10 10 5.522 0 10-4.477 10-10s-4.478-10-10-10c-5.523 0-10 4.477-10 10zm-9.448 9.448c-5.523 0-10 4.477-10 10 0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10zM58 67.447c0-5.523-4.477-10-10-10s-10 4.477-10 10 4.477 10 10 10 10-4.477 10-10z"
+                >
+                    <animateTransform attributeName="transform" type="rotate" from="0 67 67" to="-360 67 67" dur="2.5s" repeatCount="indefinite" />
+                </path>
+                <path
+                    d="M28.19 40.31c6.627 0 12-5.374 12-12 0-6.628-5.373-12-12-12-6.628 0-12 5.372-12 12 0 6.626 5.372 12 12 12zm30.72-19.825c4.686 4.687 12.284 4.687 16.97 0 4.686-4.686 4.686-12.284 0-16.97-4.686-4.687-12.284-4.687-16.97 0-4.687 4.686-4.687 12.284 0 16.97zm35.74 7.705c0 6.627 5.37 12 12 12 6.626 0 12-5.373 12-12 0-6.628-5.374-12-12-12-6.63 0-12 5.372-12 12zm19.822 30.72c-4.686 4.686-4.686 12.284 0 16.97 4.687 4.686 12.285 4.686 16.97 0 4.687-4.686 4.687-12.284 0-16.97-4.685-4.687-12.283-4.687-16.97 0zm-7.704 35.74c-6.627 0-12 5.37-12 12 0 6.626 5.373 12 12 12s12-5.374 12-12c0-6.63-5.373-12-12-12zm-30.72 19.822c-4.686-4.686-12.284-4.686-16.97 0-4.686 4.687-4.686 12.285 0 16.97 4.686 4.687 12.284 4.687 16.97 0 4.687-4.685 4.687-12.283 0-16.97zm-35.74-7.704c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12s5.374 12 12 12c6.628 0 12-5.373 12-12zm-19.823-30.72c4.687-4.686 4.687-12.284 0-16.97-4.686-4.686-12.284-4.686-16.97 0-4.687 4.686-4.687 12.284 0 16.97 4.686 4.687 12.284 4.687 16.97 0z"
+                >
+                    <animateTransform attributeName="transform" type="rotate" from="0 67 67" to="360 67 67" dur="8s" repeatCount="indefinite" />
+                </path>
+            </svg>
+        </div> --}}
 
-    <!-- Icons css -->
-    <link href="{{ asset('tempelate/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+        <!-- scroll to top button -->
+        <div class="fixed bottom-6 z-50 ltr:right-6 rtl:left-6" x-data="scrollToTop">
+            <template x-if="showTopButton">
+                <button
+                    type="button"
+                    class="btn btn-outline-primary animate-pulse rounded-full bg-[#fafafa] p-2 dark:bg-[#060818] dark:hover:bg-primary"
+                    @click="goToTop"
+                >
+                    <svg width="24" height="24" class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            opacity="0.5"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12 20.75C12.4142 20.75 12.75 20.4142 12.75 20L12.75 10.75L11.25 10.75L11.25 20C11.25 20.4142 11.5858 20.75 12 20.75Z"
+                            fill="currentColor"
+                        />
+                        <path
+                            d="M6.00002 10.75C5.69667 10.75 5.4232 10.5673 5.30711 10.287C5.19103 10.0068 5.25519 9.68417 5.46969 9.46967L11.4697 3.46967C11.6103 3.32902 11.8011 3.25 12 3.25C12.1989 3.25 12.3897 3.32902 12.5304 3.46967L18.5304 9.46967C18.7449 9.68417 18.809 10.0068 18.6929 10.287C18.5768 10.5673 18.3034 10.75 18 10.75L6.00002 10.75Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </button>
+            </template>
+        </div>
 
-    <!-- Theme Config Js -->
-    <script src="{{ asset('tempelate/assets/js/config.js') }}"></script>
-</head>
+        <!-- start theme customizer section -->
+        <x-layout.rightbar />
+        <!-- end theme customizer section -->
 
-<body>
-
-    <div class="flex wrapper">
-
-      <x-layout.sidebar />
-        <!-- Sidenav Menu End  -->
-
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
-        <div class="page-content">
-
-            <!-- Topbar Start -->
-            <x-layout.navbar />
-            <!-- Topbar End -->
-
-            <!-- Topbar Search Modal -->
-            <div>
-                <div id="topbar-search-modal" class="fc-modal hidden w-full h-full fixed top-0 start-0 z-50">
-                    <div class="fc-modal-open:opacity-100 fc-modal-open:duration-500 opacity-0 transition-all sm:max-w-lg sm:w-full m-12 sm:mx-auto">
-                        <div class="mx-auto max-w-2xl overflow-hidden rounded-xl bg-white shadow-2xl transition-all dark:bg-slate-800">
-                            <div class="relative">
-                                <div class="pointer-events-none absolute top-3.5 start-4 text-gray-900 text-opacity-40 dark:text-gray-200">
-                                    <i class="mgc_search_line text-xl"></i>
-                                </div>
-                                <input type="search" class="h-12 w-full border-0 bg-transparent ps-11 pe-4 text-gray-900 placeholder-gray-500 dark:placeholder-gray-300 dark:text-gray-200 focus:ring-0 sm:text-sm" placeholder="Search...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="main-container min-h-screen text-black dark:text-white-dark" :class="[$store.app.navbar]">
+            <!-- start sidebar section -->
+            <div :class="{'dark text-white-dark' : $store.app.semidark}">
+                <x-layout.sidebar />
             </div>
+            <!-- end sidebar section -->
 
-            <main class="flex-grow p-6">
+            <div class="main-content flex min-h-screen flex-col">
+                <!-- start header section -->
+                <x-layout.navbar />
+                <!-- end header section -->
 
-               {{ $slot }}
-
-            </main>
-
-            <!-- Footer Start -->
-            <footer class="footer h-16 flex items-center px-6 bg-white shadow dark:bg-gray-800">
-                <div class="flex md:justify-between justify-center w-full gap-4">
+                <!-- start main content section -->
+                <div class="animate__animated p-6" :class="[$store.app.animation]">
                     <div>
-                        <script>document.write(new Date().getFullYear())</script> © Konrix - <a href="https://coderthemes.com/" target="_blank">Coderthemes</a>
-                    </div>
-                    <div class="md:flex hidden gap-4 item-center md:justify-end">
-                        <a href="javascript: void(0);" class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">About</a>
-                        <span class="border-e border-gray-300 dark:border-gray-700"></span>
-                        <a href="javascript: void(0);" class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Support</a>
-                        <span class="border-e border-gray-300 dark:border-gray-700"></span>
-                        <a href="javascript: void(0);" class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Contact Us</a>
+                        {{ $slot }}
                     </div>
                 </div>
-            </footer>
-            <!-- Footer End -->
+                <!-- end main content section -->
 
-        </div>
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-
-    </div>
-
-    <!-- Back to Top Button -->
-    <button data-toggle="back-to-top" class="fixed hidden h-10 w-10 items-center justify-center rounded-full z-10 bottom-20 end-14 p-2.5 bg-primary cursor-pointer shadow-lg text-white">
-        <i class="mgc_arrow_up_line text-lg"></i>
-    </button>
-
-    <!-- Theme Settings -->
-    <div>
-        <!-- Theme Setting Button -->
-        <div class="fixed end-0 bottom-20">
-            <button data-fc-type="offcanvas" data-fc-target="theme-customization" type="button" class="bg-white rounded-s-full shadow-lg p-2.5 ps-3 transition-all dark:bg-slate-800">
-                <span class="sr-only">Setting</span>
-                <span class="flex items-center justify-center animate-spin">
-                    <i class="mgc_settings_4_line text-2xl"></i>
-                </span>
-            </button>
-        </div>
-        
-        <!-- Theme Settings Offcanvas -->
-        <div id="theme-customization" class="fc-offcanvas-open:translate-x-0 hidden translate-x-full rtl:-translate-x-full fixed inset-y-0 end-0
-            transition-all duration-300 transform max-w-sm w-full z-50 bg-white border-s border-gray-900/10 dark:bg-gray-800 dark:border-white/10" tabindex="-1">
-            <div class="h-16 flex items-center text-gray-800 dark:text-white border-b border-dashed border-gray-900/10 dark:border-white/10 px-6 gap-3">
-                <h5 class="text-base grow">Theme Settings</h5>
-                <button type="button" class="p-2" id="reset-layout"><i class="mgc_refresh_1_line text-xl"></i></button>
-                <button type="button" data-fc-dismiss><i class="mgc_close_line text-xl"></i></button>
-            </div>
-        
-            <div class="h-[calc(100vh-64px)]" data-simplebar>
-                <div class="divide-y divide-dashed divide-slate-900/10  dark:divide-white/10">
-                    <div class="p-6">
-                        <h5 class="font-semibold text-sm mb-3">Theme</h5>
-                        <div class="grid grid-cols-3 gap-2">
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-mode" id="layout-color-light" value="light">
-                                <label class="form-label rounded-md" for="layout-color-light">
-                                    <span class="flex items-center justify-center px-4 py-3">
-                                        <i class="mgc_sun_line text-2xl"></i>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Light </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-mode" id="layout-color-dark" value="dark">
-                                <label class="form-label rounded-md" for="layout-color-dark">
-                                    <span class="flex items-center justify-center px-4 py-3">
-                                        <i class="mgc_moon_line text-2xl"></i>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Dark </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="p-6">
-                        <h5 class="font-semibold text-sm mb-3">Direction</h5>
-                        <div class="grid grid-cols-3 gap-2">
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="dir" id="direction-ltr" value="ltr">
-                                <label class="form-label rounded-md" for="direction-ltr">
-                                    <span class="flex items-center justify-center px-4 py-3">
-                                        <i class="mgc_align_left_line text-2xl"></i>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> LTR </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="dir" id="direction-rtl" value="rtl">
-                                <label class="form-label rounded-md" for="direction-rtl">
-                                    <span class="flex items-center justify-center px-4 py-3">
-                                        <i class="mgc_align_right_line text-2xl"></i>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> RTL </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="p-6 2xl:block hidden">
-                        <h5 class="font-semibold text-sm mb-3">Content Width</h5>
-                        <div class="grid grid-cols-3 gap-2">
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-layout-width" id="layout-mode-default" value="default">
-                                <label class="form-label rounded-md" for="layout-mode-default">
-                                    <span class="flex items-center justify-center px-4 py-3">
-                                        <i class="mgc_fullscreen_2_line text-2xl rotate-45"></i>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Fluid </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-layout-width" id="layout-mode-boxed" value="boxed">
-                                <label class="form-label rounded-md" for="layout-mode-boxed">
-                                    <span class="flex items-center justify-center px-4 py-3">
-                                        <i class="mgc_fullscreen_exit_2_line text-2xl rotate-45"></i>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Boxed </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="p-6">
-                        <h5 class="font-semibold text-sm mb-3">Sidenav View</h5>
-                        <div class="grid grid-cols-3 gap-3">
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-default" value="default">
-                                <label class="form-label rounded-md" for="sidenav-view-default">
-                                    <span class="flex h-16 overflow-hidden">
-                                        <span class="block w-8 bg-gray-100 dark:bg-gray-800">
-                                            <span class="mt-1.5 mx-1.5 block space-y-1">
-                                                <span class="h-1 block rounded-sm mb-2.5 bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex flex-col flex-auto border-s border-gray-200 dark:border-gray-700">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex items-center justify-end h-full mr-1.5">
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Default </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-hover" value="hover">
-                                <label class="form-label rounded-md" for="sidenav-view-hover">
-                                    <span class="flex h-16 overflow-hidden">
-                                        <span class="w-3 bg-gray-100 dark:bg-gray-800">
-                                            <span class="w-1.5 h-1.5 mt-1 mx-auto rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                            <span class="flex flex-col items-center w-full mt-1.5 space-y-1">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex flex-col flex-auto border-s border-gray-200 dark:border-gray-700">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex items-center justify-end h-full mr-1.5">
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Hover </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-hover-active" value="hover-active">
-                                <label class="form-label rounded-md" for="sidenav-view-hover-active">
-                                    <span class="flex h-16 overflow-hidden">
-                                        <span class="w-8 bg-gray-100 dark:bg-gray-800">
-                                            <span class="mt-1.5 mx-1.5 block space-y-1">
-                                                <span class="flex mb-2.5 gap-1">
-                                                    <span class="h-1 block w-full rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="h-1 block w-2 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="h-1 block rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex flex-col flex-auto border-s border-gray-200 dark:border-gray-700">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex items-center justify-end h-full mr-1.5">
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Hover Active </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-sm" value="sm">
-                                <label class="form-label rounded-md" for="sidenav-view-sm">
-                                    <span class="flex h-16 overflow-hidden">
-                                        <span class="w-3 bg-gray-100 dark:bg-gray-800">
-                                            <span class="w-1.5 h-1.5 mt-1 mx-auto rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                            <span class="flex flex-col items-center w-full mt-1.5 space-y-1">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex flex-col flex-auto border-s border-gray-200 dark:border-gray-700">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex items-center h-full mr-1.5">
-                                                    <span class="grow">
-                                                        <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    </span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Small </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-md" value="md">
-                                <label class="form-label rounded-md" for="sidenav-view-md">
-                                    <span class="flex h-16 rounded-md overflow-hidden">
-                                        <span class="w-4 bg-gray-100 dark:bg-gray-800">
-                                            <span class="w-2 h-2 mt-2 mx-auto rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                            <span class="flex flex-col items-center w-full mt-2 space-y-1">
-                                                <span class="w-2 h-2 rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-2 h-2 rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                <span class="w-2 h-2 rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex flex-col flex-auto border-s border-gray-200 dark:border-gray-700">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex items-center h-full mr-1.5">
-                                                    <span class="grow">
-                                                        <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    </span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ml-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Compact </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-mobile" value="mobile">
-                                <label class="form-label rounded-md" for="sidenav-view-mobile">
-                                    <span class="flex h-16 overflow-hidden">
-                                        <span class="flex flex-col flex-auto">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex items-center h-full mr-1.5">
-                                                    <span class="w-1.5 h-1.5  ms-1 rounded-sm bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1  rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-auto rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Mobile </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-sidenav-view" id="sidenav-view-hidden" value="hidden">
-                                <label class="form-label rounded-md" for="sidenav-view-hidden">
-                                    <span class="flex h-16 overflow-hidden">
-                                        <span class="flex flex-col flex-auto">
-                                            <span class="h-3 bg-gray-100 dark:bg-gray-800">
-                                                <span class="flex flex-auto items-center h-full me-1.5">
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-auto rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                    <span class="w-1 h-1 block ms-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex flex-auto border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"></span>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Hidden </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="p-6">
-                        <h5 class="font-semibold text-sm mb-3">Menu Color</h5>
-                        <div class="grid grid-cols-4 gap-2">
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-menu-color" id="menu-color-light" value="light">
-                                <label class="form-label rounded-md" for="menu-color-light">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full bg-white"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Light </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-menu-color" id="menu-color-dark" value="dark">
-                                <label class="form-label rounded-md" for="menu-color-dark">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full bg-dark"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Dark </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-menu-color" id="menu-color-brand" value="brand">
-                                <label class="form-label rounded-md" for="menu-color-brand">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full bg-primary"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Brand </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-menu-color" id="menu-color-gradient" value="gradient">
-                                <label class="form-label rounded-md" for="menu-color-gradient">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full" style="background: linear-gradient(135deg, #6379c3 0%, #546ee5 60%);"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Gradient </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="p-6">
-                        <h5 class="font-semibold text-sm mb-3">Topbar Color</h5>
-                        <div class="grid grid-cols-4 gap-2">
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-topbar-color" id="topbar-color-light" value="light">
-                                <label class="form-label rounded-md" for="topbar-color-light">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full bg-white"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Light </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-topbar-color" id="topbar-color-dark" value="dark">
-                                <label class="form-label rounded-md" for="topbar-color-dark">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full bg-dark"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Dark </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-topbar-color" id="topbar-color-brand" value="brand">
-                                <label class="form-label rounded-md" for="topbar-color-brand">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full bg-primary"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Brand </div>
-                            </div>
-        
-                            <div class="card-radio">
-                                <input class="form-radio" type="radio" name="data-topbar-color" id="topbar-color-gradient" value="gradient">
-                                <label class="form-label rounded-md" for="topbar-color-gradient">
-                                    <span class="flex items-center justify-center px-4 py-3 bg-gray-100 dark:bg-gray-900">
-                                        <span class="w-5 h-5 shadow-lg rounded-full" style="background: linear-gradient(135deg, #6379c3 0%, #546ee5 60%);"></span>
-                                    </span>
-                                </label>
-                                <div class="mt-1 text-md font-medium text-center text-gray-600 dark:text-gray-300"> Gradient </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="p-6">
-                        <h5 class="font-semibold text-sm mb-3">Layout Position</h5>
-                        <div class="flex btn-radio">
-                            <input type="radio" class="form-radio hidden" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                            <label class="btn rounded-e-none bg-gray-100 dark:bg-gray-700" for="layout-position-fixed">Fixed</label>
-                            <input type="radio" class="form-radio hidden" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                            <label class="btn rounded-s-none bg-gray-100 dark:bg-gray-700" for="layout-position-scrollable">Scrollable</label>
-                        </div>
-                    </div>
+                <!-- start footer section -->
+                <div class="mt-auto p-6 text-center dark:text-white-dark ltr:sm:text-left rtl:sm:text-right">
+                    © <span id="footer-year">2022</span>. Vristo All rights reserved.
                 </div>
+                <!-- end footer section -->
             </div>
         </div>
-    </div>
 
-    <!-- Plugin Js -->
-    <script src="{{ asset('tempelate/assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('tempelate/assets/libs/feather-icons/feather.min.js') }}"></script>
-    <script src="{{ asset('tempelate/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
-
-    <!-- App Js -->
-    <script src="{{ asset('tempelate/assets/js/app.js') }}"></script>
-    
-    <!-- Apexcharts js -->
-    <script src="{{ asset('tempelate/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
-    <!-- Dashboard Project Page js -->
-    <script src="{{ asset('tempelate/assets/js/pages/dashboard.js') }}"></script>
-
-</body>
-
+        <script src="{{ asset('template/assets/js/alpine-collaspe.min.js') }}"></script>
+        <script src="{{ asset('template/assets/js/alpine-persist.min.js') }}"></script>
+        <script defer src="{{ asset('template/assets/js/alpine-ui.min.js') }}"></script>
+        <script defer src="{{ asset('template/assets/js/alpine-focus.min.js') }}"></script>
+        <script defer src="{{ asset('template/assets/js/alpine.min.js') }}"></script>
+        <script src="{{ asset('template/assets/js/custom.js') }}"></script>
+        <script src="{{ asset('template/node_modules/feather-icons/dist/feather.min.js') }}"></script>
+        <script src="{{ asset('template/assets/js/app.js') }}"></script>
+        <script>
+            feather.replace();
+        </script>
+    </body>
 </html>

@@ -1,130 +1,33 @@
-<div class="app-menu">
-
-    <!-- Sidenav Brand Logo -->
-    <a href="#" class="logo-box">
-        <!-- Light Brand Logo -->
-        <div class="logo-light">
-            <img src="{{ asset('assets/images/logo-light.png')}}" class="logo-lg h-6" alt="Light logo">
-            <img src="{{ asset('assets/images/logo-sm.png')}}" class="logo-sm" alt="Small logo">
+<nav x-data="sidebar" class="sidebar fixed bottom-0 top-0 z-50 h-full min-h-screen w-[260px] shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-all duration-300">
+    <div class="h-full bg-white dark:bg-[#0e1726]">
+        <div class="flex items-center justify-between px-4 py-3">
+            <x-layout.brand />
+            <a
+                href="javascript:;"
+                class="collapse-icon flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180 dark:text-white-light dark:hover:bg-dark-light/10"
+                @click="$store.app.toggleSidebar()"
+            >
+                <i data-feather="chevrons-left"></i>
+            </a>
         </div>
+        <ul
+            class="perfect-scrollbar relative h-[calc(100vh-80px)] space-y-0.5 overflow-y-auto overflow-x-hidden p-4 py-0 font-semibold"
+            x-data="{ activeDropdown: 'dashboard' }"
+        >
+        <h2 class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+            <span>Apps</span>
+        </h2>
+            
 
-        <!-- Dark Brand Logo -->
-        <div class="logo-dark">
-            <img src="{{ asset('assets/images/logo-dark.png')}}" class="logo-lg h-6" alt="Dark logo">
-            <img src="{{ asset('assets/images/logo-sm.png')}}" class="logo-sm" alt="Small logo">
-        </div>
-    </a>
-
-    <!-- Sidenav Menu Toggle Button -->
-    <button id="button-hover-toggle" class="absolute top-5 end-2 rounded-full p-1.5">
-        <span class="sr-only">Menu Toggle Button</span>
-        <i class="mgc_round_line text-xl"></i>
-    </button>
-
-    <!--- Menu -->
-    <div class="srcollbar" data-simplebar>
-        <ul class="menu" data-fc-type="accordion">
-
-            <li class="menu-title">Menu</li>
-
-            <x-layout.sidebar-item url="{{url('beranda')}}" icons="mgc_calendar_line" label="Dashboard" />
-
-
-            <li class="menu-item">
-                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
-                    <span class="menu-icon"><i class="mgc_box_3_line"></i></span>
-                    <span class="menu-text"> Master Data </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <ul class="sub-menu hidden">
-                    <li class="menu-item">
-                        <a href="{{url('master-data/kabupaten')}}" class="menu-link">
-                            <span class="menu-text">Data Kabupaten</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('master-data/dapil')}}" class="menu-link">
-                            <span class="menu-text">Data Dapil</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('master-data/kecamatan')}}" class="menu-link">
-                            <span class="menu-text">Data Kecamatan</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('master-data/desa')}}" class="menu-link">
-                            <span class="menu-text">Data Desa</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('master-data/tps')}}" class="menu-link">
-                            <span class="menu-text">Data TPS</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="{{url('master-data/partai')}}" class="menu-link">
-                            <span class="menu-text">Data Partai</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="{{url('master-data/kandidat')}}" class="menu-link">
-                            <span class="menu-text">Data Kandidat</span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </li>
-
-
-
-            <li class="menu-item">
-                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
-                    <span class="menu-icon"><i class="mgc_box_3_line"></i></span>
-                    <span class="menu-text"> Perhitungan Cepat </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <ul class="sub-menu hidden">
-                    <li class="menu-item">
-                        <a href="{{url('perhitungan-cepat/keseluruhan')}}" class="menu-link">
-                            <span class="menu-text">Hasil Keseluruhan</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('perhitungan-cepat/kecamatan')}}" class="menu-link">
-                            <span class="menu-text">Hasil Kecamatan</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('perhitungan-cepat/desa')}}" class="menu-link">
-                            <span class="menu-text">Hasil Desa</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('perhitungan-cepat/tps')}}" class="menu-link">
-                            <span class="menu-text">Hasil TPS</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{url('perhitungan-cepat/partai')}}" class="menu-link">
-                            <span class="menu-text">Hasil Partai</span>
-                        </a>
-                    </li>
-
-                   
-                    
-                </ul>
-            </li>
-
-             <x-layout.sidebar-item url="{{url('pengaturan')}}" icons="mgc_calendar_line" label="Pengaturan" />
-             <x-layout.sidebar-item url="{{url('profil-akun')}}" icons="mgc_calendar_line" label="Profil Akun" />
-
-
-
-
+            <x-layout.sidebar-btn url="{{ url('/') }}" icon="home" label="Dashboard" />
+            <x-layout.sidebar-dropdown>
+                <x-layout.sidebar-dropdown-button class="user" icon="list" label="Master data"/>
+                <x-layout.sidebar-dropdown-menu class="user">
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/card') }}" label="Card"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data 3"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data 4"/>
+                </x-layout.sidebar-dropdown-menu>
+            </x-layout.sidebar-dropdown>
         </ul>
-
     </div>
-</div>
+</nav>

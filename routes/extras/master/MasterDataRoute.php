@@ -36,6 +36,7 @@ Route::prefix('master-data')->group(function () {
 
      Route::controller(MasterMasterdataTpsController::class)->group(function () {
         Route::get('tps', 'index');
+        Route::get('card', 'card');
     });
 
 });
