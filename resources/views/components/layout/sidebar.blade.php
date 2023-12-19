@@ -20,8 +20,40 @@
             
 
             <x-layout.sidebar-btn url="{{ url('/') }}" icon="home" label="Dashboard" />
+
             <x-layout.sidebar-dropdown>
-                <x-layout.sidebar-dropdown-button class="user" icon="list" label="Master data"/>
+                <x-layout.sidebar-dropdown-button class="master-data" icon="layers" label="Master data"/>
+                <x-layout.sidebar-dropdown-menu class="master-data">
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Kabupaten"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Dapil"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Kecamatan"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Desa"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data TPS"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data Partai"/>
+                </x-layout.sidebar-dropdown-menu>
+            </x-layout.sidebar-dropdown>
+
+
+            <x-layout.sidebar-dropdown>
+                <x-layout.sidebar-dropdown-button class="perhitungan-cepat" icon="percent" label="Perhitungan Cepat"/>
+                <x-layout.sidebar-dropdown-menu class="perhitungan-cepat">
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Keseluruhan"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Kecamatan"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Desa"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil TPS"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data TPS"/>
+                    <x-layout.sidebar-dropdown-menuitem url="#" label="Hasil Partai"/>
+                </x-layout.sidebar-dropdown-menu>
+            </x-layout.sidebar-dropdown>
+
+
+            <x-layout.sidebar-btn url="{{ url('/') }}" icon="settings" label="Pengaturan" />
+
+            <x-layout.sidebar-btn url="{{ url('/') }}" icon="user" label="Profil Akun" />
+
+
+            <x-layout.sidebar-dropdown>
+                <x-layout.sidebar-dropdown-button class="user" icon="list" label="Example"/>
                 <x-layout.sidebar-dropdown-menu class="user">
                     <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/card') }}" label="Card"/>
                     <x-layout.sidebar-dropdown-menuitem url="#" label="Data 3"/>
