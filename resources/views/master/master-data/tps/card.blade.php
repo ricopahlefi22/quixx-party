@@ -1,5 +1,5 @@
 <x-app>
-    <div class="card mb-8 bg-white dark:bg-slate-900 rounded-md shadow-md">
+    <x-card.card>
         <div class="p-3 flex items-center justify-between">
             <h2 class="text-base font-semibold text-slate-600">Header</h2>
             <a href="" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md">Tambah</a>
@@ -32,5 +32,19 @@
                 </table>
             </div>
         </div>
-    </div>
+    </x-card.card>
+
+    <x-card.card>
+        <div class="grid grid-cols-12 gap-2">
+            <x-button.btn url="#" class="secondary" label="Secondary" />
+            <x-button.btn url="#" class="primary" label="primary" />
+            <x-button.btn url="#" class="warning" label="warning" />
+            <x-button.btn url="#" class="info" label="info" />
+            <x-button.btn url="#" class="danger" label="danger" />
+            <x-button.btn url="#" class="success" label="success" />
+        </div>
+        <div class="">
+            <x-form.input />
+        </div>
+    </x-card.card>
 </x-app>
