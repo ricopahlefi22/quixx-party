@@ -13,6 +13,7 @@ Route::prefix('master-data')->group(function () {
 
     Route::controller(MasterMasterdataDapilController::class)->group(function () {
         Route::get('data-dapil', 'index');
+        Route::post('data-dapil/create', 'store');
     });
 
     Route::controller(MasterMasterdataDesaController::class)->group(function () {

@@ -4,31 +4,57 @@
             <h2 class="text-base font-semibold text-slate-600">Data Dapil</h2>
             <x-button.btn url="#" class="primary"  label="Tambah Data Dapil" />
         </div>
+
+
+        <form action="{{ url('master-data/data-dapil/create') }}" method="post">
+            @csrf
+            <div class="mt-3">
+                  <input name="name" value="{{ $dapilName }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Kabupaten">
+                 
+                  <select name="city_id" id="" class="appearance-none border rounded w-full mt-3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="" hidden>-- Pilih Kecamatan--</option>
+                    @foreach ($list_city as $item)
+                    <option value="{{ $item->city_id }}">{{ ucwords($item->name) }}</option>
+                    @endforeach
+                   
+                  </select>
+
+                  <button class="bg-primary rounded-lg text-white px-4 py-2 mt-3 hover:bg-primary-299">SIMPAN</button>
+                </div>
+        </form>
+        
         <div class="p-3">
             <div>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th><center>No.</center></th>
-                            <th><center>No.</center></th>
-                            <th><center>No.</center></th>
-                            <th><center>No.</center></th>
-                            <th><center>No.</center></th>
-                            <th><center>No.</center></th>
+                            <th><center>#</center></th>
+                            <th><center>Aksi</center></th>
+                            <th><center>Dapil</center></th>
+                            <th><center>Kebupaten.</center></th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($list_vote_zones as $item)
                         <tr>
-                            <td><center>No.</center></td>
-                            <td><center>No.</center></td>
-                            <td><center>No.</center></td>
-                            <td><center>No.</center></td>
-                            <td><center>No.</center></td>
+                            <td><center>{{ $loop->iteration }}</center></td>
+                            <td><center>Aksi</center></td>
+                            <td><center>{{ ucwords($item->name) }}</center></td>
+                            <td><center>{{ ucwords($item->city->name) }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th><center>#</center></th>
+                            <th><center>Aksi</center></th>
+                            <th><center>Dapil</center></th>
+                            <th><center>Kebupaten.</center></th>
                             <td>
                                 
                             </td>
                         </tr>
-                    </tbody>
+                    </tfoot>
                 </table>
             </div>
         </div>
