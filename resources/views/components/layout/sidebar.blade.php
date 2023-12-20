@@ -53,11 +53,9 @@
 
 
             <x-layout.sidebar-dropdown>
-                <x-layout.sidebar-dropdown-button class="user" icon="list" label="Example"/>
+                <x-layout.sidebar-dropdown-button class="user" icon="list" label="Component"/>
                 <x-layout.sidebar-dropdown-menu class="user">
-                    <x-layout.sidebar-dropdown-menuitem url="{{ url('master-data/card') }}" label="Card"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data 3"/>
-                    <x-layout.sidebar-dropdown-menuitem url="#" label="Data 4"/>
+                    <x-layout.sidebar-dropdown-menuitem url="{{ url('component/card') }}" label="Card"/>
                 </x-layout.sidebar-dropdown-menu>
             </x-layout.sidebar-dropdown>
         </ul>

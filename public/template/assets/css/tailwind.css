@@ -633,12 +633,7 @@ hover:text-primary hover:before:!bg-primary ltr:before:mr-2 rtl:before:ml-2 dark
 }
 
 /* button  */
-.btn-primary{
-    @apply px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md
-}
-.btn-success{
-    @apply px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md
-}
+
 
 /* Input */
 .input-group{
