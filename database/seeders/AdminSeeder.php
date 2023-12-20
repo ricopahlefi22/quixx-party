@@ -21,6 +21,6 @@ class AdminSeeder extends Seeder
             'password' => bcrypt('12341234'),
         ]);
 
-        Admin::factory(10)->create();
+        Admin::factory(5)->create();
     }
 }
