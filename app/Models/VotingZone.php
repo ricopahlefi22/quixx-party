@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 class VotingZone extends Model
 {
     use HasFactory;
+
     protected $table = 'voting_zones';
     protected $primaryKey = 'voting_zone_id';
 
