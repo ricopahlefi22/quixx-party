@@ -15,6 +15,7 @@ class MasterMasterdataKecamatanController extends Controller
     function index(){
         $data['list_zones'] = VotingZone::all();
         $data['list_city'] = City::all();
+        $data['list_district'] = District::all();
         return view('master.master-data.kecamatan.index',$data);
     }
 }
