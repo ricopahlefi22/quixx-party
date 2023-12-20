@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-use Str;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class City extends Model
 {
@@ -11,7 +12,12 @@ class City extends Model
     protected $table = 'cities';
     protected $primaryKey = 'city_id';
 
-    protected static function boot(){
+    protected $fillable = [
+        'name',
+    ];
+
+    protected static function boot()
+    {
         parent::boot();
         static::creating(function ($model) {
             if (empty($model->{$model->getKeyName()})) {
@@ -21,12 +27,14 @@ class City extends Model
     }
 
     // biar tidak auto increment
-    public function getIncrementing(){
+    public function getIncrementing()
+    {
         return false;
     }
 
     // mendevinisikan sebagai string
-    public function getKeyType(){
+    public function getKeyType()
+    {
         return 'string';
     }
 }

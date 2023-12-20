@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\VotingPlace;
 use Illuminate\Database\Seeder;
 
 class VotingPlaceSeeder extends Seeder
@@ -13,6 +12,6 @@ class VotingPlaceSeeder extends Seeder
     public function run(): void
     {
         // VotingPlace::factory(10000)->create();
-        
+
     }
 }
