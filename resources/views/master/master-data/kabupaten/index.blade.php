@@ -18,19 +18,22 @@
 
         <div class="p-3">
             <div>
-                <table class="table">
+                <table class="table ">
                     <thead>
                         <tr>
                             <th><center>#</center></th>
-                            <th><center>Aksi</center></th>
+                            <th width=100px><center>Aksi</center></th>
                             <th><center>Nama City</center></th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($list_city as $item)
                         <tr>
-                            <td>-</td>
-                           <td>{{ $item->name }}</td>
+                            <td><center>{{ $loop->iteration }}</center></td>
+                            <td>  <x-button.btn url="#" class="primary" data-modal-target="default-modal" data-modal-toggle="default-modal"  label="Hapus" /></td>
+                           <td>{{ ucwords($item->name )}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
 
 

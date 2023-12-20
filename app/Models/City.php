@@ -1,15 +1,14 @@
 <?php
 
 namespace App\Models;
-
+use Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class City extends Model
 {
-    use HasFactory;
-    
+    use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'cities';
     protected $primaryKey = 'city_id';
 
