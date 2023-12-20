@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -12,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('voting_results', function (Blueprint $table) {
-            $table->uuid('voting_result_id')->primary();
+            $table->uuid('voting_result_id')->primary()->default(DB::raw('(UUID())'));
             $table->string('name');
             $table->foreignUuid('voting_place_id')->nullable();
             $table->foreign('voting_place_id')->references('voting_place_id')->on('voting_places');
