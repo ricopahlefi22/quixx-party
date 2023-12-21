@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             VotingZoneSeeder::class,
             DistrictSeeder::class,
             VillageSeeder::class,
-            // VotingPlaceSeeder::class,
         ]);
     }
 }

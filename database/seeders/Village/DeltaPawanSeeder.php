@@ -15,88 +15,235 @@ class DeltaPawanSeeder extends Seeder
      */
     public function run(): void
     {
-        // $deltaPawan = District::where('name', 'Delta Pawan')->first();
-        // /**-------------- DELTA PAWAN (DAPIL 1) ------------- **/
-        // $kalinilam = Village::create([
-        //     'name' => 'Desa Kalinilam',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+        $deltaPawan = District::where('name', 'Delta Pawan')->first();
 
-        // for ($i = 1; $i < 5; $i++) {
-        //     VotingPlace::create([
-        //         'name' => 'TPS ' . $i,
-        //         'village_id' => $kalinilam->village_id,
-        //         'district_id' => $kalinilam->district_id,
-        //         'voting_zone_id' => $kalinilam->voting_zone_id,
-        //         'city_id' => $kalinilam->city_id,
-        //     ]);
-        // }
+        /**-------------- KALINILAM ------------- **/
+        $kalinilam = Village::create([
+            'name' => 'Desa Kalinilam',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
 
-        // Village::create([
-        //     'village_id' => 'a23173a0-2cb5-4eec-b54e-85fae4a39e08',
-        //     'name' => 'Desa Paya Kumang',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+        for ($i = 1; $i <= 33; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
 
-        // Village::create([
-        //     'village_id' => 'a7292306-8c97-43e7-a9fc-fdf994f2271d',
-        //     'name' => 'Desa Sukabangun',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $kalinilam->village_id,
+                'district_id' => $kalinilam->district_id,
+                'voting_zone_id' => $kalinilam->voting_zone_id,
+                'city_id' => $kalinilam->city_id,
+            ]);
+        }
+        /**-------------- KALINILAM ------------- **/
 
-        // Village::create([
-        //     'village_id' => '288c04ba-718f-4e83-bd9b-53ecb7259bbb',
-        //     'name' => 'Desa Sukabangun Dalam',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
 
-        // Village::create([
-        //     'village_id' => 'f1df78c8-6571-4e1a-9b36-ec222d330861',
-        //     'name' => 'Kelurahan Kantor',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+        /**-------------- PAYA KUMANG ------------- **/
+        $payaKumang = Village::create([
+            'name' => 'Desa Paya Kumang',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
 
-        // Village::create([
-        //     'village_id' => '1c8eeb36-a433-4c7a-b734-e8e67b714120',
-        //     'name' => 'Kelurahan Mulia Baru',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+        for ($i = 1; $i <= 18; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
 
-        // Village::create([
-        //     'village_id' => '288c04ba-718f-4e83-bd9b-53ecb7259bbb',
-        //     'name' => 'Kelurahan Sampit',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $payaKumang->village_id,
+                'district_id' => $payaKumang->district_id,
+                'voting_zone_id' => $payaKumang->voting_zone_id,
+                'city_id' => $payaKumang->city_id,
+            ]);
+        }
+        /**-------------- PAYA KUMANG ------------- **/
 
-        // Village::create([
-        //     'village_id' => '018bfeab-6536-4a12-905c-8f62f5b6b63e',
-        //     'name' => 'Kelurahan Sukaharja',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
 
-        // Village::create([
-        //     'village_id' => '288c04ba-718f-4e83-bd9b-53ecb7259bbb',
-        //     'name' => 'Kelurahan Tengah',
-        //     'district_id' => 'd9a0f57c-52c5-4d56-bd4d-0f3556421d3a',
-        //     'voting_zone_id' => '0ef85de1-cb26-47b3-926a-5b813ae00533',
-        //     'city_id' => 'b5d5da9b-9e1a-11ee-922f-0f7624512ade',
-        // ]);
+
+        /**-------------- SUKABANGUN ------------- **/
+        $sukabangun = Village::create([
+            'name' => 'Desa Sukabangun',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 23; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $sukabangun->village_id,
+                'district_id' => $sukabangun->district_id,
+                'voting_zone_id' => $sukabangun->voting_zone_id,
+                'city_id' => $sukabangun->city_id,
+            ]);
+        }
+        /**-------------- SUKABANGUN ------------- **/
+
+
+
+        /**-------------- SUKABANGUN DALAM ------------- **/
+        $sukabangunDalam = Village::create([
+            'name' => 'Desa Sukabangun Dalam',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 11; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $sukabangunDalam->village_id,
+                'district_id' => $sukabangunDalam->district_id,
+                'voting_zone_id' => $sukabangunDalam->voting_zone_id,
+                'city_id' => $sukabangunDalam->city_id,
+            ]);
+        }
+        /**-------------- SUKABANGUN DALAM ------------- **/
+
+
+
+        /**-------------- KELURAHAN KANTOR ------------- **/
+        $kantor = Village::create([
+            'name' => 'Kelurahan Kantor',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 17; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $kantor->village_id,
+                'district_id' => $kantor->district_id,
+                'voting_zone_id' => $kantor->voting_zone_id,
+                'city_id' => $kantor->city_id,
+            ]);
+        }
+        /**-------------- KELURAHAN KANTOR ------------- **/
+
+
+
+        /**-------------- KELURAHAN MULIA BARU ------------- **/
+        $muliaBaru = Village::create([
+            'name' => 'Kelurahan Mulia Baru',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 34; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $muliaBaru->village_id,
+                'district_id' => $muliaBaru->district_id,
+                'voting_zone_id' => $muliaBaru->voting_zone_id,
+                'city_id' => $muliaBaru->city_id,
+            ]);
+        }
+        /**-------------- KELURAHAN MULIA BARU ------------- **/
+
+
+
+        /**-------------- KELURAHAN SAMPIT ------------- **/
+        $sampit = Village::create([
+            'name' => 'Kelurahan Sampit',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 44; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $sampit->village_id,
+                'district_id' => $sampit->district_id,
+                'voting_zone_id' => $sampit->voting_zone_id,
+                'city_id' => $sampit->city_id,
+            ]);
+        }
+        /**-------------- KELURAHAN SAMPIT ------------- **/
+
+
+
+        /**-------------- KELURAHAN SUKAHARJA ------------- **/
+        $sukaharja = Village::create([
+            'name' => 'Kelurahan Sukaharja',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 45; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $sukaharja->village_id,
+                'district_id' => $sukaharja->district_id,
+                'voting_zone_id' => $sukaharja->voting_zone_id,
+                'city_id' => $sukaharja->city_id,
+            ]);
+        }
+
+        VotingPlace::create([
+            'name' => 'TPS 901',
+            'village_id' => $sukaharja->village_id,
+            'district_id' => $sukaharja->district_id,
+            'voting_zone_id' => $sukaharja->voting_zone_id,
+            'city_id' => $sukaharja->city_id,
+        ]);
+
+        VotingPlace::create([
+            'name' => 'TPS 902',
+            'village_id' => $sukaharja->village_id,
+            'district_id' => $sukaharja->district_id,
+            'voting_zone_id' => $sukaharja->voting_zone_id,
+            'city_id' => $sukaharja->city_id,
+        ]);
+
+        VotingPlace::create([
+            'name' => 'TPS 903',
+            'village_id' => $sukaharja->village_id,
+            'district_id' => $sukaharja->district_id,
+            'voting_zone_id' => $sukaharja->voting_zone_id,
+            'city_id' => $sukaharja->city_id,
+        ]);
+        /**-------------- KELURAHAN SUKAHARJA ------------- **/
+
+
+        /**-------------- KELURAHAN TENGAH ------------- **/
+        $sukaharja = Village::create([
+            'name' => 'Kelurahan Tengah',
+            'district_id' => $deltaPawan->district_id,
+            'voting_zone_id' => $deltaPawan->voting_zone_id,
+            'city_id' => $deltaPawan->city_id,
+        ]);
+
+        for ($i = 1; $i <= 19; $i++) {
+            $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
+
+            VotingPlace::create([
+                'name' => 'TPS ' . $tpsNumber,
+                'village_id' => $sukaharja->village_id,
+                'district_id' => $sukaharja->district_id,
+                'voting_zone_id' => $sukaharja->voting_zone_id,
+                'city_id' => $sukaharja->city_id,
+            ]);
+        }
+        /**-------------- KELURAHAN TENGAH ------------- **/
+
         /**-------------- DELTA PAWAN (DAPIL 1) ------------- **/
     }
 }
