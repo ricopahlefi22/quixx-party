@@ -1,9 +1,6 @@
-<form action="" method="">
+<form action="{{ $action ?? '' }}" method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="">
-        <div class="dark:text-white-dark/70 text-base font-medium text-[#1f2937]">
-            {{ $slot }}
-        </div>
-        
+    <div class="dark:text-white-dark/70 text-base font-medium text-[#1f2937]">
+        {{ $slot }}
     </div>
 </form>

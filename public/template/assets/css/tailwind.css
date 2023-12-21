@@ -652,6 +652,7 @@ hover:text-primary hover:before:!bg-primary ltr:before:mr-2 rtl:before:ml-2 dark
     text-[12px]
     text-slate-500
 }
+
 .form-control{
     @apply
     block 
@@ -691,4 +692,40 @@ hover:text-primary hover:before:!bg-primary ltr:before:mr-2 rtl:before:ml-2 dark
     @apply
     ring-red-500 
     focus:ring-red-500 
+}
+
+/* Button */
+.btn{
+    @apply
+    rounded-[4px]
+}
+.btn-success{
+    @apply
+    bg-green-500
+    text-white
+    hover:bg-green-600
+}
+.btn-primary{
+    @apply
+    bg-indigo-500
+    text-white
+    hover:bg-indigo-600
+}
+.btn-warning{
+    @apply
+    bg-yellow-500
+    text-white
+    hover:bg-yellow-600
+}
+.btn-info{
+    @apply
+    bg-cyan-500
+    text-white
+    hover:bg-cyan-600
+}
+.btn-danger{
+    @apply
+    bg-red-500
+    text-white
+    hover:bg-red-600
 }

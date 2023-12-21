@@ -1,1 +1,1 @@
-<th><center>{{ $label ?? '' }}</center></th>
+<th><center class="uppercase text-sm">{{ $label ?? '' }}</center></th>

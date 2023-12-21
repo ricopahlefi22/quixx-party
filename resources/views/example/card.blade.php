@@ -13,7 +13,7 @@
                     <x-modal.body>
                         <x-modal.header title="Modal Header"/>
                         <div class="p-3">
-
+                            
                         </div>
                         <div class="flex justify-center items-center mt-8 p-3">
                             <button type="button" class="btn btn-outline-danger"

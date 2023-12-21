@@ -1,5 +1,7 @@
 <div class="input-group">
-    <label for="" class="label">Email</label>
-    <input type="{{ $type ?? '' }}" placeholder="Enter Email ..." class="form-control form-error" />
-    <span class="error">We'll never share your email with anyone else.</span>
+    <label for="{{ $label ?? '' }}" class="label">{{ $label ?? '' }}</label>
+    <input type="{{ $type ?? '' }}" name="{{ $name ?? '' }}" placeholder="{{ $placeholder ?? '' }}" class="form-control @error($name ?? '') form-error @enderror" autocomplete="off" />
+    @error($name ?? '')
+        <span class="error">{{ $message }}</span>
+    @enderror
 </div>  

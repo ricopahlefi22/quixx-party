@@ -1,3 +1,3 @@
 <td>
-    <center>{{ $slot }}</center>
+    <center class="flex items-center justify-center">{{ $slot }}</center>
 </td>
