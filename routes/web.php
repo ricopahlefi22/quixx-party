@@ -38,6 +38,8 @@ Route::controller(AdminController::class)->group(function () {
 
 });
 
+ include 'extras/admin/voting-results.php';
+
 
 
 // Component example
