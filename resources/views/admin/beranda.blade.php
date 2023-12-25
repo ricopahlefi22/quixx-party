@@ -1,812 +1,152 @@
 <x-app>
-     <!-- Page Title Start -->
-     <div class="flex justify-between items-center mb-6">
-        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">GGG</h4>
-
-        <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
-            <div class="flex items-center gap-2">
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Konrix</a>
-            </div>
-
-            <div class="flex items-center gap-2">
-                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">DDD</a>
-            </div>
-
-            <div class="flex items-center gap-2">
-                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">DDD</a>
+    <section class="content-container-header">
+        <h2 class="title">MODAL</h2>
+    </section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h2 class="title">BASIC MODALS</h2>
+                </div>
+                <div class="body">
+    
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#default">
+                        Default
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#scrollabel">
+                        Scrollabel
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#centered">
+                        Centered
+                    </button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#success">
+                        Success
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#danger">
+                        Danger
+                    </button>
+    
+                    <!-- Modal default-->
+                    <div class="modal fade" id="default" tabindex="-1" aria-labelledby="defaultLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="defaultLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                    <i class="bi bi-x"></i></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----------------------- -->
+    
+                    <!-- Modal scrollabel-->
+                    <div class="modal fade" id="scrollabel" tabindex="-1" aria-labelledby="defaultLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="defaultLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                    <i class="bi bi-x"></i></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto assumenda autem eligendi, odio ipsam obcaecati laboriosam? Sunt distinctio hic nesciunt laudantium explicabo cum minima officiis inventore debitis illum eos dolorem obcaecati quisquam, nihil qui sed odit, non velit omnis odio, ad maxime asperiores? Explicabo vel nemo modi neque consectetur porro exercitationem minus, recusandae hic, corrupti quas reiciendis reprehenderit esse saepe soluta similique quasi tempore? Cupiditate excepturi, nulla voluptatem beatae doloremque error enim distinctio officia ducimus perspiciatis accusantium alias, quaerat ullam. Voluptates delectus quas ullam beatae, quis fugit voluptatibus, eum accusamus sit pariatur nisi. Veritatis exercitationem reprehenderit ducimus, odio vel quas dolore. Eaque aspernatur excepturi eligendi optio culpa consectetur quae in odit. Cum voluptatum modi molestiae nostrum possimus facere nam inventore similique, ipsa quidem, commodi voluptates est animi ea voluptate magni adipisci laborum a praesentium explicabo blanditiis repudiandae? Deserunt reiciendis iure neque ut molestias commodi facere dolore ullam earum expedita! Dolores ratione magnam, recusandae laboriosam error voluptate nesciunt, exercitationem odit sapiente saepe excepturi ipsam! Facilis minima, recusandae quam voluptate doloremque hic architecto veniam ipsum nobis voluptates omnis veritatis quos vero ea quisquam dicta culpa tempore, tenetur beatae? Error vitae eaque voluptates officia, consectetur iste unde dolore illum incidunt cupiditate accusamus similique tempore facilis optio architecto tenetur ipsum rerum accusantium distinctio. Incidunt aperiam voluptatibus, tempore sunt consequatur, quae, fugit neque modi placeat asperiores illo porro ipsum optio repudiandae soluta delectus dolor atque. Quis quibusdam fugiat id beatae assumenda autem sed sunt consequuntur corrupti voluptate officiis laudantium eveniet provident corporis, quas sint, quidem unde totam incidunt quisquam officia! Animi modi dolores ipsa reiciendis voluptate quidem, distinctio, inventore placeat dicta fuga, nisi sunt. Eveniet exercitationem modi nobis odit consequatur tempore nam eligendi, nesciunt neque cum atque numquam, iusto error magni necessitatibus blanditiis eos repellat corporis, provident id quam ullam veniam saepe earum! Soluta eaque illum eius placeat nemo quas autem veritatis. Natus in reprehenderit iure libero veniam hic delectus. Ut, cupiditate? Eaque distinctio debitis maiores excepturi unde officia vitae rem, itaque, impedit facere iste saepe quibusdam dolor quas quos adipisci assumenda dignissimos ipsam consectetur harum velit. Dolorum, atque exercitationem! Officiis, adipisci quis modi aliquam dolor ipsum velit voluptatibus itaque atque ea sint. Aut, animi voluptatem facere recusandae dolorem perspiciatis exercitationem temporibus? Ratione vitae mollitia quod veniam totam, aperiam laudantium! Exercitationem est facilis voluptate optio vero tenetur sed, magni perferendis commodi! Iste excepturi ea porro ratione eius veritatis quo illum accusantium officiis itaque alias facilis deleniti tempore tempora dolorem vero recusandae, dolore ipsum nam eveniet libero deserunt delectus dignissimos quibusdam. Ad iusto dicta quam, sapiente atque, voluptates adipisci facere assumenda repellat dolor officiis soluta! Numquam aliquid blanditiis ipsum consequuntur laboriosam deleniti, soluta suscipit iusto quidem iure possimus tenetur consequatur dicta quia quisquam, ea amet qui. Nulla incidunt eius culpa deleniti officiis rem optio est quam nostrum! Veniam, soluta nostrum! Sunt unde non fuga quod eius animi explicabo mollitia quibusdam earum hic facilis fugit tenetur distinctio itaque culpa nisi eum sint ex, et enim soluta! Consectetur provident dignissimos, cupiditate rem officia quod vero cumque sint sit laboriosam quibusdam molestias pariatur debitis id earum atque! Quam earum unde eos nulla laboriosam, sed nisi nihil provident nemo dolores maiores et? Sit, esse ab, vitae nihil accusantium sint, et atque error doloribus unde eveniet accusamus? Repellendus aut asperiores corporis officiis earum, veritatis reprehenderit, unde eaque inventore minus exercitationem repudiandae tempora quos, quis iusto obcaecati nisi. Velit, repellendus rerum? Quos quo nobis fugiat magnam vel cumque asperiores ipsa, laboriosam sequi ad corporis incidunt, repellat atque placeat commodi consequuntur distinctio facilis nesciunt enim! Quo nemo commodi enim qui, amet labore eaque rem suscipit inventore earum. Dicta quia, eius dolores obcaecati distinctio officiis repudiandae asperiores beatae doloremque ipsum perspiciatis temporibus commodi aut velit facere consectetur deleniti incidunt tempora? Rem cum fugit beatae officiis illum recusandae accusantium minus rerum ut praesentium! Labore pariatur blanditiis architecto quam tempora libero perspiciatis repellendus, placeat temporibus cupiditate eligendi ipsam aperiam! Ipsum ullam dolorem eum. Voluptatibus dolor quisquam corporis, tempore reiciendis quam nihil omnis asperiores temporibus molestiae sequi placeat earum dolores perspiciatis illum odio reprehenderit corrupti possimus nulla? Quae laudantium sunt assumenda ipsam tempora debitis quibusdam, laborum vitae vel obcaecati excepturi a aliquid corrupti quas deleniti. Iure reiciendis soluta culpa ut magni vero nam velit facere sed amet officia debitis, molestias quaerat odio fugiat molestiae vitae. Repudiandae illo quibusdam aspernatur, nobis esse, cumque officiis dignissimos reprehenderit atque fuga, hic enim explicabo libero alias quos aperiam similique aliquam at nostrum dolorem? Delectus labore eaque eius aperiam voluptates tempore laborum esse beatae modi quo eos necessitatibus veritatis ut, voluptatem veniam perspiciatis illo tenetur iusto omnis ipsam aspernatur. Deleniti fugit excepturi delectus ea vero voluptas perferendis, voluptates rerum reiciendis, reprehenderit consectetur nihil saepe iusto sequi sed, molestiae nostrum nam hic accusantium minus suscipit corrupti quidem autem. Consequatur voluptas atque accusantium dolores omnis adipisci harum a dolor! Debitis qui cum dolorem nobis rem cumque? Quam commodi tenetur molestiae animi eos neque dignissimos! Veniam ducimus ab pariatur, eveniet dignissimos, voluptatum a officia aliquam rerum alias officiis nam. Expedita necessitatibus cumque mollitia, maiores maxime numquam atque vitae? Suscipit saepe sapiente temporibus eos expedita. Debitis quis pariatur voluptatibus dolores quo minima ad suscipit ea. Illum, quas qui? Obcaecati aut ducimus totam assumenda nulla. Quaerat quo distinctio odit quis similique! Neque eligendi tenetur maiores beatae dolorem tempore totam rem voluptas, soluta, placeat quod aliquid facere officia nisi odit ducimus! Asperiores dolorum molestiae culpa, ipsa in ad quo quos cupiditate ex, placeat eligendi nesciunt, quidem quibusdam minus perferendis. Ullam totam voluptatum perferendis nihil. Quo, fugit officiis obcaecati doloribus est ab laudantium ducimus animi nesciunt nobis ea culpa saepe iusto perferendis hic fuga cupiditate corporis. Magni fugit iure, quibusdam, ad culpa debitis natus rerum repellat cum necessitatibus optio minus. Nisi debitis iste tenetur labore at rerum recusandae ducimus sit, impedit temporibus repellendus perspiciatis illum, aut assumenda? Dolore quisquam quas cum modi veniam soluta praesentium obcaecati culpa debitis magni quaerat fuga itaque enim, tempore nihil perspiciatis autem, minus eius nisi mollitia porro reprehenderit veritatis voluptatibus odit! Aspernatur aliquid nemo repellendus sit eius, repudiandae aut nostrum laborum vitae ea fugiat.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----------------------- -->
+    
+                    <!-- Modal centered-->
+                    <div class="modal fade" id="centered" tabindex="-1" aria-labelledby="defaultLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="defaultLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                    <i class="bi bi-x"></i></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----------------------- -->
+    
+                    <!-- Modal success -->
+                    <div class="modal fade" id="success" tabindex="-1" aria-labelledby="defaultLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-notif notif-success modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                               <form action="">
+                                    <div class="icons">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-slate-500 text-base text-center mb-2 mt-6">Success !</h2>
+                                        <p class="text-slate-400 text-sm text-center mb-3 font-normal">Status save successfully !</p>
+                                        <button type="button" class="btn btn-success btn-block">IYA</button>
+                                    </div>
+                               </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----------------------- -->
+                    <!-- Modal success -->
+                    <div class="modal fade" id="danger" tabindex="-1" aria-labelledby="defaultLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-notif notif-danger modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                               <form action="">
+                                    <div class="icons">    
+                                        <i class="bi bi-exclamation-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-slate-500 text-base text-center mb-2 mt-6">danger !</h2>
+                                        <p class="text-slate-400 text-sm text-center mb-3 font-normal">Status save dangerfully !</p>
+                                        <div>
+                                            <button type="button" class="btn btn-danger btn-block">OK</button>
+                                        </div>
+                                    </div>
+                               </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----------------------- -->
+    
+                </div>
             </div>
         </div>
+    
     </div>
-    <!-- Page Title End -->
-
-    <div class="grid 2xl:grid-cols-4 gap-6 mb-6">
-
-        <div class="2xl:col-span-3">
-            <div class="grid xl:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
-                <div class="card">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Project Dashboard</h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">New Task Assign</p>
-                            </div>
-
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
-
-                                <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5" href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i class="mgc_alarm_2_line"></i> 4 Hrs ago</p>
-                            </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="assets/images/users/avatar-1.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="assets/images/users/avatar-2.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Admin Template</h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">New Task Assign</p>
-                            </div>
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
-
-                                <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5" href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i class="mgc_alarm_2_line"></i> 3 Hrs ago</p>
-                            </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="assets/images/users/avatar-3.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="assets/images/users/avatar-4.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Client Project</h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">New Task Assign</p>
-                            </div>
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
-
-                                <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5" href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i class="mgc_alarm_2_line"></i> 5 Hrs ago</p>
-                            </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="assets/images/users/avatar-5.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="assets/images/users/avatar-6.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Figma Design</h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">New Task Assign</p>
-                            </div>
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
-
-                                <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5" href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i class="mgc_alarm_2_line"></i> 1 Day ago</p>
-                            </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="assets/images/users/avatar-7.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="assets/images/users/avatar-8.jpg" class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700" alt="friend">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-6">
-                <div class="col-span-1">
-                    <div class="card">
-                        <div class="p-6">
-                            <h4 class="card-title">Monthly Target</h4>
-
-                            <div id="monthly-target" class="apex-charts my-8" data-colors="#0acf97,#3073F1"></div>
-
-                            <div class="flex justify-center">
-                                <div class="w-1/2 text-center">
-                                    <h5>Pending</h5>
-                                    <p class="fw-semibold text-muted">
-                                        <i class="mgc_round_fill text-primary"></i> Projects
-                                    </p>
-                                </div>
-                                <div class="w-1/2 text-center">
-                                    <h5>Done</h5>
-                                    <p class="fw-semibold text-muted">
-                                        <i class="mgc_round_fill text-success"></i> Projects
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-2">
-                    <div class="card">
-                        <div class="p-6">
-                            <div class="flex justify-between items-center">
-                                <h4 class="card-title">Project Statistics</h4>
-                                <div class="flex gap-2">
-                                    <button type="button" class="btn btn-sm bg-primary/25 text-primary hover:bg-primary hover:text-white">
-                                        All
-                                    </button>
-                                    <button type="button" class="btn btn-sm bg-gray-400/25 text-gray-400 hover:bg-gray-400 hover:text-white">
-                                        6M
-                                    </button>
-                                    <button type="button" class="btn btn-sm bg-gray-400/25 text-gray-400 hover:bg-gray-400 hover:text-white">
-                                        1Y
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div dir="ltr" class="mt-2">
-                                <div id="crm-project-statistics" class="apex-charts" data-colors="#cbdcfc,#3073F1"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-span-1">
-            <div class="card mb-6">
-                <div class="px-6 py-5 flex justify-between items-center">
-                    <h4 class="header-title">Project Summary</h4>
-                    <div>
-                        <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                            <i class="mgc_more_1_fill text-xl"></i>
-                        </button>
-
-                        <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                <i class="mgc_add_circle_line"></i> Add
-                            </a>
-                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                <i class="mgc_edit_line"></i> Edit
-                            </a>
-                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                <i class="mgc_copy_2_line"></i> Copy
-                            </a>
-                            <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5" href="javascript:void(0)">
-                                <i class="mgc_delete_line"></i> Delete
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4 py-2 bg-warning/20 text-warning" role="alert">
-                    <i class="mgc_folder_star_line me-1 text-lg align-baseline"></i> <b>38</b> Total Admin & Client Projects
-                </div>
-
-                <div class="p-6 space-y-3">
-                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
-                        <div class="flex-shrink-0 me-2">
-                            <div class="w-12 h-12 flex justify-center items-center rounded-full text-primary bg-primary/25">
-                                <i class="mgc_group_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="font-semibold mb-1">Project Discssion</h5>
-                            <p class="text-gray-400">6 Person</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
-                                <i class="mgc_information_line text-xl"></i>
-                            </button>
-                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50" role="tooltip">
-                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
-                        <div class="flex-shrink-0 me-2">
-                            <div class="w-12 h-12 flex justify-center items-center rounded-full text-warning bg-warning/25">
-                                <i class="mgc_compass_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="fw-semibold my-0">In Progress</h5>
-                            <p>16 Projects</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
-                                <i class="mgc_information_line text-xl"></i>
-                            </button>
-                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50" role="tooltip">
-                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
-                        <div class="flex-shrink-0 me-2">
-                            <div class="w-12 h-12 flex justify-center items-center rounded-full text-danger bg-danger/25">
-                                <i class="mgc_check_circle_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="fw-semibold my-0">Completed Projects</h5>
-                            <p>24</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
-                                <i class="mgc_information_line text-xl"></i>
-                            </button>
-                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50" role="tooltip">
-                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
-                        <div class="flex-shrink-0 me-2">
-                            <div class="w-12 h-12 flex justify-center items-center rounded-full text-success bg-success/25">
-                                <i class="mgc_send_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="fw-semibold my-0">Delivery Projects</h5>
-                            <p>20</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
-                                <i class="mgc_information_line text-xl"></i>
-                            </button>
-                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50" role="tooltip">
-                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-6">
-                <h4 class="text-gray-600 dark:text-gray-300 mb-2.5">On Time Completed Rate <span class="px-2 py-0.5 rounded bg-success/25 text-success ms-2"><i class="mgc_arrow_up_line text-sm align-baseline me-1"></i>59%</span></h4>
-                <div class="flex justify-between items-center mb-2">
-                    <h5 class="text-base font-semibold">Completed Projects</h5>
-                    <h5 class="text-gray-600 dark:text-gray-300">65%</h5>
-                </div>
-                <div class="flex w-full h-1 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 ">
-                    <div class="flex flex-col justify-center overflow-hidden bg-primary w-1/4" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Grid End -->
-
-    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
-        <div class="col-span-1">
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 me-3">
-                            <div class="w-12 h-12 flex justify-center items-center rounded text-primary bg-primary/25">
-                                <i class="mgc_document_2_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="mb-1">Active Projects</h5>
-                            <p>85</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                <i class="mgc_more_2_fill text-xl"></i>
-                            </button>
-
-                            <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Today
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Yesterday
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Week
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Month
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-span-1">
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 me-3">
-                            <div class="w-12 h-12 flex justify-center items-center rounded text-success bg-success/25">
-                                <i class="mgc_group_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="mb-1">Total Employees</h5>
-                            <p>32</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                <i class="mgc_more_2_fill text-xl"></i>
-                            </button>
-
-                            <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Today
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Yesterday
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Week
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Month
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-span-1">
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 me-3">
-                            <div class="w-12 h-12 flex justify-center items-center rounded text-info bg-info/25">
-                                <i class="mgc_star_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="mb-1">Project Reviews</h5>
-                            <p>40</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                <i class="mgc_more_2_fill text-xl"></i>
-                            </button>
-
-                            <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Today
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Yesterday
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Week
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Month
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-span-1">
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 me-3">
-                            <div class="w-12 h-12 flex justify-center items-center rounded text-warning bg-warning/25">
-                                <i class="mgc_new_folder_line text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <h5 class="mb-1">New Projects</h5>
-                            <p>25</p>
-                        </div>
-                        <div>
-                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                <i class="mgc_more_2_fill text-xl"></i>
-                            </button>
-
-                            <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Today
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Yesterday
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Week
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Month
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Grid End -->
-
-    <div class="grid 2xl:grid-cols-4 md:grid-cols-2 gap-6">
-        <div class="2xl:col-span-2 md:col-span-2">
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex justify-between items-center">
-                        <h4 class="card-title">Project Overview</h4>
-                        <div>
-                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown" data-fc-placement="left-start" type="button">
-                                <i class="mgc_more_2_fill text-xl"></i>
-                            </button>
-
-                            <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Today
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Yesterday
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Week
-                                </a>
-                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Last Month
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 items-center gap-4">
-                        <div class="md:order-1 order-2">
-                            <div class="flex flex-col gap-6">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0">
-                                        <i class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-primary/25 text-lg text-primary"></i>
-                                    </div>
-                                    <div class="flex-grow ms-3">
-                                        <h5 class="fw-semibold mb-1">Product Design</h5>
-                                        <ul class="flex items-center gap-2">
-                                            <li class="list-inline-item"><b>26</b> Total Projects</li>
-                                            <li class="list-inline-item">
-                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
-                                            </li>
-                                            <li class="list-inline-item"><b>4</b> Employees</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0">
-                                        <i class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-danger/25 text-lg text-danger"></i>
-                                    </div>
-                                    <div class="flex-grow ms-3">
-                                        <h5 class="fw-semibold mb-1">Web Development</h5>
-                                        <ul class="flex items-center gap-2">
-                                            <li class="list-inline-item"><b>30</b> Total Projects</li>
-                                            <li class="list-inline-item">
-                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
-                                            </li>
-                                            <li class="list-inline-item"><b>5</b> Employees</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0">
-                                        <i class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-success/25 text-lg text-success"></i>
-                                    </div>
-                                    <div class="flex-grow ms-3">
-                                        <h5 class="fw-semibold mb-1">Illustration Design</h5>
-                                        <ul class="flex items-center gap-2">
-                                            <li class="list-inline-item"><b>12</b> Total Projects</li>
-                                            <li class="list-inline-item">
-                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
-                                            </li>
-                                            <li class="list-inline-item"><b>3</b> Employees</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0">
-                                        <i class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-warning/25 text-lg text-warning"></i>
-                                    </div>
-                                    <div class="flex-grow ms-3">
-                                        <h5 class="fw-semibold mb-1">UI/UX Design</h5>
-                                        <ul class="flex items-center gap-2">
-                                            <li class="list-inline-item"><b>8</b> Total Projects</li>
-                                            <li class="list-inline-item">
-                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
-                                            </li>
-                                            <li class="list-inline-item"><b>4</b> Employees</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="md:order-2 order-1">
-                            <div id="project-overview-chart" class="apex-charts" data-colors="#3073F1,#ff679b,#0acf97,#ffbc00"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-span-1">
-            <div class="card">
-                <div class="card-header">
-                    <div class="flex justify-between items-center">
-                        <h4 class="card-title">Daily Task</h4>
-                        <div>
-                            <select class="form-input form-select-sm">
-                                <option selected>Today</option>
-                                <option value="1">Yesterday</option>
-                                <option value="2">Tomorrow</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="py-6">
-                    <div class="px-6" data-simplebar style="max-height: 304px;">
-                        <div class="space-y-4">
-                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
-                                <ul class="flex items-center gap-2 mb-2">
-                                    <a href="javascript:void(0);" class="text-base text-gray-600 dark:text-gray-400">Landing Page Design</a>
-                                    <i class="mgc_round_fill text-[5px]"></i>
-                                    <h5 class="text-sm font-semibold">2 Hrs ago</h5>
-                                </ul>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new landing page (Saas Product)</p>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i class="mgc_group_line text-xl me-1 align-middle"></i> <b>5</b> People</p>
-                            </div>
-
-                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
-                                <ul class="flex items-center gap-2 mb-2">
-                                    <a href="javascript:void(0);" class="text-base text-gray-600 dark:text-gray-400">Admin Dashboard</a>
-                                    <i class="mgc_round_fill text-[5px]"></i>
-                                    <h5 class="text-sm font-semibold">3 Hrs ago</h5>
-                                </ul>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new Admin dashboard</p>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i class="mgc_group_line text-xl me-1 align-middle"></i> <b>2</b> People</p>
-                            </div>
-
-                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
-                                <ul class="flex items-center gap-2 mb-2">
-                                    <a href="javascript:void(0);" class="text-base text-gray-600 dark:text-gray-400">Client Work</a>
-                                    <i class="mgc_round_fill text-[5px]"></i>
-                                    <h5 class="text-sm font-semibold">5 Hrs ago</h5>
-                                </ul>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new Power Project (Sktech design)</p>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i class="mgc_group_line text-xl me-1 align-middle"></i> <b>2</b> People</p>
-                            </div>
-
-                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
-                                <ul class="flex items-center gap-2 mb-2">
-                                    <a href="javascript:void(0);" class="text-base text-gray-600 dark:text-gray-400">UI/UX Design</a>
-                                    <i class="mgc_round_fill text-[5px]"></i>
-                                    <h5 class="text-sm font-semibold">6 Hrs ago</h5>
-                                </ul>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new UI Kit in figma</p>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i class="mgc_group_line text-xl me-1 align-middle"></i> <b>3</b> People</p>
-                            </div>
-
-                            <div class="flex items-center justify-center">
-                                <div class="animate-spin flex">
-                                    <i class="mgc_loading_2_line text-xl"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-span-1">
-            <div class="card">
-                <div class="card-header flex justify-between items-center">
-                    <h4 class="card-title">Team Members</h4>
-                    <div>
-                        <select class="form-select form-select-sm">
-                            <option selected>Active</option>
-                            <option value="1">Offline</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="py-6">
-                    <div class="px-6" data-simplebar style="max-height: 304px;">
-                        <div class="space-y-6">
-                            <div class="flex items-center">
-                                <img class="me-3 rounded-full" src="assets/images/users/avatar-1.jpg" width="40" alt="Generic placeholder image">
-                                <div class="w-full overflow-hidden">
-                                    <h5 class="font-semibold"><a href="javascript:void(0);" class="text-gray-600 dark:text-gray-400">Risa Pearson</a></h5>
-                                    <div class="flex items-center gap-2">
-                                        <div>UI/UX Designer</div>
-                                        <i class="mgc_round_fill text-[5px]"></i>
-                                        <div>2.5 Year Experience</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <img class="me-3 rounded-full" src="assets/images/users/avatar-2.jpg" width="40" alt="Generic placeholder image">
-                                <div class="w-full overflow-hidden">
-                                    <h5 class="font-semibold"><a href="javascript:void(0);" class="text-gray-600 dark:text-gray-400">Margaret D. Evans</a></h5>
-                                    <div class="flex items-center gap-2">
-                                        <div>PHP Developer</div>
-                                        <i class="mgc_round_fill text-[5px]"></i>
-                                        <div>2 Year Experience</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <img class="me-3 rounded-full" src="assets/images/users/avatar-3.jpg" width="40" alt="Generic placeholder image">
-                                <div class="w-full overflow-hidden">
-                                    <h5 class="font-semibold"><a href="javascript:void(0);" class="text-gray-600 dark:text-gray-400">Bryan J. Luellen</a></h5>
-                                    <div class="flex items-center gap-2">
-                                        <div>Front end Developer</div>
-                                        <i class="mgc_round_fill text-[5px]"></i>
-                                        <div>1 Year Experience</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <img class="me-3 rounded-full" src="assets/images/users/avatar-4.jpg" width="40" alt="Generic placeholder image">
-                                <div class="w-full overflow-hidden">
-                                    <h5 class="font-semibold"><a href="javascript:void(0);" class="text-gray-600 dark:text-gray-400">Kathryn S. Collier</a></h5>
-                                    <div class="flex items-center gap-2">
-                                        <div>UI/UX Designer</div>
-                                        <i class="mgc_round_fill text-[5px]"></i>
-                                        <div>3 Year Experience</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <img class="me-3 rounded-full" src="assets/images/users/avatar-5.jpg" width="40" alt="Generic placeholder image">
-                                <div class="w-full overflow-hidden">
-                                    <h5 class="font-semibold"><a href="javascript:void(0);" class="text-gray-600 dark:text-gray-400">Timothy Kauper</a></h5>
-                                    <div class="flex items-center gap-2">
-                                        <div>Backend Developer</div>
-                                        <i class="mgc_round_fill text-[5px]"></i>
-                                        <div>2 Year Experience</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <img class="me-3 rounded-full" src="assets/images/users/avatar-6.jpg" width="40" alt="Generic placeholder image">
-                                <div class="w-full overflow-hidden">
-                                    <h5 class="font-semibold"><a href="javascript:void(0);" class="text-gray-600 dark:text-gray-400">Zara Raws</a></h5>
-                                    <div class="flex items-center gap-2">
-                                        <div>Python Developer</div>
-                                        <i class="mgc_round_fill text-[5px]"></i>
-                                        <div>1 Year Experience</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Grid End -->
 </x-app>

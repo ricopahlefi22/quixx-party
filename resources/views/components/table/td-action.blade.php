@@ -1,3 +1,5 @@
 <td>
-    <center class="flex items-center justify-center">{{ $slot }}</center>
+    <div class="btn-group">
+        {{ $slot }}
+    </div>
 </td>

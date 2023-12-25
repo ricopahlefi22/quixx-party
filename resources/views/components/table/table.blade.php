@@ -1,3 +1,3 @@
-<table class="table">
+<table class="table table-data dataTableFull">
     {{ $slot }}
 </table>

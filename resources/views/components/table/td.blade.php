@@ -1,3 +1,3 @@
 <td>
-    <center>{{ $label ?? '' }}</center>
+    {{ $label ?? '' }}
 </td>

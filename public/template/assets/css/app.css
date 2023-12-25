@@ -1,0 +1,665 @@
+@import url('../plugins/bootstrap/css/bootstrap.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-display: block;
+    font-family: "bootstrap-icons";
+    src: url("./../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+    url("./../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+}
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    @apply
+    font-body
+    bg-slate-100
+    w-screen
+    h-screen
+    overflow-x-hidden
+    dark:bg-slate-800
+}
+
+/* Sidebar */
+.sidebar{
+    @apply
+    w-60
+    h-screen
+    bg-white
+    dark:bg-slate-900
+    fixed
+    -left-full
+    md:left-0
+    z-10
+    transition-all
+    duration-300
+    ease-linear
+}
+.sidebar-open .sidebar{
+    @apply
+    left-0
+}
+.sidebar ul{
+    @apply
+    relative
+}
+.sidebar ul .sidebar-header{
+    @apply
+    relative
+    h-14
+    flex
+    items-center
+    justify-center
+    border-b-[1.6px]
+    border-b-slate-100
+    dark:border-b-slate-800
+    mb-8
+}
+.sidebar ul .sidebar-header .sidebar-brand{
+    @apply
+    inline-block
+    font-semibold
+    text-xl
+    text-indigo-500
+}
+.sidebar ul .sidebar-header .sidebar-button-toggle{
+    @apply
+    inline-block
+    text-xl
+    text-indigo-500
+    fixed
+    left-0
+    md:left-60
+    md:hidden
+    w-14
+    h-14
+    hover:bg-slate-100
+    dark:hover:bg-slate-800
+    transition-all
+    duration-300
+    ease-linear
+}
+.sidebar-open .sidebar ul .sidebar-header .sidebar-button-toggle{
+    @apply
+    left-52
+}
+.sidebar ul .sidebar-menu{
+    @apply
+    relative
+    w-full
+    px-3
+}
+.sidebar ul .sidebar-menu .menu-item{
+    @apply
+    relative
+    w-full
+    inline-flex
+    items-center
+    px-3
+    py-2
+    text-sm
+    font-medium
+    rounded-md
+    text-slate-500
+    hover:bg-indigo-500
+    hover:text-white
+    hover:shadow-md
+    hover:shadow-indigo-200
+    dark:hover:shadow-slate-800
+}
+.sidebar ul .sidebar-menu .menu-item i{
+    @apply
+    text-base
+    mr-3
+}
+/* .sidebar ul .sidebar-menu.dropdown .menu-item::after{
+    @apply
+    content-['\2304']
+    absolute
+    right-3
+    text-xl
+    inline-block
+    p-0
+    m-0
+    top-0
+    transition-all
+    duration-200
+    focus:rotate-180
+    focus:bottom-0
+} */
+.sidebar ul .sidebar-menu.dropdown .dropdown-menu{
+    @apply
+    bg-white
+    dark:bg-slate-800
+    border-0
+    w-[calc(240px_-_35px)]
+    shadow-sm
+    p-2
+    rounded-md
+}
+.sidebar ul .sidebar-menu.dropdown .dropdown-menu li a{
+    @apply
+    flex
+    items-center
+    py-2
+    px-3
+    font-normal
+    text-sm
+    text-slate-500
+    hover:text-indigo-500
+    rounded-md
+    hover:bg-slate-200
+    dark:hover:bg-slate-900
+}
+
+
+/* content */
+section.content{
+    @apply
+    md:ml-60
+    relative
+    w-full
+    md:w-[calc(100vw_-_240px)]
+    h-screen
+    dark:bg-slate-800
+}
+nav.content-navbar{
+    @apply
+    flex
+    items-center
+    justify-end
+    h-14
+    bg-white
+    dark:bg-slate-900
+    pr-8
+}
+nav.content-navbar .navar-menu{
+    @apply
+    relative
+    flex
+}
+nav.content-navbar .navar-menu .menu-dropdown{
+    @apply
+    relative
+}
+nav.content-navbar .navar-menu .menu-dropdown .items{
+    @apply
+    flex
+    flex-row
+    items-center
+    justify-center
+    gap-3
+    h-14
+    hover:bg-slate-100
+    dark:hover:bg-slate-800
+    dark:hover:text-slate-300
+    dark:text-slate-100
+}
+nav.content-navbar .navar-menu .menu-dropdown .items .user-image{
+    @apply
+    w-8
+    h-8
+    rounded-full
+    overflow-hidden
+}
+nav.content-navbar .navar-menu .menu-dropdown .items .user-image img{
+    @apply
+    w-full
+    h-full
+}
+nav.content-navbar .navar-menu .menu-dropdown .items .name{
+    @apply
+    font-medium
+    text-slate-600
+    dark:text-slate-200
+    text-sm
+}
+nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu{
+    @apply
+    transition-all
+    duration-300
+    ease-in-out
+    scale-50
+    p-2
+    border-0
+    rounded-sm
+    shadow-md
+    min-w-[190px]
+    gap-1
+    dark:bg-slate-900
+}
+nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
+    @apply
+    flex
+    items-center
+    text-sm
+    text-slate-500
+    gap-3
+    py-2
+    px-3
+    rounded-md
+    hover:bg-slate-100
+    dark:hover:bg-slate-800
+    hover:text-slate-600
+    dark:hover:text-slate-300
+}
+
+.content-container{
+    @apply
+    p-8
+}
+.content-container-header{
+    @apply
+    inline-block
+    mb-8
+}
+.content-container-header .title{
+    @apply
+    text-base
+    font-semibold
+    text-slate-600
+    dark:text-slate-300
+    uppercase
+}
+
+/* Card */
+.card-info,
+.card{
+    @apply
+    mb-8
+    bg-white 
+    dark:bg-slate-900
+    rounded-md 
+    shadow-sm
+    border-0
+}
+.card-info{
+    @apply
+    p-3
+    gap-3
+    flex
+    relative
+    min-h-[90px]
+}
+.card-info .info-icons{
+    @apply
+    w-10
+    h-10
+    flex
+    items-center
+    justify-center
+    rounded-md
+
+    shadow-md
+    text-white
+}
+.card-info .info-content h2{
+    @apply
+    font-bold
+    text-xl
+    text-slate-700
+}
+.card-info .info-content span{
+    @apply
+    font-normal
+    text-sm
+    text-slate-700
+    uppercase
+}
+
+.card .header{
+    @apply
+    clear-both
+    p-3
+
+}
+.card .header .title{
+    @apply
+    inline-block
+    font-medium
+    text-sm
+    uppercase
+    text-slate-600
+}
+.card .body{
+    @apply
+    clear-both
+    p-3
+}
+
+
+/* Modal animations */
+.modal{
+    @apply
+    transition-all
+    duration-300
+    ease-linear
+    translate-y-px
+ 
+}
+.modal-content{
+    @apply
+    rounded-[5px]
+    border-0
+}
+.modal-title{
+    @apply
+    inline-block
+    font-semibold
+    text-base
+    text-slate-600
+    uppercase
+}
+.modal-header button{
+    @apply
+    bg-slate-200
+    text-slate-700
+    hover:bg-slate-300
+    transition-colors
+    duration-300
+    ease-linear
+    flex
+    items-center
+    justify-center
+    text-[20px]
+}
+.modal-notif .modal-content{
+    @apply
+    relative
+}
+.modal-notif .modal-content .icons{
+    @apply
+    relative
+}
+.modal-notif .modal-content form{
+    @apply
+    p-6
+}
+.modal-notif .modal-content form .icons{
+    @apply
+    absolute
+    w-14
+    h-14
+    -top-1/3
+    left-1/3
+   
+    translate-x-1/2
+    translate-y-1/2
+    rounded-full
+    shadow-md
+    flex
+    items-center
+    justify-center
+    text-3xl
+    text-white
+}
+.modal-notif .modal-content form button{
+    @apply
+    w-full
+}
+.modal-notif.notif-success .modal-content form .icons{
+    @apply
+    bg-green-500
+    shadow-green-300
+}
+.modal-notif.notif-danger .modal-content form .icons{
+    @apply
+    bg-red-500
+    shadow-red-300
+}
+
+/* Form group */
+.form-group{
+    @apply
+    relative
+}
+.form-group .label{
+    @apply
+    absolute
+    inline-block
+    font-medium
+    text-[12px]
+    left-2.5
+    -top-2
+    px-2
+    py-0
+    bg-white
+    text-slate-500
+}
+.form-group select,
+.form-group input,
+.form-group textarea{
+    @apply
+    border-[1.7px]
+    border-slate-300 
+    placeholder-slate-400 
+    contrast-more:border-slate-400 
+    contrast-more:placeholder-slate-500
+    focus:shadow-none
+    placeholder:text-[12px]
+    text-[13px]
+    py-2.5
+    px-3
+    text-slate-500
+}
+.form-group .has-error{
+    @apply
+    absolute
+    inline-block
+    font-medium
+    text-[11px]
+    right-2.5
+    -bottom-1.5
+    px-2
+    py-0
+    bg-white
+    text-red-500
+}
+.form-group .is-invalid{
+    @apply
+    shadow-none
+    focus:shadow-none
+}
+
+/* File input */
+
+.form-group input[type="file"]{
+    @apply
+        block 
+        w-full 
+        text-sm 
+        text-slate-500
+      file:mr-4 
+      file:py-0
+      file:px-4
+      file:rounded-full 
+      file:border-0
+      file:text-sm 
+      file:font-medium
+      file:bg-white
+      file:text-violet-700
+      hover:file:bg-white
+}
+
+/* table */
+.table thead tr th{
+    @apply
+    font-semibold
+    text-[11px]
+    text-slate-600
+    text-center
+    uppercase
+}
+.table tbody tr td{
+    @apply
+    font-medium
+    text-[11px]
+    text-slate-500
+    text-center
+    uppercase
+}
+.table-paginations{
+    @apply
+    float-right
+    flex 
+    items-center
+    mt-3
+    clear-both
+}
+.dataTables_info{
+    @apply
+    float-left
+    mt-3
+    clear-both
+    text-sm
+    text-slate-500
+}
+
+.paginations-btn{
+    @apply
+    inline-flex
+    px-3
+    py-1
+    font-normal
+    text-[12px]
+    hover:bg-indigo-500
+    hover:rounded-sm
+    hover:shadow-md
+    hover:shadow-indigo-500
+    hover:text-white
+    transition-all
+    duration-300
+    ease-linear
+    items-center
+    justify-center
+}
+.table-paginations .active .paginations-btn{
+    @apply
+    bg-indigo-500
+    text-white
+    rounded-sm
+    shadow-md
+    shadow-indigo-500
+}
+.previous{
+    @apply
+    mr-1
+    bg-slate-100
+}
+.next{
+    @apply
+    ml-1
+    bg-slate-100
+}
+.dataTables_filter label,
+.dataTables_length label{
+    @apply
+    text-sm
+    text-slate-500
+}
+.dataTables_filter input,
+.dataTables_length select{
+    @apply
+    border-[1.7px]
+    border-slate-300 
+    placeholder-slate-400 
+    contrast-more:border-slate-400 
+    contrast-more:placeholder-slate-500
+    focus:shadow-none
+    placeholder:text-[12px]
+    text-[13px]
+    py-1
+    px-3
+    text-slate-500
+}
+
+/* Button */
+.btn{
+    @apply
+    text-sm
+    font-[300]
+    rounded-[4px]
+    hover:shadow-md
+}
+.btn-icons{
+    @apply
+    inline-flex
+    items-center
+    gap-1
+}
+.btn-icons i{
+    @apply
+    text-[16px]
+}
+.btn-success{
+    @apply
+    border-0
+    bg-green-500
+    hover:bg-green-600
+    hover:shadow-green-200
+    focus:bg-green-600
+}
+.btn-primary{
+    @apply
+    border-0
+    bg-indigo-500
+    hover:bg-indigo-600
+    hover:shadow-indigo-200
+    focus:bg-indigo-600
+}
+.btn-warning{
+    @apply
+    border-0
+    bg-yellow-300
+    hover:bg-yellow-400
+    hover:shadow-yellow-200
+    focus:bg-yellow-400
+}
+.btn-danger{
+    @apply
+    border-0
+    bg-red-500
+    hover:bg-red-600
+    hover:shadow-red-200
+    focus:bg-red-600
+}
+.btn-info{
+    @apply
+    border-0
+    bg-sky-500
+    hover:bg-sky-600
+    hover:shadow-sky-200
+    focus:bg-sky-600
+    text-white
+    hover:text-white
+}
+.btn-dark{
+    @apply
+    border-0
+    bg-slate-700
+    hover:bg-slate-800
+    hover:shadow-slate-200
+    focus:bg-slate-800
+}
+.btn-secondary{
+    @apply
+    border-0
+    bg-slate-400
+    hover:bg-slate-600
+    hover:shadow-slate-200
+    focus:bg-slate-600
+}

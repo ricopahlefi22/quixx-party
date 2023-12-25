@@ -1,73 +1,51 @@
 <x-app>
-    <div >
-        <x-card.card>
-            <x-card.header >
-                <x-card.title title="Data Kabupaten" />
-                <div x-data="modal">
-                    <x-button.btn-modal  class="success btn-sm" icons icon="plus" @click="toggle" /> 
-                    <!-- Modal tambah data -->
-                <x-modal.modal>
-                    <x-modal.body action="{{ url('master-data/data-kabupaten/create') }}">
-                        <x-modal.header title="Modal Header"/>
-                        <div class="p-3">
-                            <x-form.input type="text" label="Kabupaten" name="name" placeholder="Masukan nama kabupaten ..." />
-                        </div>
-                        <div class="flex justify-center items-center px-3 pb-3">
-                            <button type="button" class="btn btn-secondary" @click="toggle">BATAL</button>
-                            <button type="submit" class="btn btn-primary ltr:ml-2 rtl:mr-2">SIMPAN</button>
-                        </div>
-                    </x-modal.body>
-                </x-modal.modal>
-                <!-- END Modal tambah data -->
-                </div>
-               
 
-            </x-card.header>
-            
-            <div class="p-3 w-full overflow-x-auto">
-                <x-table.table>
-                    <thead>
-                        <tr>
-                            <x-table.th label="No." />
-                            <x-table.th label="Nama Kecamatan" />
-                            <x-table.th label="Aksi" />
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($list_city as $item)
-                        <tr>
-                            <x-table.td label="{{ $loop->iteration }}" />
-                            <x-table.td label="{{ ucwords($item->name )}}" />
-                            <x-table.td-action x-data="modal">
-                                <x-button.btn-modal class="warning p-0 w-8 h-8" icons icon="eye" @click="toggle" /> 
-                                <x-button.btn-modal class="primary p-0 w-8 h-8" icons icon="edit" @click="toggle" /> 
-                                <x-button.btn-modal class="danger p-0 w-8 h-8" icons icon="trash-2" @click="toggle" /> 
-                                <x-modal.modal>
-                                    <x-modal.body action="{{ url('master-data/data-kabupaten/create') }}">
-                                        <x-modal.header title="Modal Header"/>
-                                        <div class="p-3">
-                                            <x-form.input type="text" label="Kabupaten" name="name" placeholder="Masukan nama kabupaten ..." />
-                                        </div>
-                                        <div class="flex justify-center items-center px-3 pb-3">
-                                            <button type="button" class="btn btn-secondary" @click="toggle">BATAL</button>
-                                            <button type="submit" class="btn btn-primary ltr:ml-2 rtl:mr-2">SIMPAN</button>
-                                        </div>
-                                    </x-modal.body>
-                                </x-modal.modal>
-                                <!-- END Modal tambah data -->
-                            </x-table.td-action>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <x-table.th label="No." />
-                            <x-table.th label="Nama Kecamatan" />
-                            <x-table.th label="Aksi" />
-                        </tr>
-                    </tfoot>
-                </x-table.table>
-            </div>
-        </x-card.card>
+    <x-layout.section-header title="DATA KABUPATEN" />
+
+    <!-- Modal Tambah Data -->
+    <x-modal.modal id="tambah" action="{{ url('master-data/data-kabupaten/create') }}">
+        <x-modal.header title="TAMBAH KABUPATEN" />
+        <x-modal.body>
+            <x-form.input type="text" label="Kabupaten" name="name" placeholder="Masukan nama kabupaten ..." />
+        </x-modal.body>
+        <x-modal.footer>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">BATAL</button>
+            <button type="button" class="btn btn-primary">SIMPAN</button>
+        </x-modal.footer>
+    </x-modal.modal>
+    <!-- ENDModal Tambah Data -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <x-card.card>
+                <x-card.header>
+                    <x-button.btn url="#tambah" icons="plus" class="success" modal />
+                </x-card.header>
+                <x-card.body>
+                    <x-table.table>
+                        <thead>
+                            <tr>
+                                <x-table.th label="No." />
+                                <x-table.th label="Nama Kecamatan" />
+                                <x-table.th label="Aksi" />
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($list_city as $item)
+                                <tr>
+                                    <x-table.td label="{{ $loop->iteration }}" />
+                                    <x-table.td label="{{ ucwords($item->name) }}" />
+                                    <x-table.td-action x-data="modal">
+                                        <x-button.btn url="#lihat" icons="eye" class="warning" modal />
+                                        <x-button.btn url="#edit" icons="pencil-square" class="primary" modal />
+                                        <x-button.btn url="#hapus" icons="trash" class="danger" modal />
+                                    </x-table.td-action>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </x-table.table>
+                </x-card.body>
+            </x-card.card>
+        </div>
     </div>
 </x-app>

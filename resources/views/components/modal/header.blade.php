@@ -1,6 +1,5 @@
-<div class="flex bg-[#fbfbfb] dark:bg-[#121c2c] items-center justify-between px-5 py-3">
-    <div class="font-bold text-lg">{{ $title ?? '' }}</div>
-    <button type="button" class="text-white-dark hover:text-dark" @click="toggle">
-        <i data-feather="x" class="group-hover:text-slate-200"></i>
-    </button>
+<div class="modal-header">
+    <h1 class="modal-title" id="defaultLabel">{{ $title ?? '' }}</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <i class="bi bi-x"></i></button>
 </div>

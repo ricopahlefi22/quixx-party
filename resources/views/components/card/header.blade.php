@@ -1,3 +1,3 @@
-<div class="flex flex-row items-center justify-between">
+<div class="header">
     {{ $slot }}
 </div>
