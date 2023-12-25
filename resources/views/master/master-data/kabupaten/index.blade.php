@@ -43,6 +43,13 @@
                                 </tr>
                             @endforeach
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <x-table.th label="No." />
+                                <x-table.th label="Nama Kecamatan" />
+                                <x-table.th label="Aksi" />
+                            </tr>
+                        </tfoot>
                     </x-table.table>
                 </x-card.body>
             </x-card.card>
