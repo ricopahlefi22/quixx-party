@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Auth;
 
-class AuthController extends Controller
+class AuthMasterController extends Controller
 {
     function login(){
         return view('login');
@@ -20,13 +20,12 @@ class AuthController extends Controller
 
        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 
-        // dd($cek1);
         if (Auth::attempt(['email' => request('email'), 'password' => request('password'),'level' => 1])) {
-            return redirect('beranda')->with('success', 'Selamat datang '.$cek1->nama);
+           return redirect('http://master.localhost:8000/beranda')->with('success', 'Selamat datang '.$cek1->nama);
 
 
         } elseif(Auth::attempt(['email' => request('email'), 'password' => request('password'),'level' => 0])) {
-            return redirect('/admin/beranda')->with('success', 'Selamat datang '.$cek1->nama);
+            return redirect('/beranda')->with('success', 'Selamat datang '.$cek1->nama);
         }
 
     } else {

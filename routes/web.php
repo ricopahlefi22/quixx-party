@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthMasterController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ComponentController;
-
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
@@ -19,47 +19,46 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 
-// START CONTROLLER ADMIN
-Route::middleware('auth')->group(function () {
-    include 'extras/master/BerandaRoute.php';
-    include 'extras/master/MasterDataRoute.php';
-    include 'extras/master/PerhitunganCepatRoute.php';
-
-});
 
 
 
 
 // START CONTROLLER MASTER
 Route::group(['domain' => 'master.localhost'], function () {
+    Route::middleware('web')->group(function () {
+       include 'extras/master/BerandaRoute.php';
+       include 'extras/master/MasterDataRoute.php';
+       include 'extras/master/PerhitunganCepatRoute.php';
 
-    include 'extras/master/BerandaRoute.php';
-    include 'extras/master/MasterDataRoute.php';
-    include 'extras/master/PerhitunganCepatRoute.php';
+
+   });
+
+
 
 });
+
 // END CONTROLLER MASTER-------------------------------------
 
 
 
-// START CONTROLLER ADMIN
-Route::controller(AdminController::class)->group(function () {
-    Route::get('beranda', 'beranda');
+// // START CONTROLLER ADMIN
+// Route::controller(AdminController::class)->group(function () {
+//     Route::get('beranda', 'beranda');
 
-});
+// });
 
- include 'extras/admin/voting-results.php';
+// include 'extras/admin/voting-results.php';
 
 
 
-// Component example
-Route::prefix('component')->group(function () {
-    Route::controller(ComponentController::class)->group(function () {
-        Route::get('card', 'card');
-    });
-});
+// // Component example
+// Route::prefix('component')->group(function () {
+//     Route::controller(ComponentController::class)->group(function () {
+//         Route::get('card', 'card');
+//     });
+// });
 
-Route::get('/', function () {
-   return view("admin.beranda");
-});
+// Route::get('/', function () {
+//    return view("admin.beranda");
+// });
 
