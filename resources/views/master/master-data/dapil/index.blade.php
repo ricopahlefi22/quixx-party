@@ -25,6 +25,7 @@
         
         <div class="p-3">
             <div>
+            <i class="bi bi-4-square"></i>
                 <table class="table">
                     <thead>
                         <tr>
@@ -38,7 +39,11 @@
                         @foreach($list_vote_zones as $item)
                         <tr>
                             <td><center>{{ $loop->iteration }}</center></td>
-                            <td><center>Aksi</center></td>
+                             <x-table.td-action x-data="modal">
+                                            <x-button.btn url="#lihat" icons="eye" class="warning" modal />
+                                            <x-button.btn url="#edit" icons="pencil-square" class="primary" modal />
+                                            <x-button.btn url="{{url('master-data/data-kabupaten',$item->city_id)}}/delete" icons="trash" class="danger" />
+                                            </x-table.td-action>
                             <td><center>{{ ucwords($item->name) }}</center></td>
                             <td><center>{{ ucwords($item->city->name) }}</td>
                         </tr>

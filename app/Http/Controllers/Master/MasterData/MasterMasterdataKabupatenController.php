@@ -20,4 +20,9 @@ class MasterMasterdataKabupatenController extends Controller
         $city->save();
         return back()->with('success','City successfull added');
     }
+
+    function destroy(City $city){
+        $city->delete();
+        return back()->with('danger','Data berhasil dihapus');
+    }
 }

@@ -41,4 +41,19 @@ class Village extends Model
     {
         return 'string';
     }
+
+      public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function zones()
+    {
+        return $this->belongsTo(VotingZone::class, 'voting_zone_id');
+    }
+
+     public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id');
+    }
 }

@@ -16,6 +16,7 @@
     <!-- ENDModal Tambah Data -->
 
     <div class="row">
+        <i class="bi bi-person"></i> icon sinim
         <div class="col-md-12">
             <x-card.card>
                 <x-card.header>
@@ -32,27 +33,27 @@
                         </thead>
                         <tbody>
                             @foreach ($list_city as $item)
-                                <tr>
-                                    <x-table.td label="{{ $loop->iteration }}" />
-                                    <x-table.td label="{{ ucwords($item->name) }}" />
-                                    <x-table.td-action x-data="modal">
-                                        <x-button.btn url="#lihat" icons="eye" class="warning" modal />
-                                        <x-button.btn url="#edit" icons="pencil-square" class="primary" modal />
-                                        <x-button.btn url="#hapus" icons="trash" class="danger" modal />
-                                    </x-table.td-action>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
                             <tr>
-                                <x-table.th label="No." />
-                                <x-table.th label="Nama Kecamatan" />
-                                <x-table.th label="Aksi" />
-                            </tr>
-                        </tfoot>
-                    </x-table.table>
-                </x-card.body>
-            </x-card.card>
-        </div>
-    </div>
-</x-app>
+                                <x-table.td label="{{ $loop->iteration }}" />
+                                    <x-table.td label="{{ ucwords($item->name) }}" />
+                                        <x-table.td-action x-data="modal">
+                                           <!--  <x-button.btn url="#lihat" icons="eye" class="warning" modal />
+                                            <x-button.btn url="#edit" icons="pencil-square" class="primary" modal /> -->
+                                            <x-button.btn url="{{url('master-data/data-kabupaten',$item->city_id)}}/delete" icons="trash" class="danger" />
+                                            </x-table.td-action>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <x-table.th label="No." />
+                                            <x-table.th label="Nama Kecamatan" />
+                                            <x-table.th label="Aksi" />
+                                        </tr>
+                                    </tfoot>
+                                </x-table.table>
+                            </x-card.body>
+                        </x-card.card>
+                    </div>
+                </div>
+            </x-app>

@@ -16,8 +16,18 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('otp', 'otp');
     Route::get('logout', 'logout');
 
+});
+
+
+// START CONTROLLER ADMIN
+Route::middleware('auth')->group(function () {
+    include 'extras/master/BerandaRoute.php';
+    include 'extras/master/MasterDataRoute.php';
+    include 'extras/master/PerhitunganCepatRoute.php';
 
 });
+
+
 
 
 // START CONTROLLER MASTER

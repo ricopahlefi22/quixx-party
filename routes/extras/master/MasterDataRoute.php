@@ -22,6 +22,7 @@ Route::prefix('master-data')->group(function () {
     Route::controller(MasterMasterdataKabupatenController::class)->group(function () {
         Route::get('data-kabupaten', 'index');
         Route::post('data-kabupaten/create', 'store');
+        Route::get('data-kabupaten/{city}/delete', 'destroy');
     });
 
     Route::controller(MasterMasterdataKandidatController::class)->group(function () {
