@@ -24,7 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+.app-screen{
     @apply
     font-body
     bg-slate-100
@@ -662,4 +662,123 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     hover:bg-slate-600
     hover:shadow-slate-200
     focus:bg-slate-600
+}
+
+/* Login page */
+.login-page{
+    @apply
+    font-body
+    bg-slate-100
+    flex 
+    items-center 
+    justify-center 
+    w-screen 
+    h-screen
+    overflow-hidden
+    dark:bg-slate-800
+}
+.login-page .box{
+    @apply
+    shadow-sm 
+    p-8 
+    bg-white 
+    dark:bg-slate-800 
+    max-w-[350px] 
+    rounded-md
+}
+.login-page .box form{
+    @apply
+    w-full
+    relative
+}
+.login-page .box form .brands{
+    @apply
+    absolute
+    -top-20
+    left-[85px]
+    bg-indigo-500
+    w-20
+    h-20
+    rounded-full
+    flex
+    items-center
+    justify-center
+    text-2xl
+    text-white
+    font-bold
+    uppercase
+}
+.login-page .box form .form-header{
+    @apply
+    mb-8
+    pt-3
+}
+.login-page .box form .form-header h2{
+    @apply
+    font-semibold
+    text-xl
+    text-center
+    text-indigo-500
+}
+.login-page .box form .form-header p{
+    @apply
+    font-medium
+    text-sm
+    text-center
+    text-slate-500
+}
+.login-page .box form .form-body{
+    @apply
+    grid 
+    grid-cols-1 
+    space-y-6
+}
+.login-page .box form .form-body .form-group{
+    @apply
+    flex
+    flex-col
+    relative
+}
+.login-page .box form .form-body .form-group .label{
+    @apply
+    text-[13px] 
+    font-medium 
+    text-slate-500 
+    mb-1
+}
+.login-page .box form .form-body .form-group .form-control{
+    @apply
+    w-full 
+    outline-none 
+    border 
+    border-slate-300 
+    px-[34px] 
+    py-1.5 
+    rounded-md 
+    text-sm 
+    text-slate-400
+    ring-1
+    focus:ring-indigo-500
+}
+.login-page .box form .form-body .form-group .form-control.is-invalid{
+    @apply
+    ring-red-500
+}
+.login-page .box form .form-body .form-group .icons{
+    @apply
+    absolute
+    w-[34px]
+    h-[34px]
+    rounded-md
+    flex
+    items-center
+    justify-center
+    text-sm
+}
+.login-page .box form .form-body .form-group .icons.icons-right{
+    @apply
+    right-0
+    cursor-pointer
+    hover:text-indigo-500
+    focus:text-indigo-500
 }
