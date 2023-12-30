@@ -42,10 +42,10 @@ Route::group(['domain' => 'master.localhost'], function () {
 
 
 // // START CONTROLLER ADMIN
-// Route::controller(AdminController::class)->group(function () {
-//     Route::get('beranda', 'beranda');
+Route::controller(AdminController::class)->group(function () {
+    Route::get('beranda', 'beranda');
 
-// });
+});
 
 // include 'extras/admin/voting-results.php';
 

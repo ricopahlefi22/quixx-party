@@ -16,7 +16,6 @@
     <!-- ENDModal Tambah Data -->
 
     <div class="row">
-        <i class="bi bi-person"></i> icon sinim
         <div class="col-md-12">
             <x-card.card>
                 <x-card.header>

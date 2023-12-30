@@ -7,35 +7,30 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-class Admin extends Authenticatable
-{
+
+class Admin extends Authenticatable{
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
+      use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'admins';
+    protected $primaryKey = 'admin_id';
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+     protected static function boot(){
+        parent::boot();
+        static::creating(function ($model) {
+            if (empty($model->{$model->getKeyName()})) {
+                $model->{$model->getKeyName()} = Str::uuid()->toString();
+            }
+        });
+    }
 
-    protected $hidden = [
-        'level',
-        'password',
-        'remember_token',
-    ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    public function getIncrementing()
-    {
+    // biar tidak auto increment
+    public function getIncrementing(){
         return false;
     }
 
-    public function getKeyType()
-    {
+    // mendevinisikan sebagai string
+    public function getKeyType(){
         return 'string';
     }
 }

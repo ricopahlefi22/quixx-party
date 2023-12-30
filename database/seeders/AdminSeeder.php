@@ -30,6 +30,14 @@ class AdminSeeder extends Seeder
             'password' => bcrypt('12345678'),
         ]);
 
+        Admin::create([
+            'name' => 'Naldy',
+            'email' => 'user@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'level' => false,
+            'password' => bcrypt('12345678'),
+        ]);
+
         Admin::factory(5)->create();
     }
 }

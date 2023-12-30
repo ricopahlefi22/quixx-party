@@ -14,29 +14,17 @@ class AuthController extends Controller
 
     function loginProcess(Request $request){
 
-  
-       $cek1 = Admin::where('email', $request->email)->first();
-       // dd($cek1);
-
-       if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
-
-        // dd($cek1);
-        if (Auth::attempt(['email' => request('email'), 'password' => request('password'),'level' => 1])) {
-            return redirect('beranda')->with('success', 'Selamat datang '.$cek1->nama);
-
-
-        } elseif(Auth::attempt(['email' => request('email'), 'password' => request('password'),'level' => 0])) {
-            return redirect('/admin/beranda')->with('success', 'Selamat datang '.$cek1->nama);
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('beranda'); 
+        }else{
+            return back()->with('danger','Email atau Password Anda Salah !!');
         }
-
-    } else {
-        return back()->with('warning', 'Silahkan periksa Email atau Password');
     }
-}
 
 
-function logout(Admin $user){
-    Auth::logout();
-    return redirect('login')->with('warning','Berhasil keluar');
-}
+    function logout(Admin $user){
+        Auth::logout();
+        return redirect('login')->with('warning','Berhasil keluar');
+    }
 }
