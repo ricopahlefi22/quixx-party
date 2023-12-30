@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('template/assets/css/output.css') }}">
 </head>
 
-<body>
+<body class="app-screen">
 
     <!-- Sidebar -->
     <x-layout.sidebar />
