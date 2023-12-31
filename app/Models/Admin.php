@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+Use Illuminate\Support\Str;
 
 class Admin extends Authenticatable{
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
-      use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'admins';
     protected $primaryKey = 'admin_id';
 
@@ -33,4 +33,12 @@ class Admin extends Authenticatable{
     public function getKeyType(){
         return 'string';
     }
+
+    // Validasi email & password
+    static $field = [
+        'email' => ['required']
+    ];
+    static $pesan = [
+        'email.required' => 'Inputan tidak boleh kosong !'
+    ];
 }

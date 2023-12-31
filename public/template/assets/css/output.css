@@ -15779,6 +15779,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
+:is(:where(.dark) .btn-success:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .btn-primary{
   border-width: 0px;
   --tw-bg-opacity: 1;
@@ -15796,6 +15801,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
 .btn-primary:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+:is(:where(.dark) .btn-primary:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .btn-warning{
@@ -15817,6 +15827,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
+:is(:where(.dark) .btn-warning:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .btn-danger{
   border-width: 0px;
   --tw-bg-opacity: 1;
@@ -15834,6 +15849,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
 .btn-danger:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+:is(:where(.dark) .btn-danger:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .btn-info{
@@ -15861,6 +15881,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
+:is(:where(.dark) .btn-info:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .btn-dark{
   border-width: 0px;
   --tw-bg-opacity: 1;
@@ -15878,6 +15903,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
 .btn-dark:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+:is(:where(.dark) .btn-dark:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .btn-secondary{
@@ -15899,6 +15929,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+:is(:where(.dark) .btn-secondary:hover){
+  --tw-shadow-color: #1e293b;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 /* Login page */
 
 .login-page{
@@ -15915,10 +15950,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
 
 :is(:where(.dark) .login-page){
   --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
 .login-page .box{
+  min-width: 350px;
   max-width: 350px;
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
@@ -15930,6 +15966,13 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
   box-shadow: var(--bs-box-shadow-sm);
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity));
+}
+
+@media (min-width: 768px){
+  .login-page .box{
+    min-width: 370px;
+    max-width: 370px;
+  }
 }
 
 :is(:where(.dark) .login-page .box){
@@ -15945,7 +15988,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
 .login-page .box form .brands{
   position: absolute;
   top: -5rem;
-  left: 85px;
+  left: calc(370px / 3.2);
   display: flex;
   height: 5rem;
   width: 5rem;
@@ -16035,11 +16078,24 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
 }
 
 .login-page .box form .form-body .form-group .form-control:focus{
+  --tw-border-opacity: 1;
+  border-color: rgb(99 102 241 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity));
 }
 
+:is(:where(.dark) .login-page .box form .form-body .form-group .form-control){
+  --tw-border-opacity: 1;
+  border-color: rgb(148 163 184 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(148 163 184 / var(--tw-ring-opacity));
+}
+
 .login-page .box form .form-body .form-group .form-control.is-invalid{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
 }
@@ -16054,6 +16110,11 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a:hover{
   border-radius: 0.375rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+:is(:where(.dark) .login-page .box form .form-body .form-group .icons){
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 .login-page .box form .form-body .form-group .icons.icons-right{

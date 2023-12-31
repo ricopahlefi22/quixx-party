@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class AuthMasterController extends Controller
 {
@@ -14,7 +16,7 @@ class AuthMasterController extends Controller
 
     function loginProcess(Request $request){
 
-  
+       $validated = $request->validate([Admin::$field,Admin::$pesan]);
        $cek1 = Admin::where('email', $request->email)->first();
        // dd($cek1);
 

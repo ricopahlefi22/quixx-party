@@ -13,7 +13,8 @@
 <body class="login-page">
 
     <div class="box">
-		<form action="" method="POST">
+		<form action="{{ url('/login') }}" method="POST">
+			@csrf
 			<div class="brands">qp</div>
 			<div class="form-header">
 				<h2>QUIXX PARTY</h2>
@@ -24,13 +25,14 @@
 					<span class="icons icons-left">
 						<i class="bi bi-envelope"></i>
 					</span>
-					<input type="email" placeholder="Enter email ..." class="form-control is-invalid">
+					<input type="email" name="email" placeholder="Enter email ..." class="form-control @error('email') is-invalid @enderror">
+					
 				</label>
 				<label for="password" class="form-group">
 					<span class="icons icons-left">
 						<i class="bi bi-lock"></i>
 					</span>
-					<input type="password" placeholder="Enter password ..." class="form-control is-invalid">
+					<input type="password" name="password" placeholder="Enter password ..." class="form-control @error('email') is-invalid @enderror">
 					<span class="icons icons-right">
 						<i class="bi bi-eye-slash"></i>
 					</span>

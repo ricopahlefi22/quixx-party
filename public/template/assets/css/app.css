@@ -594,6 +594,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     font-[300]
     rounded-[4px]
     hover:shadow-md
+    
 }
 .btn-icons{
     @apply
@@ -611,6 +612,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     bg-green-500
     hover:bg-green-600
     hover:shadow-green-200
+    dark:hover:shadow-slate-800
     focus:bg-green-600
 }
 .btn-primary{
@@ -620,7 +622,8 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     hover:bg-indigo-600
     hover:shadow-indigo-200
     focus:bg-indigo-600
-}
+    dark:hover:shadow-slate-800
+}   
 .btn-warning{
     @apply
     border-0
@@ -628,6 +631,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     hover:bg-yellow-400
     hover:shadow-yellow-200
     focus:bg-yellow-400
+    dark:hover:shadow-slate-800
 }
 .btn-danger{
     @apply
@@ -636,6 +640,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     hover:bg-red-600
     hover:shadow-red-200
     focus:bg-red-600
+    dark:hover:shadow-slate-800
 }
 .btn-info{
     @apply
@@ -646,6 +651,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     focus:bg-sky-600
     text-white
     hover:text-white
+    dark:hover:shadow-slate-800
 }
 .btn-dark{
     @apply
@@ -654,6 +660,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     hover:bg-slate-800
     hover:shadow-slate-200
     focus:bg-slate-800
+    dark:hover:shadow-slate-800
 }
 .btn-secondary{
     @apply
@@ -662,6 +669,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     hover:bg-slate-600
     hover:shadow-slate-200
     focus:bg-slate-600
+    dark:hover:shadow-slate-800
 }
 
 /* Login page */
@@ -675,7 +683,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     w-screen 
     h-screen
     overflow-hidden
-    dark:bg-slate-800
+    dark:bg-slate-900
 }
 .login-page .box{
     @apply
@@ -684,6 +692,9 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     bg-white 
     dark:bg-slate-800 
     max-w-[350px] 
+    min-w-[350px] 
+    md:max-w-[370px] 
+    md:min-w-[370px] 
     rounded-md
 }
 .login-page .box form{
@@ -695,7 +706,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     @apply
     absolute
     -top-20
-    left-[85px]
+    left-[calc(370px_/_3.2)]
     bg-indigo-500
     w-20
     h-20
@@ -752,17 +763,22 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     outline-none 
     border 
     border-slate-300 
+    dark:border-slate-400 
     px-[34px] 
     py-1.5 
     rounded-md 
     text-sm 
     text-slate-400
     ring-1
+    dark:ring-slate-400
     focus:ring-indigo-500
+    focus:border-indigo-500
+    dark:bg-slate-900
 }
 .login-page .box form .form-body .form-group .form-control.is-invalid{
     @apply
     ring-red-500
+    border-red-500
 }
 .login-page .box form .form-body .form-group .icons{
     @apply
@@ -774,6 +790,7 @@ nav.content-navbar .navar-menu .menu-dropdown .dropdown-menu li a{
     items-center
     justify-center
     text-sm
+    dark:text-slate-500
 }
 .login-page .box form .form-body .form-group .icons.icons-right{
     @apply
