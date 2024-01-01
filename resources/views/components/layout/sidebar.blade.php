@@ -45,10 +45,10 @@
         <x-layout.sidebar-menu class="dropdown">
             <x-layout.sidebar-items dropdown url="#" icons="bi bi-calculator-fill" label="Perhitungan Cepat"/>
             <x-layout.drop-menu>
-                <x-layout.drop-item url="{{ url('master-data/data-kabupaten') }}" icons="dash" label="Hasil Hitung Cepat"/>
-                <x-layout.drop-item url="{{ url('master-data/data-dapil') }}" icons="dash" label="Hasil Per Kabupaten"/>
-                <x-layout.drop-item url="{{ url('master-data/data-dapil') }}" icons="dash" label="Hasil Per Desa"/>
-                <x-layout.drop-item url="{{ url('master-data/data-kecamatan') }}" icons="dash" label="Hasil Peroleh C1"/>
+                <x-layout.drop-item url="{{ url('voting-results/voting-results') }}" icons="dash" label="Hasil Hitung Cepat"/>
+                <x-layout.drop-item url="{{ url('voting-results/city') }}" icons="dash" label="Hasil Per Kabupaten"/>
+                <x-layout.drop-item url="{{ url('voting-results/village') }}" icons="dash" label="Hasil Per Desa"/>
+                <x-layout.drop-item url="{{ url('voting-results/data-kecamatan') }}" icons="dash" label="Hasil Peroleh C1"/>
             </x-layout.drop-menu>
         </x-layout.sidebar-menu>
 

@@ -19,7 +19,7 @@ class AdminVotingResultsController extends Controller
 {
    function index(){
 
-    return view('admin.votin-results.index');
+    return view('admin.voting-results.index');
    }
 
 
@@ -27,12 +27,12 @@ class AdminVotingResultsController extends Controller
 
    function city(){
 
-    return view('admin.votin-results.city');
+    return view('admin.voting-results.city');
    }
 
 
     function village(){
 
-    return view('admin.votin-results.village');
+    return view('admin.voting-results.village');
    }
 }
