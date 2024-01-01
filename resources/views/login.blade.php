@@ -13,7 +13,7 @@
 <body class="login-page">
 
     <div class="box">
-		<form action="{{ url('/login') }}" method="POST">
+		<form action="{{ url('login') }}" method="POST">
 			@csrf
 			<div class="brands">qp</div>
 			<div class="form-header">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthMasterController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminVotingResultsController;
 use App\Http\Controllers\ComponentController;
 
 Route::controller(AuthController::class)->group(function () {
@@ -26,12 +27,12 @@ Route::controller(AuthController::class)->group(function () {
 // START CONTROLLER MASTER
 Route::group(['domain' => 'master.localhost'], function () {
     Route::middleware('web')->group(function () {
-       include 'extras/master/BerandaRoute.php';
-       include 'extras/master/MasterDataRoute.php';
-       include 'extras/master/PerhitunganCepatRoute.php';
+     include 'extras/master/BerandaRoute.php';
+     include 'extras/master/MasterDataRoute.php';
+     include 'extras/master/PerhitunganCepatRoute.php';
 
 
-   });
+ });
 
 
 
@@ -40,25 +41,25 @@ Route::group(['domain' => 'master.localhost'], function () {
 // END CONTROLLER MASTER-------------------------------------
 
 
-
+Route::middleware('web')->group(function () {
 // // START CONTROLLER ADMIN
-Route::controller(AdminController::class)->group(function () {
-    Route::get('beranda', 'beranda');
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('beranda', 'beranda');
+
+    });
+    Route::prefix('voting-results')->group(function(){
+     Route::controller(AdminVotingResultsController::class)->group(function () {
+        Route::get('voting-results', 'index');
+        Route::get('city', 'city');
+        Route::get('district', 'district');
+        Route::get('village', 'village');
+        Route::get('c-1', 'c1');
+
+    });
+
+ });
+    
 
 });
 
-// include 'extras/admin/voting-results.php';
-
-
-
-// // Component example
-// Route::prefix('component')->group(function () {
-//     Route::controller(ComponentController::class)->group(function () {
-//         Route::get('card', 'card');
-//     });
-// });
-
-// Route::get('/', function () {
-//    return view("admin.beranda");
-// });
 
