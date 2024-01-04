@@ -1,5 +1,5 @@
 
-@if(Auth::user()->level > 1)
+@if(Auth::user()->level == 1)
 
 <!-- MENU KHUSU MASTER -->
 <aside class="sidebar">
@@ -29,6 +29,10 @@
                 <x-layout.drop-item url="{{ url('perhitungan-cepat/tps') }}" icons="dash" label="Hasil TPS"/>
                 <x-layout.drop-item url="{{ url('perhitungan-cepat/partai') }}" icons="dash" label="Hasil Partai"/>
             </x-layout.drop-menu>
+
+              <x-layout.sidebar-menu>
+            <x-layout.sidebar-items url="{{ url('/akun-admin') }}" icons="bi bi-people-fill" label="Akun Admin"/>
+        </x-layout.sidebar-menu>
         </x-layout.sidebar-menu>
     </ul>
 </aside>
@@ -48,7 +52,7 @@
                 <x-layout.drop-item url="{{ url('voting-results/voting-results') }}" icons="dash" label="Hasil Hitung Cepat"/>
                 <x-layout.drop-item url="{{ url('voting-results/city') }}" icons="dash" label="Hasil Per Kabupaten"/>
                 <x-layout.drop-item url="{{ url('voting-results/village') }}" icons="dash" label="Hasil Per Desa"/>
-                <x-layout.drop-item url="{{ url('voting-results/data-kecamatan') }}" icons="dash" label="Hasil Peroleh C1"/>
+                <x-layout.drop-item url="{{ url('voting-results/hasil-c1') }}" icons="dash" label="Hasil Peroleh C1"/>
             </x-layout.drop-menu>
         </x-layout.sidebar-menu>
 
@@ -56,18 +60,18 @@
         <x-layout.sidebar-menu class="dropdown">
             <x-layout.sidebar-items dropdown url="#" icons="geo-fill" label="Pemetaan Suara"/>
             <x-layout.drop-menu>
-                <x-layout.drop-item url="{{ url('master-data/data-kabupaten') }}" icons="dash" label="Hasil Keseluruhan"/>
-                <x-layout.drop-item url="{{ url('master-data/data-kabupaten') }}" icons="dash" label="Hasil Per Kecamatan"/>
-                <x-layout.drop-item url="{{ url('master-data/data-kabupaten') }}" icons="dash" label="Hasil Per Desa"/>
+                <x-layout.drop-item url="{{ url('voting-place/') }}" icons="dash" label="Hasil Keseluruhan"/>
+                <x-layout.drop-item url="{{ url('voting-place/district') }}" icons="dash" label="Hasil Per Kecamatan"/>
+                <x-layout.drop-item url="{{ url('voting-place/village') }}" icons="dash" label="Hasil Per Desa"/>
             </x-layout.drop-menu>
         </x-layout.sidebar-menu>
 
-        <x-layout.sidebar-menu class="dropdown">
+   <!--      <x-layout.sidebar-menu class="dropdown">
             <x-layout.sidebar-items dropdown url="#" icons="people-fill" label="Data Pemilih"/>
             <x-layout.drop-menu>
                 <x-layout.drop-item url="{{ url('master-data/data-kabupaten') }}" icons="dash" label="On Going ..."/>
             </x-layout.drop-menu>
-        </x-layout.sidebar-menu>
+        </x-layout.sidebar-menu> -->
 
         <x-layout.sidebar-menu class="dropdown">
             <x-layout.sidebar-items dropdown url="#" icons="bi bi-gear-wide-connected" label="Lainnya"/>

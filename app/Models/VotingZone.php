@@ -44,5 +44,10 @@ class VotingZone extends Model
     {
         return $this->belongsTo(City::class, 'city_id');
     }
+
+     public function votingZone()
+    {
+        return $this->belongsTo(VotingZone::class, 'voting_zone_id');
+    }
  
 }

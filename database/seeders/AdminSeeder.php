@@ -18,6 +18,8 @@ class AdminSeeder extends Seeder
             'email' => 'ricopahlefi22@gmail.com',
             'email_verified_at' => Carbon::now(),
             'level' => true,
+            'admin_log' => '00000',
+            'voting_zone_id' => '00000',
             'password' => bcrypt('12341234'),
         ]);
 
@@ -27,6 +29,8 @@ class AdminSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'email_verified_at' => Carbon::now(),
             'level' => true,
+            'admin_log' => '00000',
+            'voting_zone_id' => '00000',
             'password' => bcrypt('12345678'),
         ]);
 
@@ -35,6 +39,8 @@ class AdminSeeder extends Seeder
             'email' => 'user@gmail.com',
             'email_verified_at' => Carbon::now(),
             'level' => false,
+            'admin_log' => '00000',
+            'voting_zone_id' => '00000',
             'password' => bcrypt('12345678'),
         ]);
 

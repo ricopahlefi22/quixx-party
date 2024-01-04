@@ -41,4 +41,29 @@ class Admin extends Authenticatable{
     static $pesan = [
         'email.required' => 'Inputan tidak boleh kosong !'
     ];
+
+
+      public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function zones()
+    {
+        return $this->belongsTo(VotingZone::class, 'voting_zone_id');
+    }
+
+     public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id');
+    }
+     public function village()
+    {
+        return $this->belongsTo(Village::class, 'village_id');
+    }
+
+     public function adminLog()
+    {
+        return $this->belongsTo(Admin::class, 'admin_log');
+    }
 }

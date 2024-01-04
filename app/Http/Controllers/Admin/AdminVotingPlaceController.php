@@ -15,27 +15,28 @@ use Yajra\DataTables\Facades\DataTables;
 
 use App\Models\Village;
 
-class AdminVotingResultsController extends Controller
+class AdminVotingPlaceController extends Controller
 {
    function index(){
 
-    return view('admin.voting-results.index');
+    return view('admin.voting-place.index');
    }
 
 
 
-   function city(){
+   function district(){
 
-    return view('admin.voting-results.city');
+    return view('admin.voting-place.district');
+   }
+
+    function city(){
+
+    return view('admin.voting-place.city');
    }
 
 
     function village(){
 
-    return view('admin.voting-results.village');
-   }
-
-   function hasilC1(){
-    return view('admin.voting-results.hasil-c1');
+    return view('admin.voting-place.village');
    }
 }

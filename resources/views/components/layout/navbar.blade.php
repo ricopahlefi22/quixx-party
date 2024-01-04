@@ -16,7 +16,7 @@
                 <div class="user-image">
                     <img src="template/assets/img/user.jpg" alt="">
                 </div>
-                <span class="name">Muhammad Yusuf A.R</span>
+                <span class="name">{{Auth::user()->name}} || {{Auth::user()->email}}</span>
             </a>
             <ul class="dropdown-menu">
                 <li>
