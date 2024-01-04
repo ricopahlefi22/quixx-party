@@ -6,7 +6,7 @@
     <ul>
         <x-layout.sidebar-header brand="Quixx" />
         <x-layout.sidebar-menu>
-            <x-layout.sidebar-items url="{{ url('/') }}" icons="house-fill" label="Dashboard"/>
+            <x-layout.sidebar-items url="{{ url('/beranda') }}" icons="house-fill" label="Dashboard"/>
         </x-layout.sidebar-menu>
         <x-layout.sidebar-menu class="dropdown">
             <x-layout.sidebar-items dropdown url="#" icons="folder-fill" label="Master Data"/>
@@ -39,7 +39,7 @@
     <ul>
         <x-layout.sidebar-header brand="Quixx Admin" />
         <x-layout.sidebar-menu>
-            <x-layout.sidebar-items url="{{ url('/') }}" icons="house-fill" label="Beranda"/>
+            <x-layout.sidebar-items url="{{ url('/beranda') }}" icons="house-fill" label="Beranda"/>
         </x-layout.sidebar-menu>
 
         <x-layout.sidebar-menu class="dropdown">

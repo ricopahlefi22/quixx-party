@@ -24,7 +24,6 @@ class AdminVotingResultsController extends Controller
 
 
 
-
    function city(){
 
     return view('admin.voting-results.city');

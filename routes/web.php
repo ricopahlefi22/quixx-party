@@ -21,9 +21,6 @@ Route::controller(AuthController::class)->group(function () {
 
 
 
-
-
-
 // START CONTROLLER MASTER
 Route::group(['domain' => 'master.localhost'], function () {
     Route::middleware('web')->group(function () {
@@ -53,7 +50,17 @@ Route::middleware('web')->group(function () {
         Route::get('city', 'city');
         Route::get('district', 'district');
         Route::get('village', 'village');
-        Route::get('c-1', 'c1');
+
+    });
+
+ });
+
+  Route::prefix('voting-results')->group(function(){
+     Route::controller(AdminVotingPlaceController::class)->group(function () {
+        Route::get('voting-results', 'index');
+        Route::get('city', 'city');
+        Route::get('district', 'district');
+        Route::get('village', 'village');
 
     });
 

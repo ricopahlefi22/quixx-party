@@ -8,6 +8,7 @@ Route::controller(VotingResultController::class)->group(function () {
         Route::get('/', 'index');
         Route::get('district/{id}', 'district');
         Route::get('village/{id}', 'village');
+        Route::get('city/{id}', 'city');
     });
 
     Route::prefix('input-voting-results')->group(function () {
