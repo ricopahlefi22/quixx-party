@@ -62,8 +62,7 @@ class Admin extends Authenticatable{
         return $this->belongsTo(Village::class, 'village_id');
     }
 
-     public function adminLog()
-    {
+     public function adminLog(){
         return $this->belongsTo(Admin::class, 'admin_log');
     }
 }
