@@ -30,7 +30,7 @@
     <!-- Simplebar -->
     <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
 
-    <!-- Simplebar -->
+    <!-- Sweetalert2 -->
     <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
 
     <!-- Shortcut -->

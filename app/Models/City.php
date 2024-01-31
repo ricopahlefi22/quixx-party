@@ -38,4 +38,9 @@ class City extends Model
     {
         return 'string';
     }
+
+    public function votingZones()
+    {
+        return $this->hasMany(VotingZone::class, 'city_id')->orderBy('name');
+    }
 }

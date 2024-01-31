@@ -18,7 +18,7 @@ class VotingResultController extends Controller
 {
     function index()
     {
-        if (Auth::guard('owner')->check()) {
+        if (Auth::user()->level == true) {
             $data['title'] = 'Hasil Perhitungan Cepat';
             $data['districts'] = District::all();
             $data['villages'] = Village::all();
@@ -38,7 +38,7 @@ class VotingResultController extends Controller
                 $item->total_suara_kandidat = $total_suara_kandidat;
             }
 
-            return view('owner.voting-result.index', $data);
+            return view('voting-result.index', $data);
         }
 
         return abort(404);
@@ -105,7 +105,7 @@ class VotingResultController extends Controller
         return view('admin.input-voting-result.index', $data);
     }
 
-    function inputVotingPlace(Request $request)
+    function inputVotingResult(Request $request)
     {
         $data['title'] = 'Data Hasil Perolehan Suara (C1)';
         $data['votingPlace'] = VotingPlace::findOrFail(Crypt::decrypt($request->id));

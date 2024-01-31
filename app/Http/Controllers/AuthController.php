@@ -38,7 +38,8 @@ class AuthController extends Controller
                     'code' => 200,
                     'status' => 'Berhasil!',
                     'message' => 'Halo Admin! kami akan mengantarmu ke dalam sistem.',
-                    'redirect_url' => 'http://master.'.env('DOMAIN').':8000'
+                    // 'redirect_url' => 'http://master.'.env('DOMAIN').':8000'
+                    'redirect_url' => '/'
                 ]);
             } else {
                 return response()->json([
