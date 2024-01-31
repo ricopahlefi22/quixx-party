@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        yajra\DataTables\DataTablesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -182,7 +182,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+        'DataTables' => yajra\DataTables\Facades\DataTables::class,
     ])->toArray(),
 
 ];

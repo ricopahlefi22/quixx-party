@@ -22,8 +22,9 @@ class AdminFactory extends Factory
 
         return [
             'name' => $faker->name,
-            'email' => $faker->email,
-            'email_verified_at' => Carbon::now(),
+            'username' => $faker->userName,
+            'phone_number' => $faker->phoneNumber,
+            'phone_number_verified_at' => Carbon::now(),
             'password' => bcrypt('12341234'),
             'level' => $faker->boolean(),
         ];

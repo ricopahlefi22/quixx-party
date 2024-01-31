@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('gender')->nullable();
             $table->string('city')->nullable();
-            $table->foreignId('party_id')->nullable();
-            $table->foreign('party_id')->references('id')->on('parties');
+            $table->foreignUuid('party_id')->nullable();
+            $table->foreign('party_id')->references('party_id')->on('parties');
             $table->timestamps();
             $table->softDeletes();
         });

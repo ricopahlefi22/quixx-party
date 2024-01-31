@@ -15,32 +15,20 @@ class AdminSeeder extends Seeder
     {
         Admin::create([
             'name' => 'Rico Pahlefi',
-            'email' => 'ricopahlefi22@gmail.com',
-            'email_verified_at' => Carbon::now(),
+            'username' => 'ricopahlefi',
+            'phone_number' => '089528597031',
+            'phone_number_verified_at' => Carbon::now(),
             'level' => true,
-            'admin_log' => '00000',
-            'voting_zone_id' => '00000',
             'password' => bcrypt('12341234'),
         ]);
 
 
         Admin::create([
-            'name' => 'Naldy',
-            'email' => 'admin@gmail.com',
-            'email_verified_at' => Carbon::now(),
-            'level' => true,
-            'admin_log' => '00000',
-            'voting_zone_id' => '00000',
-            'password' => bcrypt('12345678'),
-        ]);
-
-        Admin::create([
-            'name' => 'Naldy',
-            'email' => 'user@gmail.com',
-            'email_verified_at' => Carbon::now(),
+            'name' => 'Sunardi',
+            'username' => 'naldy',
+            'phone_number' => '08123123123',
+            'phone_number_verified_at' => Carbon::now(),
             'level' => false,
-            'admin_log' => '00000',
-            'voting_zone_id' => '00000',
             'password' => bcrypt('12345678'),
         ]);
 
