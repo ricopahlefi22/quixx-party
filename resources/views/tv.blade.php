@@ -171,7 +171,7 @@
                     @endforeach
             ],
         datasets: [{
-            label: 'Total Pendapatan Tahun Ini',
+            label: 'Total Suara',
         backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area dalam bar
         borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
         borderWidth: 1,                            // Lebar garis tepi bar
@@ -183,18 +183,27 @@
     }]
     };
 
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
+  var options = {
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
+    plugins: {
+        datalabels: {
+            anchor: 'end',
+            align: 'end',
+            formatter: function(value, context) {
+                return 90; // Sesuaikan format label sesuai kebutuhan Anda
             }
         }
-    };
+    }
+};
 
     var myBarChart = new Chart(ctx, {
-    type: 'bar',      // Tipe chart adalah bar
-    data: data,       // Menggunakan data yang telah didefinisikan
-    options: options  // Menggunakan opsi yang telah didefinisikan
+    type: 'bar',    
+    data: data,     
+    options: options 
 });
 
 
@@ -209,7 +218,7 @@
                     @endforeach
             ],
         datasets: [{
-            label: 'Total Pendapatan Tahun Ini',
+            label: 'Total Suara',
         backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area dalam bar
         borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
         borderWidth: 1,                            // Lebar garis tepi bar
@@ -230,9 +239,9 @@
     };
 
     var myBarChart = new Chart(ctx, {
-    type: 'bar',      // Tipe chart adalah bar
-    data: data,       // Menggunakan data yang telah didefinisikan
-    options: options  // Menggunakan opsi yang telah didefinisikan
+    type: 'bar',    
+    data: data,     
+    options: options 
 });
 
 
@@ -246,7 +255,7 @@
                     @endforeach
             ],
         datasets: [{
-            label: 'Total Pendapatan Tahun Ini',
+            label: 'Total Suara',
         backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area dalam bar
         borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
         borderWidth: 1,                            // Lebar garis tepi bar
@@ -267,9 +276,9 @@
     };
 
     var myBarChart = new Chart(ctx, {
-    type: 'bar',      // Tipe chart adalah bar
-    data: data,       // Menggunakan data yang telah didefinisikan
-    options: options  // Menggunakan opsi yang telah didefinisikan
+    type: 'bar',    
+    data: data,     
+    options: options 
 });
 
 
