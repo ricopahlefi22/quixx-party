@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}" />
 
-
-
-
 </head>
 
 <body data-layout-mode="light"
@@ -120,163 +117,38 @@
                         </div> <!--end inner-grid-->
                     </div>
                 </div>
-        
-
-
-            <div class="md:col-span-4 lg:col-span-4 xl:col-span-3" style="margin-top: 20px;">
-                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full  relative overflow-hidden ">
+            </div>
+            <div class="md:col-span-4 lg:col-span-4 xl:col-span-3">
+                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full p-4 relative overflow-hidden ">
                     <div class="chart-container">
-                      <canvas id="chart1" width="400" height="200"></canvas>
+                        <canvas id="bar" height="290"></canvas>
                     </div>
                 </div> <!--end inner-grid-->
             </div>
-
-             <div class="md:col-span-4 lg:col-span-4 xl:col-span-3" style="margin-top: 20px;">
-                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full  relative overflow-hidden ">
+            <div class="md:col-span-4 lg:col-span-4 xl:col-span-3">
+                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full p-4 relative overflow-hidden ">
                     <div class="chart-container">
-                      <canvas id="chart2" width="400" height="200"></canvas>
+                        <canvas id="bar" height="290"></canvas>
                     </div>
                 </div> <!--end inner-grid-->
             </div>
-
-              <div class="md:col-span-4 lg:col-span-4 xl:col-span-3" style="margin-top: 20px;">
-                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full  relative overflow-hidden ">
-                    <div class="chart-container">
-                      <canvas id="chart3" width="400" height="200"></canvas>
-                    </div>
-                </div> <!--end inner-grid-->
-            </div>
-       
         </div>
-     </div>
-
         @include('template.sections.footer')
     </div><!--end container-->
 
 
-    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-     <!-- Jquery -->
+    <!-- Jquery -->
     <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+
+    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/chart.js/chart.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/echarts/echarts.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/analytics-index.init.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
     <!-- Shortcut -->
     <script type="text/javascript" src="{{ asset('assets/js/shortcut.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    var ctx = document.getElementById('chart1').getContext('2d');
-    var data = {
-        labels: [
-             @foreach ($list_party->take(10) as $item)
-                    "{{ Str::limit($item->name,20) }}",
-                    @endforeach
-            ],
-        datasets: [{
-            label: 'Total Pendapatan Tahun Ini',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area dalam bar
-        borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
-        borderWidth: 1,                            // Lebar garis tepi bar
-        data: [
-             @foreach ($list_party->take(10)->sortByDesc('totalVotes') as $item)
-                    "{{ $item->totalVotes }}",
-                    @endforeach
-        ]                    // Data nilai bar
-    }]
-    };
-
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    };
-
-    var myBarChart = new Chart(ctx, {
-    type: 'bar',      // Tipe chart adalah bar
-    data: data,       // Menggunakan data yang telah didefinisikan
-    options: options  // Menggunakan opsi yang telah didefinisikan
-});
-
-
-    // CHART 2
-
-
-    var ctx = document.getElementById('chart2').getContext('2d');
-    var data = {
-        labels: [
-             @foreach ($list_candidate->take(10) as $item)
-                    "{{ Str::limit($item->name,20) }}",
-                    @endforeach
-            ],
-        datasets: [{
-            label: 'Total Pendapatan Tahun Ini',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area dalam bar
-        borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
-        borderWidth: 1,                            // Lebar garis tepi bar
-        data: [
-             @foreach ($list_candidate->take(10)->sortByDesc('totalVotes') as $item)
-                    "{{ $item->totalVotes }}",
-                    @endforeach
-        ]                    // Data nilai bar
-    }]
-    };
-
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    };
-
-    var myBarChart = new Chart(ctx, {
-    type: 'bar',      // Tipe chart adalah bar
-    data: data,       // Menggunakan data yang telah didefinisikan
-    options: options  // Menggunakan opsi yang telah didefinisikan
-});
-
-
-
-    // CHART 3
-    var ctx = document.getElementById('chart3').getContext('2d');
-    var data = {
-        labels: [
-             @foreach ($list_party->take(10) as $item)
-                    "{{ Str::limit($item->name,20) }}",
-                    @endforeach
-            ],
-        datasets: [{
-            label: 'Total Pendapatan Tahun Ini',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area dalam bar
-        borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
-        borderWidth: 1,                            // Lebar garis tepi bar
-        data: [
-             @foreach ($list_party->take(10)->sortByDesc('totalVotes') as $item)
-                    "{{ $item->totalVotes }}",
-                    @endforeach
-        ]                    // Data nilai bar
-    }]
-    };
-
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    };
-
-    var myBarChart = new Chart(ctx, {
-    type: 'bar',      // Tipe chart adalah bar
-    data: data,       // Menggunakan data yang telah didefinisikan
-    options: options  // Menggunakan opsi yang telah didefinisikan
-});
-
-
-
-
-</script>
-  
 
     <script>
         $.ajaxSetup({

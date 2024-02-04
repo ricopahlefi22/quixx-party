@@ -24,4 +24,10 @@ class Party extends Model
     {
         return $this->hasMany(Candidate::class);
     }
+
+
+     public function votingResults()
+    {
+        return $this->hasMany(VotingResult::class);
+    }
 }
