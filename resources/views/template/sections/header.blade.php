@@ -147,10 +147,12 @@
                 <div class="dropdown-menu dropdown-menu-right z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800"
                     id="navUserdata">
                     <div class="py-3 px-4">
-                        <span
-                            class="block text-sm font-medium text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
-                        <span
-                            class="block truncate text-sm font-normal text-gray-500 dark:text-gray-400">{{ Auth::user()->username }}</span>
+                        <span class="block text-sm font-medium text-gray-900 dark:text-white">
+                            {{ Auth::user()->name }}
+                        </span>
+                        <span class="block truncate text-sm font-normal text-gray-500 dark:text-gray-400">
+                            Admin {{ Auth::user()->votingZone->name }} {{ Auth::user()->city->name }}
+                        </span>
                     </div>
                     <ul class="py-1" aria-labelledby="navUserdata">
                         <li>

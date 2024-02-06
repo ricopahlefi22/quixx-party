@@ -16,7 +16,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('otp', 'otp');
     Route::get('logout', 'logout');
 });
-Route::middleware('web')->group(function () {
+Route::middleware('auth:web')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard']);
     Route::get('beranda', [DashboardController::class, 'dashboard']);
 
