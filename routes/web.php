@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -30,5 +31,9 @@ Route::middleware('auth:web')->group(function () {
         Route::get('/', 'index');
         Route::get('{id}', 'tv');
         Route::post('store', 'store');
+    });
+
+    Route::prefix('administrators')->controller(AdminController::class)->group(function () {
+        Route::get('/', 'index');
     });
 });

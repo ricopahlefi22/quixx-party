@@ -1,11 +1,5 @@
 <nav class="border-gray-200 bg-gray-900 px-2.5 py-2.5 shadow-sm dark:bg-slate-800 sm:px-4 block print:hidden">
     <div class="container mx-0 flex max-w-full flex-wrap items-center lg:mx-auto">
-        <div class="flex items-center">
-            <a href="{{ url('/') }}" class="flex items-center outline-none">
-                <img src="assets/images/logo-sm.png" alt="" class="h-6" />
-            </a>
-        </div>
-
         <div class="order-2 hidden w-full items-center justify-between md:order-1 md:ml-5 md:flex md:w-auto"
             id="mobile-menu-2">
             <ul
