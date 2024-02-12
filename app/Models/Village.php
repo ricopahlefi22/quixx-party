@@ -33,4 +33,9 @@ class Village extends Model
     {
         return $this->belongsTo(District::class, 'district_id');
     }
+
+    public function votingPlaces()
+    {
+        return $this->hasMany(VotingPlace::class, 'village_id');
+    }
 }

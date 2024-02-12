@@ -18,9 +18,14 @@ class District extends Model
         'voting_zone_id',
     ];
 
-    public function city()
+    public function villages()
     {
-        return $this->belongsTo(City::class, 'city_id');
+        return $this->hasMany(Village::class, 'district_id');
+    }
+
+    public function votingPlaces()
+    {
+        return $this->hasMany(VotingPlace::class, 'district_id');
     }
 
     public function zones()

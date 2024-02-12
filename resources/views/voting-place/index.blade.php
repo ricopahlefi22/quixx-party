@@ -15,7 +15,7 @@
 @section('content')
     <div x-data="basic">
         <div class="panel">
-            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Kecamatan</h5>
+            <h5 class="text-lg font-semibold dark:text-white-light">Tabel TPS</h5>
             <table id="table" class="table-hover whitespace-nowrap"></table>
         </div>
     </div>
@@ -31,12 +31,13 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Jumlah Desa', 'Jumlah TPS'],
+                            headings: ['No', 'Nama', 'Kecamatan'],
                             data: [
-                                @foreach ($districts as $district)
-                                    [{{ $loop->iteration }}, '{{ $district->name }}',
-                                        '{{ $district->villages->count() }}',
-                                        '{{ $district->votingPlaces->count() }}',
+                                @foreach ($voting_places as $voting_place)
+                                    [
+                                        {{ $loop->iteration }},
+                                        '{{ $voting_place->village->name.' '.$voting_place->name }}',
+                                        '{{ $voting_place->district->name }}',
                                     ],
                                 @endforeach
                             ],
