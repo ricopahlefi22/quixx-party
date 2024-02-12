@@ -17,7 +17,7 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-body">
-						<div x-ref="barChart" class="bg-white dark:bg-black rounded-lg" id="chart1"></div>
+						<div class="bg-white dark:bg-black rounded-lg" id="chart1"></div>
 					</div>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<div  x-ref="barChart" class="bg-white dark:bg-black rounded-lg" id="chart2"></div>
+								<div  class="bg-white dark:bg-black rounded-lg" id="chart2"></div>
 							</div>
 						</div>
 					</div>
@@ -34,7 +34,7 @@
 					<div class="col-md-12 col-12 mt-3">
 						<div class="card">
 							<div class="card-body">
-								<div  x-ref="barChart" class="bg-white dark:bg-black rounded-lg" id="chart3"></div>
+								<div  class="bg-white dark:bg-black rounded-lg" id="chart3"></div>
 							</div>
 						</div>
 					</div>
@@ -46,161 +46,293 @@
 	@include('template.sections.js')
 
 	<script>
-		var options = {
-			series: [
-			{
-				name: 'Total Suara Partai',
-				data: [
-					@foreach ($list_party->sortByDesc('totalVotes') as $village)
-					{
-						x: "{{ $village->short_name }}",
-						y: "{{ $village->totalVotes}}",
-					},
-					@endforeach
-					]
-			}
-			],
-			chart: {
-				height: 650,
-				type: 'bar'
-			},
-			plotOptions: {
-				bar: {
-					horizontal: true,
-				}
-			},
-			colors: ['#3F51B5'],
-			dataLabels: {
-				formatter: function(val, opt) {
-					const goals =
-					opt.w.config.series[opt.seriesIndex].data[opt.dataPointIndex]
-					.goals
-
-					if (goals && goals.length) {
-						return `${val} / ${goals[0].value}`
-					}
-					return val
-				}
-			},
-			legend: {
-				show: true,
-				showForSingleSeries: true,
-			}
-		};
-
-		var chart = new ApexCharts(document.querySelector("#chart1"), options);
-		chart.render();
-	</script>
-
-	<!-- chart 2 -->
-	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
-            // Data untuk diagram batang
-			var chartData = {
-				series: [{
-					data: [
-						@foreach ($list_candidate->sortByDesc('totalVotes')->take(10) as $village)
-						{
-							x: "{{ $village->name }}",
-							y: "{{ $village->totalVotes}}",
+		
+
+			// star chart 1
+			function updateData1() {
+				return new Promise((resolve, reject) => {
+					$.ajax({
+						url: '{{ url("tv/get-suara1") }}',
+						method: 'GET',
+						dataType: 'json',
+						success: function(response) {
+							const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+
+							const top10Data = sortedData.slice(0, 18);
+							resolve(top10Data);
 						},
-						@endforeach
+						error: function(error) {
+							reject(error);
+						}
+					});
+				});
+			}
 
-						]
-				}],
-				chart: {
-					type: 'bar',
-					height: 300
-				},
-				plotOptions: {
-					bar: {
-						horizontal: false,
-						columnWidth: '55%',
-						endingShape: 'rounded'
-					},
-				},
-				dataLabels: {
-					enabled: false
-				},
-				title: {
-					text: 'KANDIDAT TERTINGGI DALAM PARTAI',
-					align: 'center'
-				},
-				yaxis: {
-					title: {
-						text: 'Total Suara'
-					}
-				},
-				fill: {
-					colors: ['#3F51B5']
-				}
-			};
+			function buildChartData1(data) {
+				if (Array.isArray(data)) {
+					return [{
+						data: data.map(party => ({
+							x: party.party_name,
+							y: parseInt(party.total_votes)
+						}))
+					}];
+				} else {
+					console.error('Data yang diterima tidak dalam bentuk array:', data);
+                    return []; // atau berikan nilai default jika perlu
+                }
+            }
 
-            // Inisialisasi diagram batang dengan konfigurasi data di atas
-			var chart = new ApexCharts(document.querySelector("#chart2"), chartData);
-			chart.render();
-		});
-	</script>
+            function updateChart1() {
+            	updateData1()
+            	.then((response) => {
+            		if (chart1) {
+            			chart1.updateSeries(buildChartData1(response));
+            		} else {
+            			console.error('chart1 belum didefinisikan.');
+            		}
+
+            		setTimeout(updateChart1, 5000);
+            	})
+            	.catch((error) => {
+            		console.error('Gagal memperbarui data:', error);
+            	});
+            }
+
+            // Mengatur data awal chart
+            updateData1().then((response) => {
+            	var chartData1 = {
+            		series: buildChartData1(response),
+            		chart: {
+            			type: 'bar',
+            			height: 650
+            		},
+            		plotOptions: {
+            			bar: {
+            				horizontal: true,
+            				columnWidth: '55%',
+            				endingShape: 'rounded'
+            			},
+            		},
+            		dataLabels: {
+            			enabled: false
+            		},
+            		title: {
+            			text: 'TOTAL SUARA PARTAI',
+            			align: 'center'
+            		},
+            		yaxis: {
+            			title: {
+            				text: 'Total Suara'
+            			}
+            		},
+            		fill: {
+            			colors: ['#3F51B5']
+            		}
+            	};
+            	chart1 = new ApexCharts(document.querySelector("#chart1"), chartData1);
+            	chart1.render();
+
+            	setTimeout(updateChart1, 5000);
+            });
+			// END CHART 1 +===++++
 
 
-	<!-- chart 3 -->
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function(event) {
-            // Data untuk diagram batang
-			var chartData = {
-				series: [{
-					data: [
-						@foreach ($list_candidate_all->sortByDesc('totalVotesAll')->take(10) as $village)
-						{
-							x: "{{ $village->name }}",
-							y: "{{ $village->totalVotesAll}}",
+
+			// START CHART 2
+
+ // star chart 2
+			function updateData2() {
+				return new Promise((resolve, reject) => {
+					$.ajax({
+						url: '{{ url("tv/get-suara2") }}',
+						method: 'GET',
+						dataType: 'json',
+						success: function(response) {
+							const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+
+							const top10Data = sortedData.slice(0, 10);
+							resolve(top10Data);
 						},
-						@endforeach
+						error: function(error) {
+							reject(error);
+						}
+					});
+				});
+			}
 
-						]
-				}],
-				chart: {
-					type: 'bar',
-					height: 300
-				},
-				plotOptions: {
-					bar: {
-						horizontal: false,
-						columnWidth: '55%',
-						endingShape: 'rounded'
-					},
-				},
-				dataLabels: {
-					enabled: false
-				},
-				title: {
-					text: 'KANDIDAT TERTINGGI SEMUA PARTAI',
-					align: 'center'
-				},
-				yaxis: {
-					title: {
-						text: 'Total Suara'
-					}
-				},
-				fill: {
-					colors: ['#3F51B5']
-				}
-			};
+			function buildChartData2(data) {
+				if (Array.isArray(data)) {
+					return [{
+						data: data.map(candidate => ({
+							x: candidate.candidate_name,
+							y: parseInt(candidate.total_votes)
+						}))
+					}];
+				} else {
+					console.error('Data yang diterima tidak dalam bentuk array:', data);
+                    return []; // atau berikan nilai default jika perlu
+                }
+            }
 
-			var chart = new ApexCharts(document.querySelector("#chart3"), chartData);
-			chart.render();
-		});
+            function updateChart2() {
+            	updateData2()
+            	.then((response) => {
+            		if (chart2) {
+            			chart2.updateSeries(buildChartData2(response));
+            		} else {
+            			console.error('chart2 belum didefinisikan.');
+            		}
+
+            		setTimeout(updateChart2, 5000);
+            	})
+            	.catch((error) => {
+            		console.error('Gagal memperbarui data:', error);
+            	});
+            }
+
+            // Mengatur data awal chart
+            updateData2().then((response) => {
+            	var chartData2 = {
+            		series: buildChartData2(response),
+            		chart: {
+            			type: 'bar',
+            			height: 300
+            		},
+            		plotOptions: {
+            			bar: {
+            				horizontal: false,
+            				columnWidth: '55%',
+            				endingShape: 'rounded'
+            			},
+            		},
+            		dataLabels: {
+            			enabled: false
+            		},
+            		title: {
+            			text: 'KANDIDAT TERTINGGI SEMUA PARTAI',
+            			align: 'center'
+            		},
+            		yaxis: {
+            			title: {
+            				text: 'Total Suara'
+            			}
+            		},
+            		fill: {
+            			colors: ['#3F51B5']
+            		}
+            	};
+            	chart2 = new ApexCharts(document.querySelector("#chart2"), chartData2);
+            	chart2.render();
+
+            	setTimeout(updateChart2, 5000);
+            });
+			// END CHART 2 +===++++
 
 
-	</script>
 
 
-	<script>
-		setTimeout(function(){
-			location.reload();
-		}, 60000);
-	</script>
+            // star chart 3
+			function updateData3() {
+				return new Promise((resolve, reject) => {
+					$.ajax({
+						url: '{{ url("tv/get-suara3") }}',
+						method: 'GET',
+						dataType: 'json',
+						success: function(response) {
+							const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+
+							const top10Data = sortedData.slice(0, 10);
+							resolve(top10Data);
+						},
+						error: function(error) {
+							reject(error);
+						}
+					});
+				});
+			}
+
+			function buildChartData3(data) {
+				if (Array.isArray(data)) {
+					return [{
+						data: data.map(candidate => ({
+							x: candidate.candidate_name,
+							y: parseInt(candidate.total_votes)
+						}))
+					}];
+				} else {
+					console.error('Data yang diterima tidak dalam bentuk array:', data);
+                    return []; // atau berikan nilai default jika perlu
+                }
+            }
+
+            function updateChart3() {
+            	updateData3()
+            	.then((response) => {
+            		if (chart3) {
+            			chart3.updateSeries(buildChartData3(response));
+            		} else {
+            			console.error('chart3 belum didefinisikan.');
+            		}
+
+            		setTimeout(updateChart3, 5000);
+            	})
+            	.catch((error) => {
+            		console.error('Gagal memperbarui data:', error);
+            	});
+            }
+
+            // Mengatur data awal chart
+            updateData3().then((response) => {
+            	var chartData3 = {
+            		series: buildChartData3(response),
+            		chart: {
+            			type: 'bar',
+            			height: 300
+            		},
+            		plotOptions: {
+            			bar: {
+            				horizontal: false,
+            				columnWidth: '55%',
+            				endingShape: 'rounded'
+            			},
+            		},
+            		dataLabels: {
+            			enabled: false
+            		},
+            		title: {
+            			text: 'KANDIDAT TERTINGGI DI PARTAI ANDA',
+            			align: 'center'
+            		},
+            		yaxis: {
+            			title: {
+            				text: 'Total Suara'
+            			}
+            		},
+            		fill: {
+            			colors: ['#3F51B5']
+            		}
+            	};
+            	chart3 = new ApexCharts(document.querySelector("#chart3"), chartData3);
+            	chart3.render();
+
+            	setTimeout(updateChart3, 5000);
+            });
+
+
+
+        });
+    </script>
+
+
+
+
+<script>
+	setTimeout(function(){
+		location.reload();
+	}, 60000);
+</script>
 
 
 </body>

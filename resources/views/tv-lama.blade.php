@@ -1,175 +1,339 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>{{ $title }} - Quixx {{ env('PARTY') }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta content="Tailwind Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="" name="Mannatthemes" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
-
-
-    <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}" />
-
+    @include('template.sections.style')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+<body>
+    <div class="container-fluid">
 
-<body data-layout-mode="light"
-    class="bg-gray-100 dark:bg-gray-900 bg-[url('../images/bg-body.png')] dark:bg-[url('../images/bg-body-2.png')]">
-    <!-- leftbar-tab-menu -->
-    <div class="container mx-auto px-2  min-h-[calc(100vh-138px)]  relative pb-14">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-4">
-            <div class="md:row-span-1 lg:row-span-1 xl:row-span-2 md:col-span-2 lg:col-span-2 xl:col-span-1  ">
-                <div
-                    class="h-full bg-white dark:bg-slate-800 shadow rounded-md w-full p-4 relative overflow-hidden grid md:gap-4 lg:gap-2 xl:gap-4 md:grid-cols-1 lg:grid-cols-4">
-                    <div class="md:col-span-4 lg:col-span-2 xl:col-span-4 self-center">
-                        <h3
-                            class="text-slate-800 dark:text-slate-200 text-center text-2xl md:text-2xl lg:text-lg xl:text-2xl font-bold leading-8 py-2 md:py-2 lg:py-1 xl:py-2">
-                            Selamat Datang!
-                        </h3>
-                        <div
-                            class="text-center text-slate-400 text-base md:text-base lg:text-sm xl:text-base font-medium py-3">
-                            Hubungi Kami Jika Anda Mengalami Kendala Dalam Penggunaan Sistem.
-                        </div>
-                        <div class="text-center py-3 md:mb-3 lg:mb-0 xl:mb-3">
-                            <a href="https://wa.me/085171121070" target="_blank"
-                                class="px-3 py-2 lg:px-4 bg-green-500 text-white text-sm font-semibold rounded hover:bg-blue-600">
-                                <i class="ti ti-brand-whatsapp"></i> Hubungi
-                            </a>
-                        </div>
-                    </div>
-                    <div class="md:col-span-4 lg:col-span-2 xl:col-span-4 block dark:hidden">
-                        <img src="assets/images/widgets/user.png" alt="" class="px-3 mb-2 w-60 mx-auto">
-                    </div>
-                    <div class="md:col-span-4 lg:col-span-2 xl:col-span-4 hidden dark:block">
-                        <img src="assets/images/widgets/user-light.png" alt="" class="px-3 mb-2 w-60 mx-auto">
-                    </div>
-                </div> <!--end inner-grid-->
+        <div class="row">
+            <div class="col-md-12">
+                <center>
+                    <h2><img src="{{ asset('logo.png') }}" width="100px" alt="">  KETAPANG S14P</h2>
+                    <h4>HASIL PEROLEHAN SUARA</h4>
+                </center>
             </div>
-            <div class="sm:col-span-3 md:col-span-2 lg:col-span-2 xl:col-span-3">
-                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="md:col-span-2 lg:col-span-2 xl:col-span-1">
-                        <div
-                            class="bg-white dark:bg-slate-800 shadow  rounded-md w-full p-4 relative overflow-hidden bg-[url('../images/widgets/p-1.png')] bg-no-repeat bg-contain">
-                            <div class="flex justify-between xl:gap-x-2 items-cente">
-                                <div
-                                    class="absolute -left-6 -top-4 text-blue-500 p-3 text-center inline-flex items-center justify-center w-32 h-32 ">
-                                    <i class="ti ti-users text-3xl"></i>
-                                </div>
-                                <div class="self-center ml-auto">
-                                    <h3 class="my-1 font-semibold text-2xl dark:text-slate-200">
-                                        {{ $voting_result_count }}</h3>
-                                    <p class="text-gray-400 mb-0 font-medium">Suara Partai</p>
-                                </div>
-                            </div>
-                        </div> <!--end inner-grid-->
-                    </div>
-                    <div class="md:col-span-2 lg:col-span-2 xl:col-span-1">
-                        <div
-                            class="bg-white dark:bg-slate-800 shadow  rounded-md w-full p-4 relative overflow-hidden bg-[url('../images/widgets/p-1.png')] bg-no-repeat bg-contain">
-                            <div class="flex justify-between xl:gap-x-2 items-cente">
-                                <div
-                                    class="absolute -left-6 -top-4 text-blue-500 p-3 text-center inline-flex items-center justify-center w-32 h-32 ">
-                                    <i class="ti ti-clock text-3xl"></i>
-                                </div>
-                                <div class="self-center ml-auto">
-                                    <h3 class="my-1 font-semibold text-2xl dark:text-slate-200">{{ $district_count }}
-                                    </h3>
-                                    <p class="text-gray-400 mb-0 font-medium">Jumlah Kecamatan</p>
-                                </div>
-                            </div>
-                        </div> <!--end inner-grid-->
-                    </div>
-                    <div class="md:col-span-2 lg:col-span-2 xl:col-span-1">
-                        <div
-                            class="bg-white dark:bg-slate-800 shadow  rounded-md w-full p-4 relative overflow-hidden bg-[url('../images/widgets/p-1.png')] bg-no-repeat bg-contain">
-                            <div class="flex justify-between xl:gap-x-2 items-cente">
-                                <div
-                                    class="absolute -left-6 -top-4 text-blue-500 p-3 text-center inline-flex items-center justify-center w-32 h-32 ">
-                                    <i class="ti ti-activity text-3xl"></i>
-                                </div>
-                                <div class="self-center ml-auto">
-                                    <h3 class="my-1 font-semibold text-2xl dark:text-slate-200">{{ $village_count }}
-                                    </h3>
-                                    <p class="text-gray-400 mb-0 font-medium">Jumlah Desa</p>
-                                </div>
-                            </div>
-                        </div> <!--end inner-grid-->
-                    </div>
-                    <div class="md:col-span-2 lg:col-span-2 xl:col-span-1">
-                        <div
-                            class="bg-white dark:bg-slate-800 shadow rounded-md w-full p-4 relative overflow-hidden bg-[url('../images/widgets/p-1.png')] bg-no-repeat bg-contain">
-                            <div class="flex justify-between xl:gap-x-2 items-cente">
-                                <div
-                                    class="absolute -left-6 -top-4 text-blue-500 p-3 text-center inline-flex items-center justify-center w-32 h-32 ">
-                                    <i class="ti ti-confetti text-3xl"></i>
-                                </div>
-                                <div class="self-center ml-auto">
-                                    <h3 class="my-1 font-semibold text-2xl dark:text-slate-200">
-                                        {{ $voting_place_count }}</h3>
-                                    <p class="text-gray-400 mb-0 font-medium">Jumlah TPS</p>
-                                </div>
-                            </div>
-                        </div> <!--end inner-grid-->
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="bg-white dark:bg-black rounded-lg" id="chart1"></div>
                     </div>
                 </div>
             </div>
-            <div class="md:col-span-4 lg:col-span-4 xl:col-span-3">
-                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full p-4 relative overflow-hidden ">
-                    <div class="chart-container">
-                        <canvas id="bar" height="290"></canvas>
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div  class="bg-white dark:bg-black rounded-lg" id="chart2"></div>
+                            </div>
+                        </div>
                     </div>
-                </div> <!--end inner-grid-->
-            </div>
-            <div class="md:col-span-4 lg:col-span-4 xl:col-span-3">
-                <div class="bg-white dark:bg-slate-800 shadow rounded-md h-full w-full p-4 relative overflow-hidden ">
-                    <div class="chart-container">
-                        <canvas id="bar" height="290"></canvas>
+
+                    <div class="col-md-12 col-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div  class="bg-white dark:bg-black rounded-lg" id="chart3"></div>
+                            </div>
+                        </div>
                     </div>
-                </div> <!--end inner-grid-->
+                </div>
             </div>
         </div>
-        @include('template.sections.footer')
-    </div><!--end container-->
+    </div>
 
-
-    <!-- Jquery -->
-    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
-
-    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/chart.js/chart.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/echarts/echarts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/pages/analytics-index.init.js') }}"></script>
-    <script src="{{ asset('assets/js/app.js') }}"></script>
-
-    <!-- Shortcut -->
-    <script type="text/javascript" src="{{ asset('assets/js/shortcut.js') }}"></script>
+    @include('template.sections.js')
 
     <script>
-        $.ajaxSetup({
-            headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-            },
+        document.addEventListener("DOMContentLoaded", function(event) {
+        
+
+            // star chart 1
+            function updateData1() {
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: '{{ url("tv/get-suara1") }}',
+                        method: 'GET',
+                        dataType: 'json',
+                        success: function(response) {
+                            const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+
+                            const top10Data = sortedData.slice(0, 18);
+                            resolve(top10Data);
+                        },
+                        error: function(error) {
+                            reject(error);
+                        }
+                    });
+                });
+            }
+
+            function buildChartData1(data) {
+                if (Array.isArray(data)) {
+                    return [{
+                        data: data.map(party => ({
+                            x: party.party_name,
+                            y: parseInt(party.total_votes)
+                        }))
+                    }];
+                } else {
+                    console.error('Data yang diterima tidak dalam bentuk array:', data);
+                    return []; // atau berikan nilai default jika perlu
+                }
+            }
+
+            function updateChart1() {
+                updateData1()
+                .then((response) => {
+                    if (chart1) {
+                        chart1.updateSeries(buildChartData1(response));
+                    } else {
+                        console.error('chart1 belum didefinisikan.');
+                    }
+
+                    setTimeout(updateChart1, 5000);
+                })
+                .catch((error) => {
+                    console.error('Gagal memperbarui data:', error);
+                });
+            }
+
+            // Mengatur data awal chart
+            updateData1().then((response) => {
+                var chartData1 = {
+                    series: buildChartData1(response),
+                    chart: {
+                        type: 'bar',
+                        height: 650
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: true,
+                            columnWidth: '55%',
+                            endingShape: 'rounded'
+                        },
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    title: {
+                        text: 'TOTAL SUARA PARTAI',
+                        align: 'center'
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'Total Suara'
+                        }
+                    },
+                    fill: {
+                        colors: ['#3F51B5']
+                    }
+                };
+                chart1 = new ApexCharts(document.querySelector("#chart1"), chartData1);
+                chart1.render();
+
+                setTimeout(updateChart1, 5000);
+            });
+            // END CHART 1 +===++++
+
+
+
+
+            // START CHART 2
+
+ // star chart 2
+            function updateData2() {
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: '{{ url("tv/get-suara2") }}',
+                        method: 'GET',
+                        dataType: 'json',
+                        success: function(response) {
+                            const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+
+                            const top10Data = sortedData.slice(0, 10);
+                            resolve(top10Data);
+                        },
+                        error: function(error) {
+                            reject(error);
+                        }
+                    });
+                });
+            }
+
+            function buildChartData2(data) {
+                if (Array.isArray(data)) {
+                    return [{
+                        data: data.map(candidate => ({
+                            x: candidate.candidate_name,
+                            y: parseInt(candidate.total_votes)
+                        }))
+                    }];
+                } else {
+                    console.error('Data yang diterima tidak dalam bentuk array:', data);
+                    return []; // atau berikan nilai default jika perlu
+                }
+            }
+
+            function updateChart2() {
+                updateData2()
+                .then((response) => {
+                    if (chart2) {
+                        chart2.updateSeries(buildChartData2(response));
+                    } else {
+                        console.error('chart2 belum didefinisikan.');
+                    }
+
+                    setTimeout(updateChart2, 5000);
+                })
+                .catch((error) => {
+                    console.error('Gagal memperbarui data:', error);
+                });
+            }
+
+            // Mengatur data awal chart
+            updateData2().then((response) => {
+                var chartData2 = {
+                    series: buildChartData2(response),
+                    chart: {
+                        type: 'bar',
+                        height: 300
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: false,
+                            columnWidth: '55%',
+                            endingShape: 'rounded'
+                        },
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    title: {
+                        text: 'KANDIDAT TERTINGGI SEMUA PARTAI',
+                        align: 'center'
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'Total Suara'
+                        }
+                    },
+                    fill: {
+                        colors: ['#3F51B5']
+                    }
+                };
+                chart2 = new ApexCharts(document.querySelector("#chart2"), chartData2);
+                chart2.render();
+
+                setTimeout(updateChart2, 5000);
+            });
+            // END CHART 2 +===++++
+
+
+
+
+            // star chart 3
+            function updateData3() {
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: '{{ url("tv/get-suara3") }}',
+                        method: 'GET',
+                        dataType: 'json',
+                        success: function(response) {
+                            const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+
+                            const top10Data = sortedData.slice(0, 10);
+                            resolve(top10Data);
+                        },
+                        error: function(error) {
+                            reject(error);
+                        }
+                    });
+                });
+            }
+
+            function buildChartData3(data) {
+                if (Array.isArray(data)) {
+                    return [{
+                        data: data.map(candidate => ({
+                            x: candidate.candidate_name,
+                            y: parseInt(candidate.total_votes)
+                        }))
+                    }];
+                } else {
+                    console.error('Data yang diterima tidak dalam bentuk array:', data);
+                    return []; // atau berikan nilai default jika perlu
+                }
+            }
+
+            function updateChart3() {
+                updateData3()
+                .then((response) => {
+                    if (chart3) {
+                        chart3.updateSeries(buildChartData3(response));
+                    } else {
+                        console.error('chart3 belum didefinisikan.');
+                    }
+
+                    setTimeout(updateChart3, 5000);
+                })
+                .catch((error) => {
+                    console.error('Gagal memperbarui data:', error);
+                });
+            }
+
+            // Mengatur data awal chart
+            updateData3().then((response) => {
+                var chartData3 = {
+                    series: buildChartData3(response),
+                    chart: {
+                        type: 'bar',
+                        height: 300
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: false,
+                            columnWidth: '55%',
+                            endingShape: 'rounded'
+                        },
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    title: {
+                        text: 'KANDIDAT TERTINGGI DI PARTAI ANDA',
+                        align: 'center'
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'Total Suara'
+                        }
+                    },
+                    fill: {
+                        colors: ['#3F51B5']
+                    }
+                };
+                chart3 = new ApexCharts(document.querySelector("#chart3"), chartData3);
+                chart3.render();
+
+                setTimeout(updateChart3, 5000);
+            });
+
+
+
         });
-
-        var isDarkMode = localStorage.getItem("darkMode") === "enabled";
-
-        shortcut.add("shift+d", function() {
-            document.documentElement.classList.toggle("dark");
-            isDarkMode = document.documentElement.classList.contains("dark");
-
-            localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-        });
-
-        if (isDarkMode) {
-            document.documentElement.classList.add("dark");
-        }
     </script>
-</body>
 
+
+
+
+<script>
+    setTimeout(function(){
+        location.reload();
+    }, 60000);
+</script>
+
+
+</body>
 </html>

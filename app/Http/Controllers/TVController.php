@@ -42,11 +42,34 @@ class TVController extends Controller
         return view('tv-full',$data);
     }
 
-    function getSuara(){
-     $candidates = $data['list_candidate'] = Candidate::where('party_id', 1)->get();
-     $result = array();
 
-     foreach ($candidates as $candidate) {
+
+    function getSuara1(){
+
+
+        $parties = $data['list_party'] = Party::all();
+        $result = array();
+
+        foreach ($parties as $party) {
+            $totalVotesAll = VotingResult::where('party_id', $party->id)->sum('number');;
+            $party->totalVotesAll = $totalVotesAll;
+
+            $result[] = array(
+                'party_id' => $party->id,
+                'party_name' => $party->short_name,
+                'total_votes' => $totalVotesAll
+            );
+        }
+
+        return response()->json($result);
+    }
+
+
+    function getSuara2(){
+       $candidates = $data['list_candidate'] = Candidate::all();
+       $result = array();
+
+       foreach ($candidates as $candidate) {
         $totalVotesAll = VotingResult::where('candidate_id', $candidate->id)->sum('number');
         $candidate->totalVotesAll = $totalVotesAll;
 
@@ -57,7 +80,25 @@ class TVController extends Controller
         );
     }
 
-    return json_encode($result);
+    return response()->json($result);
+}
+
+function getSuara3(){
+   $candidates = $data['list_candidate'] = Candidate::where('party_id', 1)->get();
+   $result = array();
+
+   foreach ($candidates as $candidate) {
+    $totalVotesAll = VotingResult::where('candidate_id', $candidate->id)->sum('number');
+    $candidate->totalVotesAll = $totalVotesAll;
+
+    $result[] = array(
+        'candidate_id' => $candidate->id,
+        'candidate_name' => $candidate->name,
+        'total_votes' => $totalVotesAll
+    );
+}
+
+return response()->json($result);
 }
 function tv()
 {
