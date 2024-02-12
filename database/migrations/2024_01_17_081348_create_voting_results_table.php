@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('voting_results', function (Blueprint $table) {
-            $table->uuid('voting_result_id')->primary()->default(DB::raw('(UUID())'));
+            $table->id();
             $table->integer('number');
             $table->foreignId('voting_place_id')->nullable();
             $table->foreign('voting_place_id')->references('id')->on('voting_places');

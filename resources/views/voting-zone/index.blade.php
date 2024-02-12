@@ -15,7 +15,7 @@
 @section('content')
     <div x-data="basic">
         <div class="panel">
-            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Administrator</h5>
+            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Daerah Pemilihan</h5>
             <table id="table" class="table-hover whitespace-nowrap"></table>
         </div>
     </div>
@@ -31,12 +31,14 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Username', 'No Handphone'],
+                            headings: ['No', 'Nama', 'Jumlah Kecamatan', 'Jumlah Desa', 'Jumlah TPS'],
                             data: [
-                                @foreach ($administrators as $administrator)
-                                    [{{ $loop->iteration }}, '{{ $administrator->name }}',
-                                        '{{ $administrator->username }}',
-                                        '{{ $administrator->phone_number }}',
+                                @foreach ($voting_zones as $voting_zone)
+                                    [{{ $loop->iteration }},
+                                        '{{ $voting_zone->name . ' ' . $voting_zone->city->name }}',
+                                        '{{ $voting_zone->districts->count() }}',
+                                        '{{ $voting_zone->villages->count() }}',
+                                        '{{ $voting_zone->votingPlaces->count() }}',
                                     ],
                                 @endforeach
                             ],
@@ -67,9 +69,8 @@
                             {
                                 select: 3,
                                 render: (data, cell, row) => {
-                                    return `<a href="https://wa.me/62${data}" target="_blank">${data}</a>`;
+                                    return `${data}`;
                                 },
-                                sortable: false,
                             },
                         ],
                         firstLast: true,

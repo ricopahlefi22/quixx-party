@@ -63,6 +63,7 @@
                                 render: (data, cell, row) => {
                                     return `${data}`;
                                 },
+                                sortable: false,
                             },
                             {
                                 select: 3,

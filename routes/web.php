@@ -10,7 +10,6 @@ use App\Http\Controllers\PartyController;
 use App\Http\Controllers\TVController;
 use App\Http\Controllers\VillageController;
 use App\Http\Controllers\VotingPlaceController;
-use App\Http\Controllers\VotingResultController;
 use App\Http\Controllers\VotingZoneController;
 
 Route::controller(AuthController::class)->group(function () {

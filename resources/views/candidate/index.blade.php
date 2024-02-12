@@ -15,7 +15,7 @@
 @section('content')
     <div x-data="basic">
         <div class="panel">
-            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Caleg</h5>
+            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Calon Legislatif</h5>
             <table id="table" class="table-hover whitespace-nowrap"></table>
         </div>
     </div>
@@ -31,45 +31,71 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Jenis Kelamin', 'Kota'],
+                            headings: ['No Urut', '', 'Nama', 'Partai', 'Jumlah Suara',
+                                'Jenis Kelamin', 'Kota'
+                            ],
                             data: [
-                                @foreach ($candidates as $administrator)
-                                    [{{ $loop->iteration }}, '{{ $administrator->name }}',
-                                        '{{ $administrator->gender }}',
-                                        '{{ $administrator->city }}',
+                                @foreach ($candidates as $candidate)
+                                    [
+                                        '{{ $candidate->number }}',
+                                        '{{ $candidate->party->logo }}',
+                                        '{{ $candidate->name }}',
+                                        '{{ $candidate->party->short_name }}',
+                                        '20',
+                                        '{{ $candidate->gender }}',
+                                        '{{ $candidate->city }}',
                                     ],
                                 @endforeach
                             ],
                         },
                         searchable: true,
-                        perPage: 10,
-                        perPageSelect: [10, 20, 30, 50, 100],
+                        perPage: 25,
+                        perPageSelect: [10, 25, 50, 100],
                         columns: [{
                                 select: 0,
                                 render: (data, cell, row) => {
                                     return `<strong class="text-info">#${data}</strong>`;
                                 },
+                                sortable: false,
                             },
                             {
                                 select: 1,
                                 render: (data, cell, row) => {
                                     return `<div class="flex items-center gap-2">
-                                            <strong class="font-bold">${data}</strong>
+                                            <img src="{{ asset('${data}') }}" width="40">
                                     </div>`;
                                 },
+                                sortable: false,
                             },
                             {
                                 select: 2,
                                 render: (data, cell, row) => {
-                                    return `${data}`;
+                                    return `<div class="flex items-center gap-2">
+                                            <strong class="text-[#ee8232] font-bold">${data}</strong>
+                                    </div>`;
                                 },
                             },
                             {
                                 select: 3,
                                 render: (data, cell, row) => {
-                                    return `<a href="https://wa.me/62${data}" target="_blank">${data}</a>`;
+                                    return `${data}`;
                                 },
+                                sortable: false,
+                            },
+                            {
+                                select: 5,
+                                render: (data, cell, row) => {
+                                    return `${data}`;
                                 },
+                                sortable: false,
+                            },
+                            {
+                                select: 6,
+                                render: (data, cell, row) => {
+                                    return `${data}`;
+                                },
+                                sortable: false,
+                            },
                         ],
                         firstLast: true,
                         firstText: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 rtl:rotate-180"> <path d="M13 19L7 12L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path opacity="0.5" d="M16.9998 19L10.9998 12L16.9998 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg>',

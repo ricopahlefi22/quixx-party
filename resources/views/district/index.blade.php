@@ -33,10 +33,10 @@
                         data: {
                             headings: ['No', 'Nama', 'Username', 'No Handphone'],
                             data: [
-                                @foreach ($administrators as $administrator)
-                                    [{{ $loop->iteration }}, '{{ $administrator->name }}',
-                                        '{{ $administrator->username }}',
-                                        '{{ $administrator->phone_number }}',
+                                @foreach ($districts as $district)
+                                    [{{ $loop->iteration }}, '{{ $district->name }}',
+                                        '{{ $district->username }}',
+                                        '{{ $district->phone_number }}',
                                     ],
                                 @endforeach
                             ],

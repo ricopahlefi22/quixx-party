@@ -20,7 +20,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KALINILAM ------------- **/
         $kalinilam = Village::create([
             'name' => 'Desa Kalinilam',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -30,7 +30,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $kalinilam->village_id,
+                'village_id' => $kalinilam->id,
                 'district_id' => $kalinilam->district_id,
                 'voting_zone_id' => $kalinilam->voting_zone_id,
                 'city_id' => $kalinilam->city_id,
@@ -42,7 +42,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- PAYA KUMANG ------------- **/
         $payaKumang = Village::create([
             'name' => 'Desa Paya Kumang',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -52,7 +52,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $payaKumang->village_id,
+                'village_id' => $payaKumang->id,
                 'district_id' => $payaKumang->district_id,
                 'voting_zone_id' => $payaKumang->voting_zone_id,
                 'city_id' => $payaKumang->city_id,
@@ -65,7 +65,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- SUKABANGUN ------------- **/
         $sukabangun = Village::create([
             'name' => 'Desa Sukabangun',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -75,7 +75,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukabangun->village_id,
+                'village_id' => $sukabangun->id,
                 'district_id' => $sukabangun->district_id,
                 'voting_zone_id' => $sukabangun->voting_zone_id,
                 'city_id' => $sukabangun->city_id,
@@ -88,7 +88,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- SUKABANGUN DALAM ------------- **/
         $sukabangunDalam = Village::create([
             'name' => 'Desa Sukabangun Dalam',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -98,7 +98,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukabangunDalam->village_id,
+                'village_id' => $sukabangunDalam->id,
                 'district_id' => $sukabangunDalam->district_id,
                 'voting_zone_id' => $sukabangunDalam->voting_zone_id,
                 'city_id' => $sukabangunDalam->city_id,
@@ -111,7 +111,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN KANTOR ------------- **/
         $kantor = Village::create([
             'name' => 'Kelurahan Kantor',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -121,7 +121,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $kantor->village_id,
+                'village_id' => $kantor->id,
                 'district_id' => $kantor->district_id,
                 'voting_zone_id' => $kantor->voting_zone_id,
                 'city_id' => $kantor->city_id,
@@ -134,7 +134,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN MULIA BARU ------------- **/
         $muliaBaru = Village::create([
             'name' => 'Kelurahan Mulia Baru',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -144,7 +144,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $muliaBaru->village_id,
+                'village_id' => $muliaBaru->id,
                 'district_id' => $muliaBaru->district_id,
                 'voting_zone_id' => $muliaBaru->voting_zone_id,
                 'city_id' => $muliaBaru->city_id,
@@ -157,7 +157,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN SAMPIT ------------- **/
         $sampit = Village::create([
             'name' => 'Kelurahan Sampit',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -167,7 +167,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sampit->village_id,
+                'village_id' => $sampit->id,
                 'district_id' => $sampit->district_id,
                 'voting_zone_id' => $sampit->voting_zone_id,
                 'city_id' => $sampit->city_id,
@@ -180,7 +180,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN SUKAHARJA ------------- **/
         $sukaharja = Village::create([
             'name' => 'Kelurahan Sukaharja',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -190,7 +190,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->village_id,
+                'village_id' => $sukaharja->id,
                 'district_id' => $sukaharja->district_id,
                 'voting_zone_id' => $sukaharja->voting_zone_id,
                 'city_id' => $sukaharja->city_id,
@@ -199,7 +199,7 @@ class DeltaPawanSeeder extends Seeder
 
         VotingPlace::create([
             'name' => 'TPS 901',
-            'village_id' => $sukaharja->village_id,
+            'village_id' => $sukaharja->id,
             'district_id' => $sukaharja->district_id,
             'voting_zone_id' => $sukaharja->voting_zone_id,
             'city_id' => $sukaharja->city_id,
@@ -207,7 +207,7 @@ class DeltaPawanSeeder extends Seeder
 
         VotingPlace::create([
             'name' => 'TPS 902',
-            'village_id' => $sukaharja->village_id,
+            'village_id' => $sukaharja->id,
             'district_id' => $sukaharja->district_id,
             'voting_zone_id' => $sukaharja->voting_zone_id,
             'city_id' => $sukaharja->city_id,
@@ -215,7 +215,7 @@ class DeltaPawanSeeder extends Seeder
 
         VotingPlace::create([
             'name' => 'TPS 903',
-            'village_id' => $sukaharja->village_id,
+            'village_id' => $sukaharja->id,
             'district_id' => $sukaharja->district_id,
             'voting_zone_id' => $sukaharja->voting_zone_id,
             'city_id' => $sukaharja->city_id,
@@ -226,7 +226,7 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN TENGAH ------------- **/
         $sukaharja = Village::create([
             'name' => 'Kelurahan Tengah',
-            'district_id' => $deltaPawan->district_id,
+            'district_id' => $deltaPawan->id,
             'voting_zone_id' => $deltaPawan->voting_zone_id,
             'city_id' => $deltaPawan->city_id,
         ]);
@@ -236,7 +236,7 @@ class DeltaPawanSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->village_id,
+                'village_id' => $sukaharja->id,
                 'district_id' => $sukaharja->district_id,
                 'voting_zone_id' => $sukaharja->voting_zone_id,
                 'city_id' => $sukaharja->city_id,

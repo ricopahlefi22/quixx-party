@@ -31,10 +31,13 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No Urut', 'Nama', 'Singkatan', 'Jumlah Suara'],
+                            headings: ['No Urut', 'Logo', 'Nama', 'Singkatan', 'Jumlah Suara'],
                             data: [
                                 @foreach ($parties as $party)
-                                    [{{ $party->number }}, '{{ $party->name }}',
+                                    [
+                                        '{{ $party->number }}',
+                                        '{{ $party->logo }}',
+                                        '{{ $party->name }}',
                                         '{{ $party->short_name }}',
                                         '<div class="text-center">20</div>',
                                     ],
@@ -54,22 +57,30 @@
                                 select: 1,
                                 render: (data, cell, row) => {
                                     return `<div class="flex items-center gap-2">
-                                            <strong class="font-bold">${data}</strong>
+                                            <img src="{{ asset('${data}') }}" width="40">
                                     </div>`;
                                 },
                             },
                             {
                                 select: 2,
                                 render: (data, cell, row) => {
-                                    return `${data}`;
+                                    return `<div class="flex items-center gap-2">
+                                            <strong class="font-bold">${data}</strong>
+                                    </div>`;
                                 },
                             },
                             {
                                 select: 3,
                                 render: (data, cell, row) => {
-                                    return `<div class="text-center">${data}</div>`;
+                                    return `${data}`;
                                 },
-                                sortable: false,
+                                sortable: true,
+                            },
+                            {
+                                select: 4,
+                                render: (data, cell, row) => {
+                                    return `${data}`;
+                                },
                             },
                         ],
                         firstLast: true,

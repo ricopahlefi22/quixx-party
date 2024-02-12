@@ -3,6 +3,7 @@
 namespace Database\Seeders\Candidate;
 
 use App\Models\Candidate;
+use App\Models\VotingZone;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,8 @@ class Dapil7Seeder extends Seeder
      */
     public function run(): void
     {
+        $votingZone = VotingZone::where('name', 'Dapil 7')->first();
+
         // Partai Kebangkitan Bangsa
         Candidate::factory()->create([
             'photo' => 'images/candidate/partai-pkb/ketapang-7/1.png',
@@ -21,6 +24,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -30,6 +34,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -39,6 +44,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -48,6 +54,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -57,6 +64,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -66,6 +74,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -75,6 +84,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Kebangkitan Bangsa
 
@@ -88,6 +98,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -97,6 +108,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -106,6 +118,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -115,6 +128,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -124,6 +138,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -133,6 +148,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -142,6 +158,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Gerakan Indonesia Raya
 
@@ -155,6 +172,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -164,6 +182,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -173,6 +192,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -182,6 +202,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -191,6 +212,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -200,6 +222,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -209,6 +232,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Demokrasi Indonesia Perjuangan
 
@@ -222,6 +246,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -231,6 +256,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -240,6 +266,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -249,6 +276,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -258,6 +286,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -267,6 +296,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -276,6 +306,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Golongan Karya
 
@@ -289,6 +320,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -298,6 +330,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -307,6 +340,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -316,6 +350,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -325,6 +360,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -334,6 +370,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -343,6 +380,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Nasdem
 
@@ -356,6 +394,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -365,6 +404,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -374,6 +414,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -383,6 +424,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -392,6 +434,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -401,6 +444,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Buruh
 
@@ -414,6 +458,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 7,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -423,6 +468,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 7,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Gelora Indonesia
 
@@ -436,6 +482,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -445,6 +492,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -454,6 +502,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -463,6 +512,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -472,6 +522,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -481,6 +532,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -490,6 +542,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PKS
 
@@ -503,6 +556,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -512,6 +566,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -521,6 +576,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -530,6 +586,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -539,6 +596,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -548,6 +606,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -557,6 +616,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Hanura
 
@@ -570,6 +630,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -579,6 +640,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -588,6 +650,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -597,6 +660,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -606,6 +670,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -615,6 +680,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -624,6 +690,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PAN
 
@@ -637,6 +704,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -646,6 +714,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -655,6 +724,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -664,6 +734,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -673,6 +744,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -682,6 +754,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -691,6 +764,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Pontianak',
             'party_id' => 14,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Demokrat
 
@@ -704,6 +778,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -713,6 +788,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -722,6 +798,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -731,6 +808,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PSI
 
@@ -744,6 +822,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -753,6 +832,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -762,6 +842,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -771,6 +852,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -780,6 +862,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -789,6 +872,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -798,6 +882,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Perindo
 
@@ -811,6 +896,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -820,6 +906,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -829,6 +916,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -838,6 +926,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -847,6 +936,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -856,6 +946,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Pontianak',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -865,6 +956,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PPP
 
@@ -878,6 +970,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -887,6 +980,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -896,6 +990,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -905,6 +1000,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Pontianak',
             'party_id' => 18,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -914,6 +1010,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'voting_zone_id' => $votingZone->id,
         ]);
 
         Candidate::factory()->create([
@@ -923,6 +1020,7 @@ class Dapil7Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Ummat
     }

@@ -22,37 +22,37 @@ class VotingZoneSeeder extends Seeder
 
         VotingZone::create([
             'name' => 'Dapil 1',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 2',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 3',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 4',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 5',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 6',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 7',
-            'city_id' => $ketapang->city_id,
+            'city_id' => $ketapang->id,
         ]);
         /**-------------- KABUPATEN KETAPANG ------------- **/
 
@@ -62,22 +62,22 @@ class VotingZoneSeeder extends Seeder
 
         VotingZone::create([
             'name' => 'Dapil 1',
-            'city_id' => $kayongUtara->city_id,
+            'city_id' => $kayongUtara->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 2',
-            'city_id' => $kayongUtara->city_id,
+            'city_id' => $kayongUtara->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 3',
-            'city_id' => $kayongUtara->city_id,
+            'city_id' => $kayongUtara->id,
         ]);
 
         VotingZone::create([
             'name' => 'Dapil 4',
-            'city_id' => $kayongUtara->city_id,
+            'city_id' => $kayongUtara->id,
         ]);
         /**-------------- KABUPATEN KAYONG UTARA ------------- **/
     }
