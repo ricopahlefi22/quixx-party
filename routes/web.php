@@ -29,6 +29,7 @@ Route::middleware('auth:web')->group(function () {
 
     Route::prefix('tv')->controller(TVController::class)->group(function () {
         Route::get('/', 'index');
+        Route::get('get-suara', 'getSuara');
         Route::get('{id}', 'tv');
     });
 

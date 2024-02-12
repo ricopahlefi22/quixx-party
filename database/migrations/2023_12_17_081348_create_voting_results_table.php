@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreignId('city_id')->nullable();
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreignId('party_id')->nullable();
-            $table->foreign('party_id')->references('id')->on('candidates');
+            $table->foreign('party_id')->references('id')->on('parties');
             $table->foreignId('candidate_id')->nullable();
             $table->foreign('candidate_id')->references('id')->on('candidates');
             $table->timestamps();
