@@ -13,12 +13,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('districts', function (Blueprint $table) {
-            $table->uuid('district_id')->primary()->default(DB::raw('(UUID())'));
+            $table->id();
             $table->string('name');
-            $table->foreignUuid('voting_zone_id')->nullable();
-            $table->foreign('voting_zone_id')->references('voting_zone_id')->on('voting_zones');
-            $table->foreignUuid('city_id')->nullable();
-            $table->foreign('city_id')->references('city_id')->on('cities');
+            $table->foreignId('voting_zone_id')->nullable();
+            $table->foreign('voting_zone_id')->references('id')->on('voting_zones');
+            $table->foreignId('city_id')->nullable();
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
             $table->softDeletes();
         });

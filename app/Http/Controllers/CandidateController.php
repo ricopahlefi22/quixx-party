@@ -9,45 +9,12 @@ use Yajra\DataTables\Facades\DataTables;
 
 class CandidateController extends Controller
 {
-    function index(Request $request)
+    function index()
     {
         $data['title'] = 'Data Calon Legislatif';
-        $data['parties'] = Party::all();
+        $data['candidates'] = Candidate::all();
 
-        if ($request->ajax()) {
-            return DataTables::of(Candidate::all())
-                ->addIndexColumn()
-                ->addColumn('name', function (Candidate $candidate) {
-                    if (empty($candidate->photo)) {
-                        return '<span>' . $candidate->name . '</span>';
-                    } else {
-                        return '<a class="image-popup-no-margins" href="' . asset($candidate->photo) . '">
-                        <img src="' . asset($candidate->photo) . '" class="avatar-sm img-thumbnail rounded-circle">
-                        </a> <span>' . $candidate->name . '</span>';
-                    }
-                })
-                ->addColumn('party', function (Candidate $candidate) {
-                    return '<a class="image-popup-no-margins" href="' . asset($candidate->party->logo) . '">
-                    <img src="' . asset($candidate->party->logo) . '" class="avatar-sm img-thumbnail rounded-circle">
-                    </a> <span>' . $candidate->party->name . '</span>';
-                })
-                ->addColumn('voting_result', function (Candidate $candidate) {
-                    $totalVotingResult = 0;
-                    foreach ($candidate->votingResult as $votingResult) {
-                        $totalVotingResult += $votingResult->number;
-                    }
-                    return $totalVotingResult . ' Suara';
-                })
-                ->addColumn('action', function (Candidate $candidate) {
-                    $btn = '<button data-id="' . $candidate->id . '"  class="btn btn-sm btn-warning edit" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></button> ';
-                    // $btn .= '<button data-id="' . $candidate->id . '"  class="btn btn-sm btn-danger delete" title="Hapus"><i class="fa fa-trash" aria-hidden="true"></i></button> ';
-                    return '<div class="btn-group">' . $btn . '</div>';
-                })
-                ->rawColumns(['name', 'party', 'action'])
-                ->make(true);
-        }
-
-        return view('owner.candidate.index', $data);
+        return view('candidate.index', $data);
     }
 
     function store(Request $request)

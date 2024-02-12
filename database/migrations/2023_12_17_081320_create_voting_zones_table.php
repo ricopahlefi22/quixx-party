@@ -13,10 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('voting_zones', function (Blueprint $table) {
-            $table->uuid('voting_zone_id')->primary()->default(DB::raw('(UUID())'));
+            $table->id();
             $table->string('name');
-            $table->foreignUuid('city_id')->nullable();
-            $table->foreign('city_id')->references('city_id')->on('cities');
+            $table->foreignId('city_id')->nullable();
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
             $table->softDeletes();
         });

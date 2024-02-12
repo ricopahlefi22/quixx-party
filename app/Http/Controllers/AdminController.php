@@ -4,39 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-    function index(Request $request)
+    function index()
     {
         $data['title'] = 'Data Administrator';
+        $data['administrators'] = Admin::all();
 
-        if ($request->ajax()) {
-            return DataTables::of(Admin::all())
-                ->addIndexColumn()
-                ->addColumn('name', function (Admin $admin) {
-                    if (empty($admin->photo)) {
-                        return '<strong>' . $admin->name . '</strong>';
-                    } else {
-                        return '<a class="image-popup-no-margins" href="' . $admin->photo . '">
-                            <img src="' . $admin->photo . '" class="avatar-sm img-thumbnail rounded-circle">
-                            </a> <strong>' . $admin->name . '</strong>';
-                    }
-                })
-                ->addColumn('level', function (Admin $admin) {
-                    return $admin->level == true ? 'Super Admin' : 'Administrator';
-                })
-                ->addColumn('action', function (Admin $admin) {
-                    $btn = '<button data-id="' . $admin->id . '"  class="btn btn-sm btn-warning edit" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></button> ';
-                    $btn .= '<button data-id="' . $admin->id . '"  class="btn btn-sm btn-danger delete" title="Hapus"><i class="fa fa-trash" aria-hidden="true"></i></button> ';
-                    return '<div class="btn-group">' . $btn . '</div>';
-                })
-                ->rawColumns(['name', 'level', 'action'])
-                ->make(true);
-        }
-
-        return view('owner.administrator.index', $data);
+        return view('administrator.index', $data);
     }
 
     function store(Request $request)

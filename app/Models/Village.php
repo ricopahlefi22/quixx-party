@@ -11,7 +11,6 @@ class Village extends Model
     use HasFactory;
 
     protected $table = 'villages';
-    protected $primaryKey = 'village_id';
 
     protected $fillable = [
         'name',
@@ -20,29 +19,7 @@ class Village extends Model
         'district_id',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-        static::creating(function ($model) {
-            if (empty($model->{$model->getKeyName()})) {
-                $model->{$model->getKeyName()} = Str::uuid()->toString();
-            }
-        });
-    }
-
-    // biar tidak auto increment
-    public function getIncrementing()
-    {
-        return false;
-    }
-
-    // mendevinisikan sebagai string
-    public function getKeyType()
-    {
-        return 'string';
-    }
-
-      public function city()
+    public function city()
     {
         return $this->belongsTo(City::class, 'city_id');
     }
@@ -52,7 +29,7 @@ class Village extends Model
         return $this->belongsTo(VotingZone::class, 'voting_zone_id');
     }
 
-     public function district()
+    public function district()
     {
         return $this->belongsTo(District::class, 'district_id');
     }

@@ -10,7 +10,6 @@ class Party extends Model
     use HasFactory;
 
     protected $table = 'parties';
-    protected $primaryKey = 'party_id';
 
     protected $fillable = [
         'logo',
@@ -25,8 +24,7 @@ class Party extends Model
         return $this->hasMany(Candidate::class);
     }
 
-
-     public function votingResults()
+    public function votingResults()
     {
         return $this->hasMany(VotingResult::class);
     }

@@ -3,38 +3,77 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{{ $title }} - Quixx {{ env('PARTY') }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ $title }} - Quixx {{ env('PARTY') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('logo.png') }}" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/style.css') }}" />
+
+    @stack('style')
 </head>
 
-<body data-layout-mode="light"
-    class="bg-gray-100 dark:bg-gray-900 bg-[url('../images/bg-body.png')] dark:bg-[url('../images/bg-body-2.png')]">
-    <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
-        <div
-            class="w-full m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md">
-            @yield('content')
+<body x-data="main" class="relative overflow-x-hidden font-nunito text-sm font-normal antialiased"
+    :class="[$store.app.sidebar ? 'toggle-sidebar' : '', $store.app.theme === 'dark' || $store.app.isDarkMode ? 'dark' : '',
+        $store.app.menu, $store.app.layout, $store.app.rtlClass
+    ]">
+    <!-- screen loader -->
+    @include('template.sections.screen-loader')
+
+    <!-- scroll to top button -->
+    @include('template.sections.scroll-to-top')
+
+    <div class="main-container min-h-screen text-black dark:text-white-dark">
+        <div x-data="auth">
+            <div class="absolute inset-0">
+                <img src="{{ asset('assets/images/auth/bg-gradient.png') }}" alt="image"
+                    class="h-full w-full object-cover" />
+            </div>
+
+            <div
+                class="relative flex min-h-screen items-center justify-center bg-[url(../images/auth/map.png)] bg-cover bg-center bg-no-repeat px-6 py-10 dark:bg-[#060818] sm:px-16">
+                <img src="{{ asset('assets/images/auth/coming-soon-object1.png') }}" alt="image"
+                    class="absolute left-0 top-1/2 h-full max-h-[893px] -translate-y-1/2" />
+                <img src="{{ asset('assets/images/auth/coming-soon-object2.png') }}" alt="image"
+                    class="absolute left-24 top-0 h-40 md:left-[30%]" />
+                <img src="{{ asset('assets/images/auth/coming-soon-object3.png') }}" alt="image"
+                    class="absolute right-0 top-0 h-[300px]" />
+                <img src="{{ asset('assets/images/auth/polygon-object.svg') }}" alt="image"
+                    class="absolute bottom-0 end-[28%]" />
+                <div
+                    class="relative w-full max-w-[870px] rounded-md bg-[linear-gradient(45deg,#fff9f9_0%,rgba(255,255,255,0)_25%,rgba(255,255,255,0)_75%,_#fff9f9_100%)] p-2 dark:bg-[linear-gradient(52.22deg,#0E1726_0%,rgba(14,23,38,0)_18.66%,rgba(14,23,38,0)_51.04%,rgba(14,23,38,0)_80.07%,#0E1726_100%)]">
+                    <div
+                        class="relative flex flex-col justify-center rounded-md bg-white/60 backdrop-blur-lg dark:bg-black/50 px-6 lg:min-h-[758px] py-20">
+
+                        <div class="mx-auto w-full max-w-[440px]">
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-
     <!-- Jquery -->
     <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
-
     <!-- Simplebar -->
     <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <!-- Sweetalert -->
+    <script defer src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
 
-    <!-- Sweetalert2 -->
-    <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
+    <script src="{{ asset('assets/js/alpine-collaspe.min.js') }}"></script>
+    <script src="{{ asset('assets/js/alpine-persist.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/alpine-ui.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/alpine-focus.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/alpine.min.js') }}"></script>
 
-    <!-- Shortcut -->
-    <script type="text/javascript" src="{{ asset('assets/js/shortcut.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+    @stack('script')
 
     <script>
         $.ajaxSetup({
@@ -43,21 +82,31 @@
             },
         });
 
-        var isDarkMode = localStorage.getItem("darkMode") === "enabled";
+        // main section
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('scrollToTop', () => ({
+                showTopButton: false,
+                init() {
+                    window.onscroll = () => {
+                        this.scrollFunction();
+                    };
+                },
 
-        shortcut.add("shift+d", function() {
-            document.documentElement.classList.toggle("dark");
-            isDarkMode = document.documentElement.classList.contains("dark");
+                scrollFunction() {
+                    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                        this.showTopButton = true;
+                    } else {
+                        this.showTopButton = false;
+                    }
+                },
 
-            localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+                goToTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                },
+            }));
         });
-
-        if (isDarkMode) {
-            document.documentElement.classList.add("dark");
-        }
     </script>
-
-    @stack('script')
 </body>
 
 </html>

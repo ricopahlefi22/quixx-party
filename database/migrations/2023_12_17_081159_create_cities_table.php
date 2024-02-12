@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cities', function (Blueprint $table) {
-            $table->uuid('city_id')->primary()->default(DB::raw('(UUID())'));
+            $table->id();
             $table->string('name');
             $table->string('logo')->nullable();
             $table->timestamps();

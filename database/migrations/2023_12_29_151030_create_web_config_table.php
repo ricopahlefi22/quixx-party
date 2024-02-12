@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('web_config', function (Blueprint $table) {
             $table->id();
             $table->string('token');
-            $table->foreignUuid('party_id')->nullable();
-            $table->foreign('party_id')->references('party_id')->on('parties');
+            $table->foreignId('party_id')->nullable();
+            $table->foreign('party_id')->references('id')->on('parties');
             $table->timestamps();
         });
     }

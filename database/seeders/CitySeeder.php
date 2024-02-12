@@ -12,8 +12,6 @@ class CitySeeder extends Seeder
      */
     public function run(): void
     {
-        // City::factory(10)->create();
-
         City::create([
             'name' => 'Kabupaten Ketapang',
         ]);
