@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Candidate;
 use App\Models\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
 class CandidateController extends Controller
@@ -12,7 +13,12 @@ class CandidateController extends Controller
     function index()
     {
         $data['title'] = 'Data Calon Legislatif';
-        $data['candidates'] = Candidate::all();
+
+        if (Auth::user()->level == true) {
+            $data['candidates'] = Candidate::all();
+        } else {
+            $data['candidates'] = Candidate::where('voting_zone_id', Auth::user()->voting_zone_id)->get();
+        }
 
         return view('candidate.index', $data);
     }

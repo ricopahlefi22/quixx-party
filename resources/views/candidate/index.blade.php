@@ -54,7 +54,7 @@
                         columns: [{
                                 select: 0,
                                 render: (data, cell, row) => {
-                                    return `<strong class="text-info">#${data}</strong>`;
+                                    return `<span class="text-[#E5B90D]">#${data}</span>`;
                                 },
                                 sortable: false,
                             },

@@ -28,11 +28,10 @@ Route::middleware('auth:web')->group(function () {
     Route::get('beranda', [DashboardController::class, 'dashboard']);
 
     Route::prefix('tv')->controller(TVController::class)->group(function () {
-        Route::get('/', 'index');
         Route::get('get-suara1', 'getSuara1');
         Route::get('get-suara2', 'getSuara2');
         Route::get('get-suara3', 'getSuara3');
-        Route::get('{id}', 'tv');
+        Route::get('{id}', 'index');
     });
 
     Route::prefix('administrators')->controller(AdminController::class)->group(function () {

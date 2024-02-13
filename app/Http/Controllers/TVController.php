@@ -15,7 +15,7 @@ class TVController extends Controller
 {
     function index()
     {
-        $data['title'] = "TV Live";
+        $data['title'] = "TV Perolehan Suara";
         $data['web'] = WebConfig::first();
 
         $parties = $data['list_party'] = Party::all();
@@ -41,10 +41,9 @@ class TVController extends Controller
 
 
 
-   
-    function getSuara1(){
 
-
+    function getSuara1()
+    {
         $parties = $data['list_party'] = Party::all();
         $result = array();
 

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     @include('template.sections.style')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-md-12">
                 <center>
-                    <h2><img src="{{ asset('logo.png') }}" width="100px" alt="">  KETAPANG S14P</h2>
+                    <h2><img src="{{ asset('logo.png') }}" width="100px" alt=""> KETAPANG S14P</h2>
                     <h4>HASIL PEROLEHAN SUARA</h4>
                 </center>
             </div>
@@ -26,7 +28,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <div  class="bg-white dark:bg-black rounded-lg" id="chart2"></div>
+                                <div class="bg-white dark:bg-black rounded-lg" id="chart2"></div>
                             </div>
                         </div>
                     </div>
@@ -34,7 +36,7 @@
                     <div class="col-md-12 col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <div  class="bg-white dark:bg-black rounded-lg" id="chart3"></div>
+                                <div class="bg-white dark:bg-black rounded-lg" id="chart3"></div>
                             </div>
                         </div>
                     </div>
@@ -45,19 +47,22 @@
 
     @include('template.sections.js')
 
+    <script src="{{ asset('assets/js/apexcharts.js') }}"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-        
+
 
             // star chart 1
             function updateData1() {
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: '{{ url("tv/get-suara1") }}',
+                        url: '{{ url('tv/get-suara1') }}',
                         method: 'GET',
                         dataType: 'json',
                         success: function(response) {
-                            const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+                            const sortedData = response.sort((a, b) => b.total_votes - a
+                                .total_votes);
 
                             const top10Data = sortedData.slice(0, 18);
                             resolve(top10Data);
@@ -85,18 +90,18 @@
 
             function updateChart1() {
                 updateData1()
-                .then((response) => {
-                    if (chart1) {
-                        chart1.updateSeries(buildChartData1(response));
-                    } else {
-                        console.error('chart1 belum didefinisikan.');
-                    }
+                    .then((response) => {
+                        if (chart1) {
+                            chart1.updateSeries(buildChartData1(response));
+                        } else {
+                            console.error('chart1 belum didefinisikan.');
+                        }
 
-                    setTimeout(updateChart1, 5000);
-                })
-                .catch((error) => {
-                    console.error('Gagal memperbarui data:', error);
-                });
+                        setTimeout(updateChart1, 5000);
+                    })
+                    .catch((error) => {
+                        console.error('Gagal memperbarui data:', error);
+                    });
             }
 
             // Mengatur data awal chart
@@ -142,15 +147,16 @@
 
             // START CHART 2
 
- // star chart 2
+            // star chart 2
             function updateData2() {
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: '{{ url("tv/get-suara2") }}',
+                        url: '{{ url('tv/get-suara2') }}',
                         method: 'GET',
                         dataType: 'json',
                         success: function(response) {
-                            const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+                            const sortedData = response.sort((a, b) => b.total_votes - a
+                                .total_votes);
 
                             const top10Data = sortedData.slice(0, 10);
                             resolve(top10Data);
@@ -178,18 +184,18 @@
 
             function updateChart2() {
                 updateData2()
-                .then((response) => {
-                    if (chart2) {
-                        chart2.updateSeries(buildChartData2(response));
-                    } else {
-                        console.error('chart2 belum didefinisikan.');
-                    }
+                    .then((response) => {
+                        if (chart2) {
+                            chart2.updateSeries(buildChartData2(response));
+                        } else {
+                            console.error('chart2 belum didefinisikan.');
+                        }
 
-                    setTimeout(updateChart2, 5000);
-                })
-                .catch((error) => {
-                    console.error('Gagal memperbarui data:', error);
-                });
+                        setTimeout(updateChart2, 5000);
+                    })
+                    .catch((error) => {
+                        console.error('Gagal memperbarui data:', error);
+                    });
             }
 
             // Mengatur data awal chart
@@ -237,11 +243,12 @@
             function updateData3() {
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: '{{ url("tv/get-suara3") }}',
+                        url: '{{ url('tv/get-suara3') }}',
                         method: 'GET',
                         dataType: 'json',
                         success: function(response) {
-                            const sortedData = response.sort((a, b) => b.total_votes - a.total_votes);
+                            const sortedData = response.sort((a, b) => b.total_votes - a
+                                .total_votes);
 
                             const top10Data = sortedData.slice(0, 10);
                             resolve(top10Data);
@@ -269,18 +276,18 @@
 
             function updateChart3() {
                 updateData3()
-                .then((response) => {
-                    if (chart3) {
-                        chart3.updateSeries(buildChartData3(response));
-                    } else {
-                        console.error('chart3 belum didefinisikan.');
-                    }
+                    .then((response) => {
+                        if (chart3) {
+                            chart3.updateSeries(buildChartData3(response));
+                        } else {
+                            console.error('chart3 belum didefinisikan.');
+                        }
 
-                    setTimeout(updateChart3, 5000);
-                })
-                .catch((error) => {
-                    console.error('Gagal memperbarui data:', error);
-                });
+                        setTimeout(updateChart3, 5000);
+                    })
+                    .catch((error) => {
+                        console.error('Gagal memperbarui data:', error);
+                    });
             }
 
             // Mengatur data awal chart
@@ -328,12 +335,13 @@
 
 
 
-<script>
-    setTimeout(function(){
-        location.reload();
-    }, 60000);
-</script>
+    <script>
+        setTimeout(function() {
+            location.reload();
+        }, 60000);
+    </script>
 
 
 </body>
+
 </html>

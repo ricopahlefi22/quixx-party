@@ -35,10 +35,10 @@
                             data: [
                                 @foreach ($voting_places as $voting_place)
                                     [
-                                        '{{ $loop->iteration }}',
-                                        '{{ $voting_place->village->name . ' ' . $voting_place->name }}',
-                                        '{{ $voting_place->district->name }}',
-                                        '{{ $voting_place->votingResult}}',
+                                        `{{ $loop->iteration }}`,
+                                        `{{ $voting_place->village->name . ' ' . $voting_place->name }}`,
+                                        `{{ $voting_place->district->name }}`,
+                                        `{{ $voting_place->votingResult }}`,
                                     ],
                                 @endforeach
                             ],
@@ -69,7 +69,11 @@
                             {
                                 select: 3,
                                 render: (data, cell, row) => {
-                                    return `${data}`;
+                                    if (data) {
+                                        return `<a href="{{ url('voting-places/input-c1/${data}') }}" class="btn btn-warning btn-sm">Edit C1</a>`;
+                                    } else {
+                                        return `<a href="{{ url('voting-places/input-c1/${data}') }}" class="btn btn-info btn-sm">Input C1</a>`;
+                                    }
                                 },
                             },
                         ],
