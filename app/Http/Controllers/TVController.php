@@ -41,8 +41,10 @@ class TVController extends Controller
 
 
 
-    function getSuara1()
-    {
+   
+    function getSuara1(){
+
+
         $parties = $data['list_party'] = Party::all();
         $result = array();
 
