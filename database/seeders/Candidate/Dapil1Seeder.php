@@ -3,19 +3,15 @@
 namespace Database\Seeders\Candidate;
 
 use App\Models\Candidate;
-use App\Models\Party;
 use App\Models\VotingZone;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class Dapil1Seeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $votingZone = VotingZone::where('name', 'Dapil 1')->first();
+
         // Partai Kebangkitan Bangsa
         Candidate::factory()->create([
             'photo' => 'images/candidate/partai-pkb/ketapang-1/1.png',

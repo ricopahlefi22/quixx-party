@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 use Database\Seeders\Candidate\Dapil1Seeder;
+use Database\Seeders\Candidate\Dapil2Seeder;
+use Database\Seeders\Candidate\Dapil3Seeder;
+use Database\Seeders\Candidate\Dapil4Seeder;
+use Database\Seeders\Candidate\Dapil5Seeder;
 use Database\Seeders\Candidate\Dapil6Seeder;
 use Database\Seeders\Candidate\Dapil7Seeder;
 use Illuminate\Database\Seeder;
@@ -16,10 +20,10 @@ class CandidateSeeder extends Seeder
     {
         $this->call([
             Dapil1Seeder::class,
-            // Dapil2Seeder::class,
-            // Dapil3Seeder::class,
-            // Dapil4Seeder::class,
-            // Dapil5Seeder::class,
+            Dapil2Seeder::class,
+            Dapil3Seeder::class,
+            Dapil4Seeder::class,
+            Dapil5Seeder::class,
             Dapil6Seeder::class,
             Dapil7Seeder::class,
         ]);
