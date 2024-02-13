@@ -144,8 +144,7 @@
                     </li>
                 @else
                     <li class="menu nav-item">
-                        <a href="{{ url('tv', Auth::user()->voting_zone_id) }}" target="_blank"
-                            class="nav-link group">
+                        <a href="{{ url('input-c1', Auth::user()->voting_zone_id) }}" class="nav-link group">
                             <div class="flex items-center">
                                 <svg class="shrink-0 group-hover:!text-primary" width="20" height="20"
                                     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

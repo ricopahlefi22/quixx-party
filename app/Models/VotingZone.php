@@ -22,6 +22,10 @@ class VotingZone extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
+    public function candidates()
+    {
+        return $this->hasMany(Candidate::class, 'voting_zone_id');
+    }
 
     public function districts()
     {

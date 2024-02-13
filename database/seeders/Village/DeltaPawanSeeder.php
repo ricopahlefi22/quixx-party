@@ -5,24 +5,20 @@ namespace Database\Seeders\Village;
 use App\Models\District;
 use App\Models\Village;
 use App\Models\VotingPlace;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DeltaPawanSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        $deltaPawan = District::where('name', 'Delta Pawan')->first();
+        $kecamatanDeltaPawan = District::where('name', 'Delta Pawan')->first();
 
         /**-------------- KALINILAM ------------- **/
         $kalinilam = Village::create([
             'name' => 'Desa Kalinilam',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 33; $i++) {
@@ -42,9 +38,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- PAYA KUMANG ------------- **/
         $payaKumang = Village::create([
             'name' => 'Desa Paya Kumang',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 18; $i++) {
@@ -65,9 +61,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- SUKABANGUN ------------- **/
         $sukabangun = Village::create([
             'name' => 'Desa Sukabangun',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 23; $i++) {
@@ -88,9 +84,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- SUKABANGUN DALAM ------------- **/
         $sukabangunDalam = Village::create([
             'name' => 'Desa Sukabangun Dalam',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 11; $i++) {
@@ -111,9 +107,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN KANTOR ------------- **/
         $kantor = Village::create([
             'name' => 'Kelurahan Kantor',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 17; $i++) {
@@ -134,9 +130,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN MULIA BARU ------------- **/
         $muliaBaru = Village::create([
             'name' => 'Kelurahan Mulia Baru',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 34; $i++) {
@@ -157,9 +153,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN SAMPIT ------------- **/
         $sampit = Village::create([
             'name' => 'Kelurahan Sampit',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 44; $i++) {
@@ -180,9 +176,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN SUKAHARJA ------------- **/
         $sukaharja = Village::create([
             'name' => 'Kelurahan Sukaharja',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 45; $i++) {
@@ -226,9 +222,9 @@ class DeltaPawanSeeder extends Seeder
         /**-------------- KELURAHAN TENGAH ------------- **/
         $sukaharja = Village::create([
             'name' => 'Kelurahan Tengah',
-            'district_id' => $deltaPawan->id,
-            'voting_zone_id' => $deltaPawan->voting_zone_id,
-            'city_id' => $deltaPawan->city_id,
+            'district_id' => $kecamatanDeltaPawan->id,
+            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
+            'city_id' => $kecamatanDeltaPawan->city_id,
         ]);
 
         for ($i = 1; $i <= 19; $i++) {

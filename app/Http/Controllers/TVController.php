@@ -8,15 +8,17 @@ use App\Models\VotingPlace;
 use App\Models\VotingResult;
 use App\Models\Party;
 use App\Models\Candidate;
+use App\Models\VotingZone;
 use App\Models\WebConfig;
 use Illuminate\Http\Request;
 
 class TVController extends Controller
 {
-    function index()
+    function index(Request $request)
     {
         $data['title'] = "TV Perolehan Suara";
         $data['web'] = WebConfig::first();
+        $data['voting_zone'] = VotingZone::findOrFail($request->id);
 
         $parties = $data['list_party'] = Party::all();
         foreach ($parties as $party) {
@@ -24,7 +26,7 @@ class TVController extends Controller
             $party->totalVotes = $totalVotes;
         }
 
-        $candidates = $data['list_candidate'] = Candidate::where('party_id', 1)->get();
+        $candidates = $data['list_candidate'] = Candidate::where('party_id', $data['web']->party_id)->get();
         foreach ($candidates as $candidate) {
             $totalVotes = VotingResult::where('candidate_id', $candidate->id)->sum('number');
             $candidate->totalVotes = $totalVotes;
@@ -83,7 +85,8 @@ class TVController extends Controller
 
     function getSuara3()
     {
-        $candidates = $data['list_candidate'] = Candidate::where('party_id', 1)->get();
+        $web = WebConfig::first();
+        $candidates = $data['list_candidate'] = Candidate::where('party_id', $web->party_id)->get();
         $result = array();
 
         foreach ($candidates as $candidate) {

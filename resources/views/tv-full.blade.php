@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-md-12">
                 <center>
-                    <h2><img src="{{ asset('logo.png') }}" width="100px" alt=""> KETAPANG S14P</h2>
-                    <h4>HASIL PEROLEHAN SUARA</h4>
+                    <img src="{{ asset('logo.png') }}" width="70px">
+                    <h4 class="text-uppercase font-bold mb-2">Hasil Perolehan Suara {{ $voting_zone->name }}</h4>
                 </center>
             </div>
             <div class="col-md-6 col-12">
@@ -326,14 +326,8 @@
 
                 setTimeout(updateChart3, 5000);
             });
-
-
-
         });
     </script>
-
-
-
 
     <script>
         setTimeout(function() {

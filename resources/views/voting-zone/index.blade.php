@@ -31,14 +31,21 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Jumlah Kecamatan', 'Jumlah Desa', 'Jumlah TPS'],
+                            headings: [
+                                'Nama',
+                                'Jumlah Kecamatan',
+                                'Jumlah Desa',
+                                'Jumlah TPS',
+                                'Jumlah Caleg'
+                            ],
                             data: [
                                 @foreach ($voting_zones as $voting_zone)
-                                    [{{ $loop->iteration }},
+                                    [
                                         '{{ $voting_zone->name . ' ' . $voting_zone->city->name }}',
                                         '{{ $voting_zone->districts->count() }}',
                                         '{{ $voting_zone->villages->count() }}',
                                         '{{ $voting_zone->votingPlaces->count() }}',
+                                        '{{ $voting_zone->candidates->count() }}',
                                     ],
                                 @endforeach
                             ],

@@ -10,7 +10,7 @@ class DistrictController extends Controller
 {
     function index()
     {
-        $data['title'] = 'Data Daerah Pemilihan';
+        $data['title'] = 'Data Kecamatan';
 
         if (Auth::user()->level == true) {
             $data['districts'] = District::orderBy('city_id', 'asc')->orderBy('name', 'asc')->get();

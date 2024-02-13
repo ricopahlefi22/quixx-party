@@ -70,9 +70,9 @@
                                 select: 3,
                                 render: (data, cell, row) => {
                                     if (data) {
-                                        return `<a href="{{ url('voting-places/input-c1/${data}') }}" class="btn btn-warning btn-sm">Edit C1</a>`;
+                                        return `✅`;
                                     } else {
-                                        return `<a href="{{ url('voting-places/input-c1/${data}') }}" class="btn btn-info btn-sm">Input C1</a>`;
+                                        return `❌`;
                                     }
                                 },
                             },

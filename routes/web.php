@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\DashboardController;
@@ -10,7 +10,6 @@ use App\Http\Controllers\PartyController;
 use App\Http\Controllers\TVController;
 use App\Http\Controllers\VillageController;
 use App\Http\Controllers\VotingPlaceController;
-use App\Http\Controllers\VotingResultController;
 use App\Http\Controllers\VotingZoneController;
 
 Route::controller(AuthController::class)->group(function () {
@@ -59,6 +58,10 @@ Route::middleware('auth:web')->group(function () {
     });
 
     Route::prefix('voting-places')->controller(VotingPlaceController::class)->group(function () {
+        Route::get('/', 'index');
+    });
+
+    Route::prefix('input-c1')->controller(VotingPlaceController::class)->group(function () {
         Route::get('/', 'index');
     });
 });
