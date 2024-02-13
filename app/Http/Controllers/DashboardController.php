@@ -21,10 +21,10 @@ class DashboardController extends Controller
             $data['village_count'] = Village::count();
             $data['voting_place_count'] = VotingPlace::count();
         } else {
-            $data['voting_result_count'] = VotingZone::where('voting_zone_id', Auth::user()->voting_zone_id)->count();
-            $data['district_count'] = District::where('voting_zone_id', Auth::user()->voting_zone_id)->count();
-            $data['village_count'] = Village::where('voting_zone_id', Auth::user()->voting_zone_id)->count();
-            $data['voting_place_count'] = VotingPlace::where('voting_zone_id', Auth::user()->voting_zone_id)->count();
+            $data['voting_result_count'] = VotingZone::where('id', Auth::user()->voting_zone_id)->count();
+            $data['district_count'] = District::where('id', Auth::user()->voting_zone_id)->count();
+            $data['village_count'] = Village::where('id', Auth::user()->voting_zone_id)->count();
+            $data['voting_place_count'] = VotingPlace::where('id', Auth::user()->voting_zone_id)->count();
         }
 
         return view('dashboard', $data);

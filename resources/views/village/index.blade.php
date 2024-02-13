@@ -15,7 +15,7 @@
 @section('content')
     <div x-data="basic">
         <div class="panel">
-            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Kecamatan</h5>
+            <h5 class="text-lg font-semibold dark:text-white-light">Tabel Kelurahan/Desa</h5>
             <table id="table" class="table-hover whitespace-nowrap"></table>
         </div>
     </div>

@@ -47,8 +47,6 @@
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
-		
-
 			// star chart 1
 			function updateData1() {
 				return new Promise((resolve, reject) => {

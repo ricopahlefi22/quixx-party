@@ -30,5 +30,38 @@ class AdminSeeder extends Seeder
             'level' => false,
             'password' => bcrypt('12345678'),
         ]);
+
+        Admin::create([
+            'name' => 'Admin Dapil 1',
+            'username' => 'dapil1',
+            'phone_number' => '08953444443331',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 1,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Admin Dapil 2',
+            'username' => 'dapil2',
+            'phone_number' => '08853334434341',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 2,
+            'city_id' => 2,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Admin Dapil 3',
+            'username' => 'dapil3',
+            'phone_number' => '0895283455031',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 3,
+            'city_id' => 3,
+            'password' => bcrypt('12345678'),
+        ]);
     }
 }

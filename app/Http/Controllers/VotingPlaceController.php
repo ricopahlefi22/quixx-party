@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\District;
 use App\Models\VotingPlace;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
-use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Auth;
 
 class VotingPlaceController extends Controller
 {
-    function index(Request $request)
+    function index()
     {
         $data['title'] = 'Data Tempat Pemungutan Suara';
-        $data['districts'] = District::all();
-        $data['voting_places'] = VotingPlace::all();
+
+        if (Auth::user()->level == true) {
+            $data['voting_places'] = VotingPlace::all();
+        } else {
+            $data['voting_places'] = VotingPlace::where('voting_zone_id', Auth::user()->voting_zone_id)->get();
+        }
 
         return view('voting-place.index', $data);
     }

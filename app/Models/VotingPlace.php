@@ -34,8 +34,14 @@ class VotingPlace extends Model
     {
         return $this->belongsTo(District::class, 'district_id');
     }
+
     public function village()
     {
         return $this->belongsTo(Village::class, 'village_id');
+    }
+
+    public function votingResult()
+    {
+        return $this->hasOne(VotingResult::class, 'voting_place_id');
     }
 }

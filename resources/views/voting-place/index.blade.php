@@ -31,13 +31,14 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Kecamatan'],
+                            headings: ['No', 'Nama', 'Kecamatan', 'C1'],
                             data: [
                                 @foreach ($voting_places as $voting_place)
                                     [
-                                        {{ $loop->iteration }},
-                                        '{{ $voting_place->village->name.' '.$voting_place->name }}',
+                                        '{{ $loop->iteration }}',
+                                        '{{ $voting_place->village->name . ' ' . $voting_place->name }}',
                                         '{{ $voting_place->district->name }}',
+                                        '{{ $voting_place->votingResult}}',
                                     ],
                                 @endforeach
                             ],
