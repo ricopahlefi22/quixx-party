@@ -3,7 +3,6 @@
 
 <head>
     @include('template.sections.style')
-
 </head>
 
 <body x-data="main" class="relative overflow-x-hidden font-nunito text-sm font-normal antialiased"

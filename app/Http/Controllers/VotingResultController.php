@@ -8,116 +8,32 @@ use App\Models\Party;
 use App\Models\Village;
 use App\Models\VotingPlace;
 use App\Models\VotingResult;
-use App\Models\WebConfig;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
-use Yajra\DataTables\Facades\DataTables;
 
 class VotingResultController extends Controller
 {
     function index()
     {
-        if (Auth::user()->level == true) {
-            $data['title'] = 'Hasil Perhitungan Cepat';
-            $data['districts'] = District::all();
-            $data['villages'] = Village::all();
-            $data['time'] = '2024/01/01';
+        $data['title'] = 'Hasil Perhitungan Cepat';
+        $data['districts'] = District::all();
+        $data['villages'] = Village::all();
+        $data['time'] = '2024/01/01';
 
-            $partai = $data['parties'] = Party::all();
-            foreach ($partai as $item) {
-                $total_suara = VotingResult::where('party_id', $item->id)
-                    ->sum('number');
-                $item->total_suara = $total_suara;
-            }
-
-            $kandidat = $data['kandidat'] = Candidate::all();
-            foreach ($kandidat as $item) {
-                $total_suara_kandidat = VotingResult::where('candidate_id', $item->id)
-                    ->sum('number');
-                $item->total_suara_kandidat = $total_suara_kandidat;
-            }
-
-            return view('voting-result.index', $data);
+        $partai = $data['parties'] = Party::all();
+        foreach ($partai as $item) {
+            $total_suara = VotingResult::where('party_id', $item->id)
+                ->sum('number');
+            $item->total_suara = $total_suara;
         }
 
-        return abort(404);
-    }
-
-    function district(District $id)
-    {
-        if (Auth::guard('owner')->check()) {
-            $data['title'] = 'Hasil Perhitungan Cepat/Kecamatan';
-            $partai = $data['parties'] = Party::all();
-            foreach ($partai as $item) {
-                $total_suara = VotingResult::where('party_id', $item->id)
-                    ->where('district_id', $id->id)
-                    ->sum('number');
-                $item->total_suara = $total_suara;
-            }
-
-
-            $kandidat = $data['kandidat'] = Candidate::all();
-            foreach ($kandidat as $item) {
-                $total_suara_kandidat = VotingResult::where('candidate_id', $item->id)
-                    ->where('district_id', $id->id)
-                    ->sum('number');
-                $item->total_suara_kandidat = $total_suara_kandidat;
-            }
-
-            return view('owner.voting-result.district', $data);
+        $kandidat = $data['kandidat'] = Candidate::all();
+        foreach ($kandidat as $item) {
+            $total_suara_kandidat = VotingResult::where('candidate_id', $item->id)
+                ->sum('number');
+            $item->total_suara_kandidat = $total_suara_kandidat;
         }
 
-        return abort(404);
-    }
-
-    function inputIndex(Request $request)
-    {
-        $data['title'] = 'Data Hasil Perolehan Suara (C1)';
-
-        if ($request->ajax()) {
-            return DataTables::of(VotingPlace::all())
-                ->addIndexColumn()
-                ->addColumn('voting_place', function (VotingPlace $votingPlace) {
-                    return $votingPlace->village->name . ' <strong>(TPS ' . $votingPlace->name . ')</strong>';
-                })
-                ->addColumn('district', function (VotingPlace $votingPlace) {
-                    return $votingPlace->district->name;
-                })
-                ->addColumn('file', function (VotingPlace $votingPlace) {
-                    return empty($votingPlace->voting_result_file) ? '-' : '<a href="' . $votingPlace->voting_result_file . '" class="btn btn-sm btn-secondary" target="_blank"><i class="fa fa-file"></i> Lihat C1</a>';
-                })
-                ->addColumn('action', function (VotingPlace $votingPlace) {
-                    if ($votingPlace->votingResult()->exists()) {
-                        return '<a href="input-voting-results/' . Crypt::encrypt($votingPlace->id) . '"  class="btn btn-sm btn-dark">Perbarui C1 <i class="fa fa-arrow-alt-circle-right"></i></a> ';
-                    } else {
-                        return '<a href="input-voting-results/' . Crypt::encrypt($votingPlace->id) . '"  class="btn btn-sm btn-primary">Input C1 <i class="fa fa-arrow-alt-circle-right"></i></a> ';
-                    }
-                })
-                ->rawColumns(['voting_place', 'file', 'action'])
-                ->make(true);
-        }
-
-        if (Auth::guard('owner')->check()) {
-            return view('owner.input-voting-result.index', $data);
-        }
-
-        return view('admin.input-voting-result.index', $data);
-    }
-
-    function inputVotingResult(Request $request)
-    {
-        $data['title'] = 'Data Hasil Perolehan Suara (C1)';
-        $data['votingPlace'] = VotingPlace::findOrFail(Crypt::decrypt($request->id));
-        $data['own_parties'] = Party::where('id', WebConfig::first()->party_id)->get();
-        $data['other_parties'] = Party::whereHas('candidates')->get()->except(WebConfig::first()->party_id);
-        $data['parties'] = $data['own_parties']->merge($data['other_parties']);
-
-        if (Auth::guard('owner')->check()) {
-            return view('owner.input-voting-result.input-c1', $data);
-        }
-
-        return view('admin.input-voting-result.input-c1', $data);
+        return view('voting-result.index', $data);
     }
 
     function store(Request $request)

@@ -15,6 +15,7 @@ class WebConfigSeeder extends Seeder
     {
         WebConfig::factory()->create([
             'token' => 'XR9154bgT7ZS1Nk38RYb2WnEEe5pfsfSnpVu5M1y2gV9L1CZ34',
+            'party_id' => 14,
         ]);
     }
 }
