@@ -63,7 +63,14 @@ class VotingResultController extends Controller
         $votingPlace->save();
 
         foreach ($parties as $party) {
-            $votingResult = VotingResult::where('party_id', $party->id)->where('voting_place_id', $request->voting_place_id)->whereNull('candidate_id')->first();
+            if ($request->{"number_voters_party_province_" . $party->id}) {
+                $votingResult = VotingResult::where('party_id', $party->id)->where('level', 'Provinsi')->where('voting_place_id', $request->voting_place_id)->whereNull('candidate_id')->first();
+            } elseif ($request->{"number_voters_party_city_" . $party->id}) {
+                $votingResult = VotingResult::where('party_id', $party->id)->where('level', 'Kabupaten')->where('voting_place_id', $request->voting_place_id)->whereNull('candidate_id')->first();
+            } else {
+                $votingResult = null;
+            }
+
             if ($votingResult) {
                 $votingResult->number = is_null($request->{"number_voters_party_" . $party->id}) ? 0 : $request->{"number_voters_party_" . $party->id};
                 $votingResult->save();
