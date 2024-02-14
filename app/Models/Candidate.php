@@ -30,7 +30,7 @@ class Candidate extends Model
         return $this->belongsTo(VotingZone::class, 'voting_zone_id');
     }
 
-    public function votingResult()
+    public function votingResults()
     {
         return $this->hasMany(VotingResult::class);
     }

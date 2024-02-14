@@ -14,6 +14,8 @@ return new class extends Migration
     {
         Schema::create('voting_places', function (Blueprint $table) {
             $table->id();
+            $table->string('voting_result_file_city')->nullable();
+            $table->string('voting_result_file_province')->nullable();
             $table->string('name');
             $table->foreignId('village_id')->nullable();
             $table->foreign('village_id')->references('id')->on('villages');

@@ -24,17 +24,25 @@ class AdminSeeder extends Seeder
 
         Admin::create([
             'name' => 'Tio Akbar',
-            'username' => 'tioakbar',
-            'phone_number' => '08123123123',
+            'username' => 'cinekw',
+            'phone_number' => '0895376945991',
             'phone_number_verified_at' => Carbon::now(),
-            'level' => false,
+            'level' => true,
             'password' => bcrypt('12345678'),
         ]);
 
         Admin::create([
-            'name' => 'Admin Dapil 1',
-            'username' => 'dapil1',
-            'phone_number' => '08953444443331',
+            'name' => 'Muhammad Ariansyah',
+            'username' => 'ariekuroboo',
+            'phone_number' => '08971158448',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => true,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Ketapang 1',
+            'username' => 'ketapang1',
             'phone_number_verified_at' => Carbon::now(),
             'level' => false,
             'voting_zone_id' => 1,
@@ -43,9 +51,79 @@ class AdminSeeder extends Seeder
         ]);
 
         Admin::create([
-            'name' => 'Admin Dapil 2',
-            'username' => 'dapil2',
-            'phone_number' => '08853334434341',
+            'name' => 'Ketapang 2',
+            'username' => 'ketapang2',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 2,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Ketapang 3',
+            'username' => 'ketapang3',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 3,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Ketapang 4',
+            'username' => 'ketapang4',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 4,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Ketapang 5',
+            'username' => 'ketapang5',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 5,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Ketapang 6',
+            'username' => 'ketapang6',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 6,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Ketapang 7',
+            'username' => 'ketapang7',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 7,
+            'city_id' => 1,
+            'password' => bcrypt('12345678'),
+        ]);
+
+
+        Admin::create([
+            'name' => 'Kayong Utara 1',
+            'username' => 'kayong1',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 1,
+            'city_id' => 2,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Kayong Utara 2',
+            'username' => 'kayong2',
             'phone_number_verified_at' => Carbon::now(),
             'level' => false,
             'voting_zone_id' => 2,
@@ -54,13 +132,22 @@ class AdminSeeder extends Seeder
         ]);
 
         Admin::create([
-            'name' => 'Admin Dapil 3',
-            'username' => 'dapil3',
-            'phone_number' => '0895283455031',
+            'name' => 'Kayong Utara 3',
+            'username' => 'kayong3',
             'phone_number_verified_at' => Carbon::now(),
             'level' => false,
             'voting_zone_id' => 3,
-            'city_id' => 3,
+            'city_id' => 2,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Admin::create([
+            'name' => 'Kayong Utara 4',
+            'username' => 'kayong4',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => false,
+            'voting_zone_id' => 4,
+            'city_id' => 2,
             'password' => bcrypt('12345678'),
         ]);
     }

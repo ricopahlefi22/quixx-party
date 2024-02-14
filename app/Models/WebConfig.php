@@ -15,4 +15,9 @@ class WebConfig extends Model
     {
         return $this->belongsTo(VotingZone::class, 'voting_zone_id');
     }
+
+    public function party()
+    {
+        return $this->belongsTo(Party::class, 'party_id', 'id');
+    }
 }
