@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-// use App\Models\Village;
-
 use Database\Seeders\Village\AirUpasSeeder;
 use Database\Seeders\Village\BenuaKayongSeeder;
 use Database\Seeders\Village\DeltaPawanSeeder;
@@ -31,6 +29,7 @@ use Database\Seeders\Village\SungaiMelayuRayakSeeder;
 use Database\Seeders\Village\TelukBatangSeeder;
 use Database\Seeders\Village\TumbangTitiSeeder;
 use Illuminate\Database\Seeder;
+use SandaiSeeder as GlobalSandaiSeeder;
 
 class VillageSeeder extends Seeder
 {
@@ -39,8 +38,6 @@ class VillageSeeder extends Seeder
      */
     public function run(): void
     {
-        // Village::factory(2500)->create();
-
         $this->call([
             /**-------------- (DAPIL 1) KABUPATEN KETAPANG ------------- **/
             DeltaPawanSeeder::class,

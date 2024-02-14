@@ -23,6 +23,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -33,6 +34,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -43,6 +45,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -53,6 +56,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -63,6 +67,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -73,6 +78,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -83,6 +89,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 1,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Kebangkitan Bangsa
@@ -97,6 +104,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -107,6 +115,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -117,6 +126,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -127,6 +137,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -137,6 +148,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -147,6 +159,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -157,6 +170,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 2,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Gerakan Indonesia Raya
@@ -171,6 +185,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -181,6 +196,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -191,6 +207,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -201,6 +218,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -211,6 +229,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -221,6 +240,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -231,6 +251,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 3,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Demokrasi Indonesia Perjuangan
@@ -245,6 +266,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -255,6 +277,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -265,6 +288,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -275,6 +299,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -285,6 +310,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -295,6 +321,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -305,6 +332,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 4,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Golongan Karya
@@ -319,6 +347,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -329,6 +358,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -339,6 +369,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -349,6 +380,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -359,6 +391,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -369,6 +402,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -379,6 +413,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 5,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Nasdem
@@ -393,6 +428,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 6,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Buruh
@@ -407,6 +443,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -417,6 +454,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -427,6 +465,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -437,6 +476,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -447,6 +487,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -457,6 +498,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -467,6 +509,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 8,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PKS
@@ -481,6 +524,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -491,6 +535,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -501,6 +546,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -511,6 +557,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -521,6 +568,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -531,6 +579,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -541,6 +590,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 10,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Hanura
@@ -555,6 +605,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -565,6 +616,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -575,6 +627,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -585,6 +638,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -595,6 +649,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -605,6 +660,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -615,6 +671,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 12,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PAN
@@ -629,6 +686,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -639,6 +697,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -649,6 +708,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -659,6 +719,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -669,6 +730,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -679,6 +741,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -689,6 +752,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Pontianak',
             'party_id' => 14,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Demokrat
@@ -703,6 +767,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -713,6 +778,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -723,6 +789,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -733,6 +800,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -743,6 +811,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -753,6 +822,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -763,6 +833,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 15,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PSI
@@ -777,6 +848,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -787,6 +859,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -797,6 +870,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -807,6 +881,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -817,6 +892,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -827,6 +903,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -837,6 +914,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 16,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Perindo
@@ -851,6 +929,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -861,6 +940,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -871,6 +951,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -881,6 +962,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -891,6 +973,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 17,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -901,6 +984,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Pontianak',
             'party_id' => 17,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai PPP
@@ -915,6 +999,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -925,6 +1010,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -935,6 +1021,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -945,6 +1032,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Pontianak',
             'party_id' => 18,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -955,6 +1043,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Perempuan',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
 
@@ -965,6 +1054,7 @@ class Dapil3Seeder extends Seeder
             'gender' => 'Laki-Laki',
             'city' => 'Ketapang',
             'party_id' => 18,
+            'level' => 'Kabupaten',
             'voting_zone_id' => $votingZone->id,
         ]);
         // Partai Ummat

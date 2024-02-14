@@ -131,7 +131,7 @@ class JelaiHuluSeeder extends Seeder
 
 
         /**-------------- KARANG DANGIN ------------- **/
-        $muliaKerta = Village::create([
+        $karangDangin = Village::create([
             'name' => 'Desa Karang Dangin',
             'district_id' => $kecamatanJelaiHulu->id,
             'voting_zone_id' => $kecamatanJelaiHulu->voting_zone_id,
@@ -143,10 +143,10 @@ class JelaiHuluSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $muliaKerta->id,
-                'district_id' => $muliaKerta->district_id,
-                'voting_zone_id' => $muliaKerta->voting_zone_id,
-                'city_id' => $muliaKerta->city_id,
+                'village_id' => $karangDangin->id,
+                'district_id' => $karangDangin->district_id,
+                'voting_zone_id' => $karangDangin->voting_zone_id,
+                'city_id' => $karangDangin->city_id,
             ]);
         }
         /**-------------- KARANG DANGIN ------------- **/
@@ -458,7 +458,7 @@ class JelaiHuluSeeder extends Seeder
 
 
         /**-------------- TANGGERANG ------------- **/
-        $sidahari = Village::create([
+        $tanggerang = Village::create([
             'name' => 'Desa Tanggerang',
             'district_id' => $kecamatanJelaiHulu->id,
             'voting_zone_id' => $kecamatanJelaiHulu->voting_zone_id,
@@ -470,10 +470,10 @@ class JelaiHuluSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sidahari->id,
-                'district_id' => $sidahari->district_id,
-                'voting_zone_id' => $sidahari->voting_zone_id,
-                'city_id' => $sidahari->city_id,
+                'village_id' => $tanggerang->id,
+                'district_id' => $tanggerang->district_id,
+                'voting_zone_id' => $tanggerang->voting_zone_id,
+                'city_id' => $tanggerang->city_id,
             ]);
         }
         /**-------------- TANGGERANG ------------- **/
@@ -482,7 +482,7 @@ class JelaiHuluSeeder extends Seeder
 
 
         /**-------------- TEBING BERSERI ------------- **/
-        $sidahari = Village::create([
+        $tebingBerseri = Village::create([
             'name' => 'Desa Tebing Berseri',
             'district_id' => $kecamatanJelaiHulu->id,
             'voting_zone_id' => $kecamatanJelaiHulu->voting_zone_id,
@@ -494,10 +494,10 @@ class JelaiHuluSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sidahari->id,
-                'district_id' => $sidahari->district_id,
-                'voting_zone_id' => $sidahari->voting_zone_id,
-                'city_id' => $sidahari->city_id,
+                'village_id' => $tebingBerseri->id,
+                'district_id' => $tebingBerseri->district_id,
+                'voting_zone_id' => $tebingBerseri->voting_zone_id,
+                'city_id' => $tebingBerseri->city_id,
             ]);
         }
         /**-------------- TEBING BERSERI ------------- **/
@@ -506,7 +506,7 @@ class JelaiHuluSeeder extends Seeder
 
 
         /**-------------- TELUK RUNJAI ------------- **/
-        $sidahari = Village::create([
+        $telukRunjai = Village::create([
             'name' => 'Desa Teluk Runjai',
             'district_id' => $kecamatanJelaiHulu->id,
             'voting_zone_id' => $kecamatanJelaiHulu->voting_zone_id,
@@ -518,10 +518,10 @@ class JelaiHuluSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sidahari->id,
-                'district_id' => $sidahari->district_id,
-                'voting_zone_id' => $sidahari->voting_zone_id,
-                'city_id' => $sidahari->city_id,
+                'village_id' => $telukRunjai->id,
+                'district_id' => $telukRunjai->district_id,
+                'voting_zone_id' => $telukRunjai->voting_zone_id,
+                'city_id' => $telukRunjai->city_id,
             ]);
         }
         /**-------------- TELUK RUNJAI ------------- **/

@@ -19,7 +19,7 @@ class TVController extends Controller
     {
         $data['title'] = "TV Perolehan Suara";
         $data['web'] = WebConfig::first();
-        $data['voting_zone'] = VotingZone::findOrFail($request->id);
+        $data['votingZone'] = VotingZone::findOrFail($request->id);
 
         $parties = $data['list_party'] = Party::all();
         foreach ($parties as $party) {
@@ -48,13 +48,13 @@ class TVController extends Controller
         }
     }
 
-    function getSuara1()
+    function getSuara1(Request $request)
     {
         $parties = $data['list_party'] = Party::all();
         $result = array();
 
         foreach ($parties as $party) {
-            $totalVotesAll = VotingResult::where('party_id', $party->id)->sum('number');;
+            $totalVotesAll = VotingResult::where('voting_zone_id', $request->id)->where('party_id', $party->id)->sum('number');;
             $party->totalVotesAll = $totalVotesAll;
 
             $result[] = array(
@@ -68,13 +68,13 @@ class TVController extends Controller
     }
 
 
-    function getSuara2()
+    function getSuara2(Request $request)
     {
-        $candidates = $data['list_candidate'] = Candidate::all();
+        $candidates = $data['list_candidate'] = Candidate::where('voting_zone_id', $request->id)->get();
         $result = array();
 
         foreach ($candidates as $candidate) {
-            $totalVotesAll = VotingResult::where('candidate_id', $candidate->id)->sum('number');
+            $totalVotesAll = VotingResult::where('voting_zone_id', $request->id)->where('candidate_id', $candidate->id)->sum('number');
             $candidate->totalVotesAll = $totalVotesAll;
 
             $result[] = array(
@@ -87,14 +87,14 @@ class TVController extends Controller
         return response()->json($result);
     }
 
-    function getSuara3()
+    function getSuara3(Request $request)
     {
         $web = WebConfig::first();
-        $candidates = $data['list_candidate'] = Candidate::where('party_id', $web->party_id)->get();
+        $candidates = $data['list_candidate'] = Candidate::where('voting_zone_id', $request->id)->where('party_id', $web->party_id)->get();
         $result = array();
 
         foreach ($candidates as $candidate) {
-            $totalVotesAll = VotingResult::where('candidate_id', $candidate->id)->sum('number');
+            $totalVotesAll = VotingResult::where('voting_zone_id', $request->id)->where('candidate_id', $candidate->id)->sum('number');
             $candidate->totalVotesAll = $totalVotesAll;
 
             $result[] = array(

@@ -57,7 +57,6 @@ class MuaraPawanSeeder extends Seeder
         /**-------------- SUKAMAJU ------------- **/
 
 
-
         /**-------------- SUNGAI AWAN KANAN ------------- **/
         $sungaiAwanKanan = Village::create([
             'name' => 'Desa Sungai Awan Kanan',
@@ -125,10 +124,9 @@ class MuaraPawanSeeder extends Seeder
         /**-------------- TANJUNG PASAR ------------- **/
 
 
-
         /**-------------- TANJUNG PURA ------------- **/
         $tanjungPura = Village::create([
-            'name' => 'Kelurahan Mulia Baru',
+            'name' => 'Desa Tanjung Pura',
             'district_id' => $kecamatanMuaraPawan->id,
             'voting_zone_id' => $kecamatanMuaraPawan->voting_zone_id,
             'city_id' => $kecamatanMuaraPawan->city_id,

@@ -4,10 +4,10 @@
     <div x-data="analytics">
         <ul class="flex space-x-2 rtl:space-x-reverse">
             <li>
-                <a href="javascript:;" class="text-primary hover:underline">Dashboard</a>
+                <a href="javascript:;" class="text-primary hover:underline">Quixx {{ env('PARTY') }}</a>
             </li>
             <li class="before:mr-1 before:content-['/'] rtl:before:ml-1">
-                <span>Analytics</span>
+                <span>Beranda</span>
             </li>
         </ul>
         <div class="pt-5">

@@ -82,10 +82,9 @@ class MatanHilirUtaraSeeder extends Seeder
         /**-------------- LAMAN SATONG ------------- **/
 
 
-
         /**-------------- SUNGAI PUTRI ------------- **/
         $sungaiPutri = Village::create([
-            'name' => 'Desa Gahang',
+            'name' => 'Desa Sungai Putri',
             'district_id' => $kecamatanMatanHilirUtara->id,
             'voting_zone_id' => $kecamatanMatanHilirUtara->voting_zone_id,
             'city_id' => $kecamatanMatanHilirUtara->city_id,

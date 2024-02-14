@@ -16,25 +16,6 @@ class VotingResultController extends Controller
 {
     function index(Request $request)
     {
-        // $data['title'] = 'Hasil Perhitungan Cepat';
-        // $data['districts'] = District::all();
-        // $data['villages'] = Village::all();
-        // $data['time'] = '2024/01/01';
-
-        // $partai = $data['parties'] = Party::all();
-        // foreach ($partai as $item) {
-        //     $total_suara = VotingResult::where('party_id', $item->id)
-        //         ->sum('number');
-        //     $item->total_suara = $total_suara;
-        // }
-
-        // $kandidat = $data['kandidat'] = Candidate::all();
-        // foreach ($kandidat as $item) {
-        //     $total_suara_kandidat = VotingResult::where('candidate_id', $item->id)
-        //         ->sum('number');
-        //     $item->total_suara_kandidat = $total_suara_kandidat;
-        // }
-
         $data['title'] = 'Data Hasil Perolehan Suara (C1)';
         $data['web'] = WebConfig::first();
         $data['votingPlace'] = VotingPlace::findOrFail($request->id);

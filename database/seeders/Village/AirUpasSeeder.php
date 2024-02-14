@@ -9,9 +9,6 @@ use Illuminate\Database\Seeder;
 
 class AirUpasSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $kecamatanAirUpas = District::where('name', 'Air Upas')->first();
@@ -95,7 +92,7 @@ class AirUpasSeeder extends Seeder
             $tpsNumber = (strlen($i) != 2) ? '00' . $i : '0' . $i;
 
             VotingPlace::create([
-                'name' => 'TPS '.$tpsNumber,
+                'name' => 'TPS ' . $tpsNumber,
                 'village_id' => $gahang->id,
                 'district_id' => $gahang->district_id,
                 'voting_zone_id' => $gahang->voting_zone_id,

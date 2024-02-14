@@ -127,7 +127,7 @@ class BenuaKayongSeeder extends Seeder
 
 
 
-        /**-------------- KELURAHAN MULIA KERTA ------------- **/
+        /**-------------- MULIA KERTA ------------- **/
         $muliaKerta = Village::create([
             'name' => 'Kelurahan Mulia Kerta',
             'district_id' => $kecamatanBenuaKayong->id,
@@ -146,7 +146,7 @@ class BenuaKayongSeeder extends Seeder
                 'city_id' => $muliaKerta->city_id,
             ]);
         }
-        /**-------------- KELURAHAN MULIA KERTA ------------- **/
+        /**-------------- MULIA KERTA ------------- **/
 
 
 
@@ -242,7 +242,7 @@ class BenuaKayongSeeder extends Seeder
 
         /**-------------- TUAN-TUAN ------------- **/
         $tuanTuan = Village::create([
-            'name' => 'kelurahan Tuan-Tuan',
+            'name' => 'Kelurahan Tuan-Tuan',
             'district_id' => $kecamatanBenuaKayong->id,
             'voting_zone_id' => $kecamatanBenuaKayong->voting_zone_id,
             'city_id' => $kecamatanBenuaKayong->city_id,

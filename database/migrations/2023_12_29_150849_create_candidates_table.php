@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('gender')->nullable();
             $table->string('city')->nullable();
+            $table->string('level')->nullable();
             $table->foreignId('voting_zone_id')->nullable();
             $table->foreign('voting_zone_id')->references('id')->on('voting_zones');
             $table->foreignId('party_id')->nullable();

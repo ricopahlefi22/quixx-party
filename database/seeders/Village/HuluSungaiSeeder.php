@@ -14,14 +14,14 @@ class HuluSungaiSeeder extends Seeder
      */
     public function run(): void
     {
-        $kecamatanDeltaPawan = District::where('name', 'Hulu Sungai')->first();
+        $kecamatanHuluSungai = District::where('name', 'Hulu Sungai')->first();
 
         /**-------------- BATU LAPIS ------------- **/
         $batuLapis = Village::create([
             'name' => 'Desa Batu Lapis',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 3; $i++) {
@@ -41,9 +41,9 @@ class HuluSungaiSeeder extends Seeder
         /**-------------- BEGINCI DARAT ------------- **/
         $beginciDarat = Village::create([
             'name' => 'Desa Beginci Darat',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 2; $i++) {
@@ -64,9 +64,9 @@ class HuluSungaiSeeder extends Seeder
         /**-------------- BENUA KRIO ------------- **/
         $benuaKrio = Village::create([
             'name' => 'Desa Benua Krio',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 6; $i++) {
@@ -87,9 +87,9 @@ class HuluSungaiSeeder extends Seeder
         /**-------------- CINTA MANIS ------------- **/
         $cintaManis = Village::create([
             'name' => 'Desa Cinta Manis',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 3; $i++) {
@@ -110,9 +110,9 @@ class HuluSungaiSeeder extends Seeder
         /**-------------- KENYABUR ------------- **/
         $kenyabur = Village::create([
             'name' => 'Desa Kenyabur',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 3; $i++) {
@@ -133,9 +133,9 @@ class HuluSungaiSeeder extends Seeder
         /**-------------- DESA KRIO HULU ------------- **/
         $krioHulu = Village::create([
             'name' => 'Desa Krio Hulu',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 6; $i++) {
@@ -154,11 +154,11 @@ class HuluSungaiSeeder extends Seeder
 
 
         /**-------------- LUBUK KAKAP ------------- **/
-        $sampit = Village::create([
+        $lubukKakap = Village::create([
             'name' => 'Desa Lubuk Kakap',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 2; $i++) {
@@ -166,10 +166,10 @@ class HuluSungaiSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sampit->id,
-                'district_id' => $sampit->district_id,
-                'voting_zone_id' => $sampit->voting_zone_id,
-                'city_id' => $sampit->city_id,
+                'village_id' => $lubukKakap->id,
+                'district_id' => $lubukKakap->district_id,
+                'voting_zone_id' => $lubukKakap->voting_zone_id,
+                'city_id' => $lubukKakap->city_id,
             ]);
         }
         /**-------------- LUBUK KAKAP ------------- **/
@@ -177,11 +177,11 @@ class HuluSungaiSeeder extends Seeder
 
 
         /**-------------- MENYUMBUNG ------------- **/
-        $sukaharja = Village::create([
+        $menyumbung = Village::create([
             'name' => 'Desa Menyumbung',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 7; $i++) {
@@ -189,21 +189,21 @@ class HuluSungaiSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->id,
-                'district_id' => $sukaharja->district_id,
-                'voting_zone_id' => $sukaharja->voting_zone_id,
-                'city_id' => $sukaharja->city_id,
+                'village_id' => $menyumbung->id,
+                'district_id' => $menyumbung->district_id,
+                'voting_zone_id' => $menyumbung->voting_zone_id,
+                'city_id' => $menyumbung->city_id,
             ]);
         }
         /**-------------- MENYUMBUNG ------------- **/
 
 
         /**-------------- DESA RIAM DADAP ------------- **/
-        $sukaharja = Village::create([
+        $riamDadap = Village::create([
             'name' => 'Desa Riam Dadap',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 2; $i++) {
@@ -211,21 +211,21 @@ class HuluSungaiSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->id,
-                'district_id' => $sukaharja->district_id,
-                'voting_zone_id' => $sukaharja->voting_zone_id,
-                'city_id' => $sukaharja->city_id,
+                'village_id' => $riamDadap->id,
+                'district_id' => $riamDadap->district_id,
+                'voting_zone_id' => $riamDadap->voting_zone_id,
+                'city_id' => $riamDadap->city_id,
             ]);
         }
         /**-------------- DESA RIAM DADAP ------------- **/
 
 
         /**-------------- DESA SEKUKUN ------------- **/
-        $sukaharja = Village::create([
+        $sekukun = Village::create([
             'name' => 'Desa Sekukun',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 3; $i++) {
@@ -233,21 +233,21 @@ class HuluSungaiSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->id,
-                'district_id' => $sukaharja->district_id,
-                'voting_zone_id' => $sukaharja->voting_zone_id,
-                'city_id' => $sukaharja->city_id,
+                'village_id' => $sekukun->id,
+                'district_id' => $sekukun->district_id,
+                'voting_zone_id' => $sekukun->voting_zone_id,
+                'city_id' => $sekukun->city_id,
             ]);
         }
         /**-------------- DESA SEKUKUN ------------- **/
 
 
         /**-------------- DESA SENDURUHAN ------------- **/
-        $sukaharja = Village::create([
+        $senduruhan = Village::create([
             'name' => 'Desa Senduruhan',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 5; $i++) {
@@ -255,21 +255,21 @@ class HuluSungaiSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->id,
-                'district_id' => $sukaharja->district_id,
-                'voting_zone_id' => $sukaharja->voting_zone_id,
-                'city_id' => $sukaharja->city_id,
+                'village_id' => $senduruhan->id,
+                'district_id' => $senduruhan->district_id,
+                'voting_zone_id' => $senduruhan->voting_zone_id,
+                'city_id' => $senduruhan->city_id,
             ]);
         }
         /**-------------- DESA SENDURUHAN ------------- **/
 
 
         /**-------------- DESA SUNGE BENGARAS ------------- **/
-        $sukaharja = Village::create([
+        $sungeBengaras = Village::create([
             'name' => 'Desa Sunge Bengaras',
-            'district_id' => $kecamatanDeltaPawan->id,
-            'voting_zone_id' => $kecamatanDeltaPawan->voting_zone_id,
-            'city_id' => $kecamatanDeltaPawan->city_id,
+            'district_id' => $kecamatanHuluSungai->id,
+            'voting_zone_id' => $kecamatanHuluSungai->voting_zone_id,
+            'city_id' => $kecamatanHuluSungai->city_id,
         ]);
 
         for ($i = 1; $i <= 6; $i++) {
@@ -277,10 +277,10 @@ class HuluSungaiSeeder extends Seeder
 
             VotingPlace::create([
                 'name' => 'TPS ' . $tpsNumber,
-                'village_id' => $sukaharja->id,
-                'district_id' => $sukaharja->district_id,
-                'voting_zone_id' => $sukaharja->voting_zone_id,
-                'city_id' => $sukaharja->city_id,
+                'village_id' => $sungeBengaras->id,
+                'district_id' => $sungeBengaras->district_id,
+                'voting_zone_id' => $sungeBengaras->voting_zone_id,
+                'city_id' => $sungeBengaras->city_id,
             ]);
         }
         /**-------------- DESA SUNGE BENGARAS ------------- **/

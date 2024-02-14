@@ -9,6 +9,7 @@ use Database\Seeders\Candidate\Dapil4Seeder;
 use Database\Seeders\Candidate\Dapil5Seeder;
 use Database\Seeders\Candidate\Dapil6Seeder;
 use Database\Seeders\Candidate\Dapil7Seeder;
+use Database\Seeders\Candidate\ProvinsiSeeder;
 use Illuminate\Database\Seeder;
 
 class CandidateSeeder extends Seeder
@@ -19,6 +20,7 @@ class CandidateSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            ProvinsiSeeder::class,
             Dapil1Seeder::class,
             Dapil2Seeder::class,
             Dapil3Seeder::class,
