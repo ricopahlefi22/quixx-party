@@ -12,6 +12,7 @@ use App\Http\Controllers\VillageController;
 use App\Http\Controllers\VotingPlaceController;
 use App\Http\Controllers\VotingResultController;
 use App\Http\Controllers\VotingZoneController;
+use App\Http\Controllers\ProfileController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
@@ -60,6 +61,12 @@ Route::middleware('auth:web')->group(function () {
 
     Route::prefix('voting-places')->controller(VotingPlaceController::class)->group(function () {
         Route::get('/', 'index');
+    });
+
+     Route::prefix('profil')->controller(ProfileController::class)->group(function () {
+        Route::get('/', 'index');
+        Route::get('/update', 'update');
+        Route::get('/change-password', 'updatePassword');
     });
 
     Route::prefix('input-c1')->controller(VotingResultController::class)->group(function () {
