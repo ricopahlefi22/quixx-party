@@ -10,4 +10,9 @@ class WebConfig extends Model
     use HasFactory;
 
     protected $table = 'web_config';
+
+    public function votingZone()
+    {
+        return $this->belongsTo(VotingZone::class, 'voting_zone_id');
+    }
 }

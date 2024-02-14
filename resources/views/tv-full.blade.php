@@ -355,9 +355,6 @@
     <div x-cloak class="fixed inset-0 z-50 bg-[black]/60 lg:hidden" :class="{ 'hidden': !$store.app.sidebar }"
         @click="$store.app.toggleSidebar()"></div>
 
-    <!-- screen loader -->
-    @include('template.sections.screen-loader')
-
     <!-- scroll to top button -->
     @include('template.sections.scroll-to-top')
 
@@ -371,7 +368,7 @@
             <a href="index.html" class="main-logo flex shrink-0 items-center">
                 <img class="ml-[5px] w-8 flex-none" src="{{ asset('logo.png') }}" alt="image" />
                 <span class="align-middle text-lg font-bold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">
-                    KETAPANG S14P
+                    Hasil Perolehan Suara {{ $voting_zone->name }}
                 </span>
             </a>
             <div class="grid grid-cols-1 gap-6 pt-5 lg:grid-cols-2" x-data="form">
@@ -402,8 +399,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-
-
             // star chart 1
             function updateData1() {
                 return new Promise((resolve, reject) => {
@@ -675,11 +670,11 @@
         });
     </script>
 
-    <script>
+    {{-- <script>
         setTimeout(function() {
             location.reload();
         }, 60000);
-    </script>
+    </script> --}}
 </body>
 
 </html>

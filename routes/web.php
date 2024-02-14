@@ -63,6 +63,7 @@ Route::middleware('auth:web')->group(function () {
     });
 
     Route::prefix('input-c1')->controller(VotingResultController::class)->group(function () {
-        Route::get('/', 'index');
+        Route::get('{id}', 'index');
+        Route::post('store', 'store');
     });
 });

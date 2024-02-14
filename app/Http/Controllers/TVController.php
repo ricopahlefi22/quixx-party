@@ -23,19 +23,19 @@ class TVController extends Controller
 
         $parties = $data['list_party'] = Party::all();
         foreach ($parties as $party) {
-            $totalVotes = VotingResult::where('voting_zone_id', Auth::user()->voting_zone_id)->where('party_id', $party->id)->sum('number');
+            $totalVotes = VotingResult::where('voting_zone_id', $request->id)->where('party_id', $party->id)->sum('number');
             $party->totalVotes = $totalVotes;
         }
 
         $candidates = $data['list_candidate'] = Candidate::where('party_id', $data['web']->party_id)->get();
         foreach ($candidates as $candidate) {
-            $totalVotes = VotingResult::where('voting_zone_id', Auth::user()->voting_zone_id)->where('candidate_id', $candidate->id)->sum('number');
+            $totalVotes = VotingResult::where('voting_zone_id', $request->id)->where('candidate_id', $candidate->id)->sum('number');
             $candidate->totalVotes = $totalVotes;
         }
 
         $candidatesAll = $data['list_candidate_all'] = Candidate::all();
         foreach ($candidatesAll as $candidate) {
-            $totalVotesAll = VotingResult::where('voting_zone_id', Auth::user()->voting_zone_id)->where('candidate_id', $candidate->id)->sum('number');
+            $totalVotesAll = VotingResult::where('voting_zone_id', $request->id)->where('candidate_id', $candidate->id)->sum('number');
             $candidate->totalVotesAll = $totalVotesAll;
         }
 
@@ -47,9 +47,6 @@ class TVController extends Controller
             return abort(404);
         }
     }
-
-
-
 
     function getSuara1()
     {

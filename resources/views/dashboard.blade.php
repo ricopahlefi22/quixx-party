@@ -11,7 +11,7 @@
             </li>
         </ul>
         <div class="pt-5">
-            <div class="mb-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {{-- <div class="mb-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <div class="panel h-full sm:col-span-2 lg:col-span-1">
                     <!-- statistics -->
                     <div class="mb-5 flex items-center justify-between dark:text-white-light">
@@ -145,7 +145,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

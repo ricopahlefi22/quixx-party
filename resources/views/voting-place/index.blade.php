@@ -31,7 +31,7 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Kecamatan', 'C1'],
+                            headings: ['No', 'Nama', 'Kecamatan', 'Status C1', 'Aksi'],
                             data: [
                                 @foreach ($voting_places as $voting_place)
                                     [
@@ -39,6 +39,7 @@
                                         `{{ $voting_place->village->name . ' ' . $voting_place->name }}`,
                                         `{{ $voting_place->district->name }}`,
                                         `{{ $voting_place->votingResult }}`,
+                                        `{{ $voting_place->id }}`,
                                     ],
                                 @endforeach
                             ],
@@ -65,6 +66,7 @@
                                 render: (data, cell, row) => {
                                     return `${data}`;
                                 },
+                                sortable: false,
                             },
                             {
                                 select: 3,
@@ -75,6 +77,13 @@
                                         return `❌`;
                                     }
                                 },
+                            },
+                            {
+                                select: 4,
+                                render: (data, cell, row) => {
+                                    return `<a href="input-c1/${data}" class="btn btn-info btn-sm">Formulir C1</a>`
+                                },
+                                sortable: false,
                             },
                         ],
                         firstLast: true,

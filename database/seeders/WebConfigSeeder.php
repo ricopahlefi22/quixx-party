@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\WebConfig;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class WebConfigSeeder extends Seeder

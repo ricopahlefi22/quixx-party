@@ -29,4 +29,9 @@ class Candidate extends Model
     {
         return $this->belongsTo(VotingZone::class, 'voting_zone_id');
     }
+
+    public function votingResult()
+    {
+        return $this->hasMany(VotingResult::class);
+    }
 }

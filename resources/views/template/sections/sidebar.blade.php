@@ -143,7 +143,7 @@
                         </a>
                     </li>
                 @else
-                    <li class="menu nav-item">
+                    {{-- <li class="menu nav-item">
                         <a href="{{ url('input-c1') }}" class="nav-link group">
                             <div class="flex items-center">
                                 <svg class="shrink-0 group-hover:!text-primary" width="20" height="20"
@@ -167,7 +167,7 @@
                                 </span>
                             </div>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="menu nav-item">
                         <a href="{{ url('tv', Auth::user()->voting_zone_id) }}" target="_blank"
