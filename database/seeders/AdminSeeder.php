@@ -14,6 +14,14 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         Admin::create([
+            'name' => 'DPC Demokrat Ketapang',
+            'username' => 'demokrat',
+            'phone_number_verified_at' => Carbon::now(),
+            'level' => true,
+            'password' => bcrypt('12341234'),
+        ]);
+
+        Admin::create([
             'name' => 'Rico Pahlefi',
             'username' => 'ricopahlefi',
             'phone_number' => '089528597031',
