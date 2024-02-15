@@ -41,4 +41,8 @@ class VotingZone extends Model
     {
         return $this->hasMany(VotingPlace::class, 'voting_zone_id');
     }
+
+    public function votingResults(){
+        return $this->hasMany(VotingResult::class, 'voting_zone_id');
+    }
 }

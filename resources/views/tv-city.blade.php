@@ -23,7 +23,7 @@
     <div class="animate__animated p-6" :class="[$store.app.animation]">
         <!-- start main content section -->
         <div>
-            <a href="index.html" class="main-logo flex shrink-0 items-center">
+            <a href="{{ url('/') }}" class="main-logo flex shrink-0 items-center">
                 <img class="ml-[5px] w-8 flex-none" src="{{ asset('logo.png') }}" alt="image" />
                 <span class="align-middle text-lg font-bold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">
                     Hasil Perolehan Suara {{ $votingZone->city->name }} {{ $votingZone->name }}
@@ -61,7 +61,7 @@
             function updateData1() {
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: `{{ url('tv/get-suara1', $votingZone->id) }}`,
+                        url: `{{ url('tv/get-all-party', $votingZone->id) }}`,
                         method: 'GET',
                         dataType: 'json',
                         success: function(response) {
@@ -151,7 +151,7 @@
             function updateData2() {
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: `{{ url('tv/get-suara2', $votingZone->id) }}`,
+                        url: `{{ url('tv/get-all-candidate', $votingZone->id) }}`,
                         method: 'GET',
                         dataType: 'json',
                         success: function(response) {
@@ -244,7 +244,7 @@
             function updateData3() {
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: `{{ url('tv/get-suara3', $votingZone->id) }}`,
+                        url: `{{ url('tv/get-party-candidate', $votingZone->id) }}`,
                         method: 'GET',
                         dataType: 'json',
                         success: function(response) {

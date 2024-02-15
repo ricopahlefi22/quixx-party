@@ -31,19 +31,25 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No Urut', '', 'Nama', 'Partai', 'Jumlah Suara',
-                                'Jenis Kelamin', 'Kota'
+                            headings: [
+                                'No Urut',
+                                '',
+                                'Nama',
+                                'Partai',
+                                'Jumlah Suara',
+                                'Jenis Kelamin',
+                                'Kota',
                             ],
                             data: [
                                 @foreach ($candidates as $candidate)
                                     [
-                                        '{{ $candidate->number }}',
-                                        '{{ $candidate->party->logo }}',
-                                        '{{ $candidate->name }}',
-                                        '{{ $candidate->party->short_name }}',
-                                        '20',
-                                        '{{ $candidate->gender }}',
-                                        '{{ $candidate->city }}',
+                                        `{{ $candidate->number }}`,
+                                        `{{ $candidate->party->logo }}`,
+                                        `{{ $candidate->name }}`,
+                                        `{{ $candidate->party->short_name }}`,
+                                        `{{ $candidate->votingResults->sum('number') }}`,
+                                        `{{ $candidate->gender }}`,
+                                        `{{ $candidate->city }}`,
                                     ],
                                 @endforeach
                             ],

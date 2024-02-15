@@ -79,7 +79,7 @@
                                 <input id="candidateVoter{{ $candidate->id }}" type="number" min="0"
                                     name="number_voters_candidate_{{ $candidate->id }}"
                                     placeholder="Masukkan Suara {{ $candidate->name }}"
-                                    value="{{ empty($candidate->votingResults->where('level', 'Kabupaten')->where('voting_place_id', $votingPlace->id)->first()->number) ? null : $candidate->votingResults->where('level', 'Kabupaten')->where('voting_place_id', $votingPlace->id)->first()->number }}"
+                                    value="{{ empty($candidate->votingResults->where('level', 'Kabupaten')->where('voting_place_id', $votingPlace->id)->first()->number)? null: $candidate->votingResults->where('level', 'Kabupaten')->where('voting_place_id', $votingPlace->id)->first()->number }}"
                                     class="form-input" />
                             </div>
                         @endforeach

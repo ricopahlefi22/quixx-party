@@ -29,10 +29,12 @@ Route::middleware('auth:web')->group(function () {
     Route::get('beranda', [DashboardController::class, 'dashboard']);
 
     Route::prefix('tv')->controller(TVController::class)->group(function () {
-        Route::get('get-suara1/{id}', 'getSuara1');
-        Route::get('get-suara2/{id}', 'getSuara2');
-        Route::get('get-suara3/{id}', 'getSuara3');
-        Route::get('{id}', 'index');
+        Route::get('get-all-party/{id}', 'getAllParty');
+        Route::get('get-all-candidate/{id}', 'getAllCandidate');
+        Route::get('get-party-candidate/{id}', 'getPartyCandidate');
+        Route::get('get-province', 'getProvince');
+        Route::get('city/{id}', 'city');
+        Route::get('province', 'province');
     });
 
     Route::prefix('administrators')->controller(AdminController::class)->group(function () {
@@ -63,7 +65,7 @@ Route::middleware('auth:web')->group(function () {
         Route::get('/', 'index');
     });
 
-     Route::prefix('profil')->controller(ProfileController::class)->group(function () {
+    Route::prefix('profile')->controller(ProfileController::class)->group(function () {
         Route::get('/', 'index');
         Route::get('/update', 'update');
         Route::get('/change-password', 'updatePassword');

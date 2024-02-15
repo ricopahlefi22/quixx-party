@@ -31,15 +31,27 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No Urut', 'Logo', 'Nama', 'Singkatan', 'Jumlah Suara'],
+                            headings: [
+                                'No Urut',
+                                'Logo',
+                                'Nama',
+                                'Singkatan',
+                                @foreach ($votingZones as $votingZone)
+                                    '{{ $votingZone->name }}',
+                                @endforeach
+                                'Jumlah Suara Provinsi'
+                            ],
                             data: [
                                 @foreach ($parties as $party)
                                     [
-                                        '{{ $party->number }}',
-                                        '{{ $party->logo }}',
-                                        '{{ $party->name }}',
-                                        '{{ $party->short_name }}',
-                                        '<div class="text-center">20</div>',
+                                        `{{ $party->number }}`,
+                                        `{{ $party->logo }}`,
+                                        `{{ $party->name }}`,
+                                        `{{ $party->short_name }}`,
+                                        @foreach ($votingZones as $votingZone)
+                                            `{{ $votingZone->votingResults->where('level', 'Kabupaten')->where('party_id', $web->party_id)->sum('number') }}`,
+                                        @endforeach
+                                        `{{ $party->votingResults->where('level', 'Provinsi')->sum('number') }}`,
                                     ],
                                 @endforeach
                             ],
@@ -67,19 +79,6 @@
                                     return `<div class="flex items-center gap-2">
                                             <strong class="font-bold">${data}</strong>
                                     </div>`;
-                                },
-                            },
-                            {
-                                select: 3,
-                                render: (data, cell, row) => {
-                                    return `${data}`;
-                                },
-                                sortable: true,
-                            },
-                            {
-                                select: 4,
-                                render: (data, cell, row) => {
-                                    return `${data}`;
                                 },
                             },
                         ],
