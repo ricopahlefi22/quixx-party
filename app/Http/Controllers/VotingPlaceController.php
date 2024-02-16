@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\District;
 use App\Models\VotingPlace;
+use App\Models\WebConfig;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,7 @@ class VotingPlaceController extends Controller
     function index()
     {
         $data['title'] = 'Data Tempat Pemungutan Suara';
+        $data['web'] = WebConfig::first();
 
         if (Auth::user()->level == true) {
             $data['voting_places'] = VotingPlace::all();

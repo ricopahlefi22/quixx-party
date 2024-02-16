@@ -31,14 +31,24 @@
                 init() {
                     this.datatable = new simpleDatatables.DataTable('#table', {
                         data: {
-                            headings: ['No', 'Nama', 'Kecamatan', 'Status C1', 'Aksi'],
+                            headings: [
+                                `No`,
+                                `Nama`,
+                                `Kecamatan`,
+                                `C1 {{ env('PARTY') }}`,
+                                `C1 Partai Lain`,
+                                `C1 Provinsi`,
+                                `Aksi`,
+                            ],
                             data: [
                                 @foreach ($voting_places as $voting_place)
                                     [
                                         `{{ $loop->iteration }}`,
                                         `{{ $voting_place->village->name . ' ' . $voting_place->name }}`,
                                         `{{ $voting_place->district->name }}`,
-                                        `{{ $voting_place->votingResult }}`,
+                                        `{{ $voting_place->votingResults->where('level', 'Kabupaten')->where('party_id', $web->party_id)->count() }}`,
+                                        `{{ $voting_place->votingResults->where('level', 'Kabupaten')->where('party_id', '!=', $web->party_id)->count() }}`,
+                                        `{{ $voting_place->votingResults->where('level', 'Provinsi')->where('party_id', $web->party_id)->count() }}`,
                                         `{{ $voting_place->id }}`,
                                     ],
                                 @endforeach
@@ -48,12 +58,6 @@
                         perPage: 10,
                         perPageSelect: [10, 20, 30, 50, 100],
                         columns: [{
-                                select: 0,
-                                render: (data, cell, row) => {
-                                    return `${data}`;
-                                },
-                            },
-                            {
                                 select: 1,
                                 render: (data, cell, row) => {
                                     return `<div class="flex items-center gap-2">
@@ -71,7 +75,7 @@
                             {
                                 select: 3,
                                 render: (data, cell, row) => {
-                                    if (data) {
+                                    if (data != 0) {
                                         return `✅`;
                                     } else {
                                         return `❌`;
@@ -80,6 +84,26 @@
                             },
                             {
                                 select: 4,
+                                render: (data, cell, row) => {
+                                    if (data != 0) {
+                                        return `✅`;
+                                    } else {
+                                        return `❌`;
+                                    }
+                                },
+                            },
+                            {
+                                select: 5,
+                                render: (data, cell, row) => {
+                                    if (data != 0) {
+                                        return `✅`;
+                                    } else {
+                                        return `❌`;
+                                    }
+                                },
+                            },
+                            {
+                                select: 6,
                                 render: (data, cell, row) => {
                                     return `<a href="input-c1/${data}" class="btn btn-info btn-sm">Formulir C1</a>`
                                 },

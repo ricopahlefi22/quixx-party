@@ -39,6 +39,10 @@
                                         '{{ $village->name }}',
                                         '{{ $village->district->name }}',
                                         '{{ $village->votingPlaces->count() }}',
+                                        // @if (Auth::user()->level != true)
+                                        //     @foreach ($candidateParty as $candidate)
+                                        //     @endforeach
+                                        // @endif
                                     ],
                                 @endforeach
                             ],

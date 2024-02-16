@@ -40,8 +40,8 @@ class VotingPlace extends Model
         return $this->belongsTo(Village::class, 'village_id');
     }
 
-    public function votingResult()
+    public function votingResults()
     {
-        return $this->hasOne(VotingResult::class, 'voting_place_id');
+        return $this->hasMany(VotingResult::class, 'voting_place_id');
     }
 }
